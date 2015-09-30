@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51131001BB1B855004B4ED7 /* AppDelegate.swift */; };
+		F51131061BB1B855004B4ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51131041BB1B855004B4ED7 /* Main.storyboard */; };
+		F51131081BB1B855004B4ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51131071BB1B855004B4ED7 /* Assets.xcassets */; };
+		F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51131091BB1B855004B4ED7 /* LaunchScreen.storyboard */; };
+		F51131161BB1B855004B4ED7 /* NeuroMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51131151BB1B855004B4ED7 /* NeuroMindTests.swift */; };
+		F51131211BB1B855004B4ED7 /* NeuroMindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51131201BB1B855004B4ED7 /* NeuroMindUITests.swift */; };
+		F511312F1BB1B8D0004B4ED7 /* ScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511312E1BB1B8CF004B4ED7 /* ScoresTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F511313D1BB1BACE004B4ED7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F51131341BB1BACE004B4ED7 /* FMDatabase.m */; settings = {ASSET_TAGS = (); }; };
+		F511313E1BB1BACE004B4ED7 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F51131361BB1BACE004B4ED7 /* FMResultSet.m */; settings = {ASSET_TAGS = (); }; };
+		F511313F1BB1BACE004B4ED7 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F51131381BB1BACE004B4ED7 /* FMDatabaseQueue.m */; settings = {ASSET_TAGS = (); }; };
+		F51131401BB1BACE004B4ED7 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F511313A1BB1BACE004B4ED7 /* FMDatabaseAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		F51131411BB1BACE004B4ED7 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F511313C1BB1BACE004B4ED7 /* FMDatabasePool.m */; settings = {ASSET_TAGS = (); }; };
+		F51131431BB1BB6C004B4ED7 /* scores.db in Resources */ = {isa = PBXBuildFile; fileRef = F51131421BB1BB6C004B4ED7 /* scores.db */; settings = {ASSET_TAGS = (); }; };
+		F51131451BB1C119004B4ED7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F51131441BB1C119004B4ED7 /* libsqlite3.tbd */; };
+		F51131471BB1C4D9004B4ED7 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51131461BB1C4D9004B4ED7 /* Util.swift */; settings = {ASSET_TAGS = (); }; };
+		F51131491BB1CAD8004B4ED7 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51131481BB1CAD8004B4ED7 /* Score.swift */; settings = {ASSET_TAGS = (); }; };
+		F511314B1BB5A0B4004B4ED7 /* ScoresDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511314A1BB5A0B4004B4ED7 /* ScoresDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F51131121BB1B855004B4ED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F51130F51BB1B855004B4ED7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F51130FC1BB1B855004B4ED7;
+			remoteInfo = NeuroMind;
+		};
+		F511311D1BB1B855004B4ED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F51130F51BB1B855004B4ED7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F51130FC1BB1B855004B4ED7;
+			remoteInfo = NeuroMind;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F51130FD1BB1B855004B4ED7 /* NeuroMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51131001BB1B855004B4ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F51131051BB1B855004B4ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F51131071BB1B855004B4ED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F511310A1BB1B855004B4ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F511310C1BB1B855004B4ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F51131111BB1B855004B4ED7 /* NeuroMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeuroMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51131151BB1B855004B4ED7 /* NeuroMindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroMindTests.swift; sourceTree = "<group>"; };
+		F51131171BB1B855004B4ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F511311C1BB1B855004B4ED7 /* NeuroMindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeuroMindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51131201BB1B855004B4ED7 /* NeuroMindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroMindUITests.swift; sourceTree = "<group>"; };
+		F51131221BB1B855004B4ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F511312E1BB1B8CF004B4ED7 /* ScoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoresTableViewController.swift; path = ../ScoresTableViewController.swift; sourceTree = "<group>"; };
+		F51131311BB1BACE004B4ED7 /* NeuroMind-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeuroMind-Bridging-Header.h"; sourceTree = "<group>"; };
+		F51131321BB1BACE004B4ED7 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		F51131331BB1BACE004B4ED7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		F51131341BB1BACE004B4ED7 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		F51131351BB1BACE004B4ED7 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F51131361BB1BACE004B4ED7 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		F51131371BB1BACE004B4ED7 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F51131381BB1BACE004B4ED7 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F51131391BB1BACE004B4ED7 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F511313A1BB1BACE004B4ED7 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F511313B1BB1BACE004B4ED7 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		F511313C1BB1BACE004B4ED7 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		F51131421BB1BB6C004B4ED7 /* scores.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = scores.db; sourceTree = "<group>"; };
+		F51131441BB1C119004B4ED7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F51131461BB1C4D9004B4ED7 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		F51131481BB1CAD8004B4ED7 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		F511314A1BB5A0B4004B4ED7 /* ScoresDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F51130FA1BB1B855004B4ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51131451BB1C119004B4ED7 /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F511310E1BB1B855004B4ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51131191BB1B855004B4ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F51130F41BB1B855004B4ED7 = {
+			isa = PBXGroup;
+			children = (
+				F51131441BB1C119004B4ED7 /* libsqlite3.tbd */,
+				F51130FF1BB1B855004B4ED7 /* NeuroMind */,
+				F51131301BB1BABE004B4ED7 /* fmdb */,
+				F51131141BB1B855004B4ED7 /* NeuroMindTests */,
+				F511311F1BB1B855004B4ED7 /* NeuroMindUITests */,
+				F51130FE1BB1B855004B4ED7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F51130FE1BB1B855004B4ED7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F51130FD1BB1B855004B4ED7 /* NeuroMind.app */,
+				F51131111BB1B855004B4ED7 /* NeuroMindTests.xctest */,
+				F511311C1BB1B855004B4ED7 /* NeuroMindUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F51130FF1BB1B855004B4ED7 /* NeuroMind */ = {
+			isa = PBXGroup;
+			children = (
+				F51131001BB1B855004B4ED7 /* AppDelegate.swift */,
+				F51131461BB1C4D9004B4ED7 /* Util.swift */,
+				F511314C1BB687C6004B4ED7 /* ViewControllers */,
+				F511314D1BB687D8004B4ED7 /* Model */,
+				F511314E1BB687E5004B4ED7 /* Views */,
+				F51131071BB1B855004B4ED7 /* Assets.xcassets */,
+				F51131421BB1BB6C004B4ED7 /* scores.db */,
+				F511310C1BB1B855004B4ED7 /* Info.plist */,
+			);
+			path = NeuroMind;
+			sourceTree = "<group>";
+		};
+		F51131141BB1B855004B4ED7 /* NeuroMindTests */ = {
+			isa = PBXGroup;
+			children = (
+				F51131151BB1B855004B4ED7 /* NeuroMindTests.swift */,
+				F51131171BB1B855004B4ED7 /* Info.plist */,
+			);
+			path = NeuroMindTests;
+			sourceTree = "<group>";
+		};
+		F511311F1BB1B855004B4ED7 /* NeuroMindUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F51131201BB1B855004B4ED7 /* NeuroMindUITests.swift */,
+				F51131221BB1B855004B4ED7 /* Info.plist */,
+			);
+			path = NeuroMindUITests;
+			sourceTree = "<group>";
+		};
+		F51131301BB1BABE004B4ED7 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				F51131321BB1BACE004B4ED7 /* FMDB.h */,
+				F51131331BB1BACE004B4ED7 /* FMDatabase.h */,
+				F51131341BB1BACE004B4ED7 /* FMDatabase.m */,
+				F51131351BB1BACE004B4ED7 /* FMResultSet.h */,
+				F51131361BB1BACE004B4ED7 /* FMResultSet.m */,
+				F51131371BB1BACE004B4ED7 /* FMDatabaseQueue.h */,
+				F51131381BB1BACE004B4ED7 /* FMDatabaseQueue.m */,
+				F51131391BB1BACE004B4ED7 /* FMDatabaseAdditions.h */,
+				F511313A1BB1BACE004B4ED7 /* FMDatabaseAdditions.m */,
+				F511313B1BB1BACE004B4ED7 /* FMDatabasePool.h */,
+				F511313C1BB1BACE004B4ED7 /* FMDatabasePool.m */,
+				F51131311BB1BACE004B4ED7 /* NeuroMind-Bridging-Header.h */,
+			);
+			name = fmdb;
+			sourceTree = "<group>";
+		};
+		F511314C1BB687C6004B4ED7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F511312E1BB1B8CF004B4ED7 /* ScoresTableViewController.swift */,
+				F511314A1BB5A0B4004B4ED7 /* ScoresDetailViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F511314D1BB687D8004B4ED7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F51131481BB1CAD8004B4ED7 /* Score.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F511314E1BB687E5004B4ED7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F51131041BB1B855004B4ED7 /* Main.storyboard */,
+				F51131091BB1B855004B4ED7 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F51130FC1BB1B855004B4ED7 /* NeuroMind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F51131251BB1B855004B4ED7 /* Build configuration list for PBXNativeTarget "NeuroMind" */;
+			buildPhases = (
+				F51130F91BB1B855004B4ED7 /* Sources */,
+				F51130FA1BB1B855004B4ED7 /* Frameworks */,
+				F51130FB1BB1B855004B4ED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeuroMind;
+			productName = NeuroMind;
+			productReference = F51130FD1BB1B855004B4ED7 /* NeuroMind.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F51131101BB1B855004B4ED7 /* NeuroMindTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F51131281BB1B855004B4ED7 /* Build configuration list for PBXNativeTarget "NeuroMindTests" */;
+			buildPhases = (
+				F511310D1BB1B855004B4ED7 /* Sources */,
+				F511310E1BB1B855004B4ED7 /* Frameworks */,
+				F511310F1BB1B855004B4ED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F51131131BB1B855004B4ED7 /* PBXTargetDependency */,
+			);
+			name = NeuroMindTests;
+			productName = NeuroMindTests;
+			productReference = F51131111BB1B855004B4ED7 /* NeuroMindTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F511311B1BB1B855004B4ED7 /* NeuroMindUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F511312B1BB1B855004B4ED7 /* Build configuration list for PBXNativeTarget "NeuroMindUITests" */;
+			buildPhases = (
+				F51131181BB1B855004B4ED7 /* Sources */,
+				F51131191BB1B855004B4ED7 /* Frameworks */,
+				F511311A1BB1B855004B4ED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F511311E1BB1B855004B4ED7 /* PBXTargetDependency */,
+			);
+			name = NeuroMindUITests;
+			productName = NeuroMindUITests;
+			productReference = F511311C1BB1B855004B4ED7 /* NeuroMindUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F51130F51BB1B855004B4ED7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = DigitalNeurosurgeon.com;
+				TargetAttributes = {
+					F51130FC1BB1B855004B4ED7 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					F51131101BB1B855004B4ED7 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = F51130FC1BB1B855004B4ED7;
+					};
+					F511311B1BB1B855004B4ED7 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = F51130FC1BB1B855004B4ED7;
+					};
+				};
+			};
+			buildConfigurationList = F51130F81BB1B855004B4ED7 /* Build configuration list for PBXProject "NeuroMind" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F51130F41BB1B855004B4ED7;
+			productRefGroup = F51130FE1BB1B855004B4ED7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F51130FC1BB1B855004B4ED7 /* NeuroMind */,
+				F51131101BB1B855004B4ED7 /* NeuroMindTests */,
+				F511311B1BB1B855004B4ED7 /* NeuroMindUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F51130FB1BB1B855004B4ED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51131431BB1BB6C004B4ED7 /* scores.db in Resources */,
+				F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */,
+				F51131081BB1B855004B4ED7 /* Assets.xcassets in Resources */,
+				F51131061BB1B855004B4ED7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F511310F1BB1B855004B4ED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F511311A1BB1B855004B4ED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F51130F91BB1B855004B4ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F511314B1BB5A0B4004B4ED7 /* ScoresDetailViewController.swift in Sources */,
+				F511313F1BB1BACE004B4ED7 /* FMDatabaseQueue.m in Sources */,
+				F511313D1BB1BACE004B4ED7 /* FMDatabase.m in Sources */,
+				F511312F1BB1B8D0004B4ED7 /* ScoresTableViewController.swift in Sources */,
+				F51131471BB1C4D9004B4ED7 /* Util.swift in Sources */,
+				F511313E1BB1BACE004B4ED7 /* FMResultSet.m in Sources */,
+				F51131411BB1BACE004B4ED7 /* FMDatabasePool.m in Sources */,
+				F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */,
+				F51131491BB1CAD8004B4ED7 /* Score.swift in Sources */,
+				F51131401BB1BACE004B4ED7 /* FMDatabaseAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F511310D1BB1B855004B4ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51131161BB1B855004B4ED7 /* NeuroMindTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51131181BB1B855004B4ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51131211BB1B855004B4ED7 /* NeuroMindUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F51131131BB1B855004B4ED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F51130FC1BB1B855004B4ED7 /* NeuroMind */;
+			targetProxy = F51131121BB1B855004B4ED7 /* PBXContainerItemProxy */;
+		};
+		F511311E1BB1B855004B4ED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F51130FC1BB1B855004B4ED7 /* NeuroMind */;
+			targetProxy = F511311D1BB1B855004B4ED7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F51131041BB1B855004B4ED7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F51131051BB1B855004B4ED7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F51131091BB1B855004B4ED7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F511310A1BB1B855004B4ED7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F51131231BB1B855004B4ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F51131241BB1B855004B4ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F51131261BB1B855004B4ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = NeuroMind/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.NeuroMind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NeuroMind-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F51131271BB1B855004B4ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = NeuroMind/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.NeuroMind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NeuroMind-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		F51131291BB1B855004B4ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NeuroMindTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.NeuroMindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeuroMind.app/NeuroMind";
+			};
+			name = Debug;
+		};
+		F511312A1BB1B855004B4ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NeuroMindTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.NeuroMindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeuroMind.app/NeuroMind";
+			};
+			name = Release;
+		};
+		F511312C1BB1B855004B4ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NeuroMindUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.NeuroMindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NeuroMind;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F511312D1BB1B855004B4ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NeuroMindUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.NeuroMindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NeuroMind;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F51130F81BB1B855004B4ED7 /* Build configuration list for PBXProject "NeuroMind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51131231BB1B855004B4ED7 /* Debug */,
+				F51131241BB1B855004B4ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F51131251BB1B855004B4ED7 /* Build configuration list for PBXNativeTarget "NeuroMind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51131261BB1B855004B4ED7 /* Debug */,
+				F51131271BB1B855004B4ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F51131281BB1B855004B4ED7 /* Build configuration list for PBXNativeTarget "NeuroMindTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51131291BB1B855004B4ED7 /* Debug */,
+				F511312A1BB1B855004B4ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F511312B1BB1B855004B4ED7 /* Build configuration list for PBXNativeTarget "NeuroMindUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F511312C1BB1B855004B4ED7 /* Debug */,
+				F511312D1BB1B855004B4ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F51130F51BB1B855004B4ED7 /* Project object */;
+}
