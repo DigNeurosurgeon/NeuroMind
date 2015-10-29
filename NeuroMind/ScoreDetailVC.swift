@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScoresDetailViewController: UIViewController {
+class ScoreDetailVC: UIViewController {
 
     var score = Score()
     

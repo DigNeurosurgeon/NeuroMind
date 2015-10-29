@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BjV-jy-dyz">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Score name-->
+        <scene sceneID="9bE-gx-16l">
+            <objects>
+                <viewController id="BjV-jy-dyz" customClass="ScoreDetailVC" customModule="NeuroMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EKd-x5-Hk6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddG-Ha-BSj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tC9-2B-9Ii">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeM-dH-EBM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BeM-dH-EBM" firstAttribute="top" secondItem="tC9-2B-9Ii" secondAttribute="top" id="GEV-cb-xIi"/>
+                            <constraint firstItem="BeM-dH-EBM" firstAttribute="bottom" secondItem="ddG-Ha-BSj" secondAttribute="top" id="Qr1-gF-sbx"/>
+                            <constraint firstItem="BeM-dH-EBM" firstAttribute="leading" secondItem="tC9-2B-9Ii" secondAttribute="leading" id="RV1-Zl-HII"/>
+                            <constraint firstAttribute="trailing" secondItem="BeM-dH-EBM" secondAttribute="trailing" id="doa-TM-1d8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Score name" id="cH5-ox-OiD"/>
+                    <connections>
+                        <outlet property="scoreName" destination="cH5-ox-OiD" id="N1V-J0-6XS"/>
+                        <outlet property="scoreWebView" destination="BeM-dH-EBM" id="ltj-eA-Zpg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gA3-Yn-Ldy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2174" y="279"/>
+        </scene>
+    </scenes>
+</document>
