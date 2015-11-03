@@ -58,6 +58,7 @@ class DatabaseManager {
                     content: results.stringForColumn("content"),
                     category: results.stringForColumn("category"),
                     reference: results.stringForColumn("reference")
+                    //cdss: results.intForColumn("cdss")
                 )
                 scores.append(score)
             }

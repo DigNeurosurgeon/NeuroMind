@@ -10,6 +10,16 @@ import UIKit
 
 class Helper: UITableViewController {
     
+    static let inputIncomplete = "Not all parameters have been entered."
+    static var inputIncompleteLength: Int {
+        get {
+            return inputIncomplete.characters.count
+        }
+    }
+    
+    
+    // MARK:- Functions
+    
 
     static func updateSelectionAtIndexPath(indexPath: NSIndexPath, forTableView tableView: UITableView) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -35,5 +45,6 @@ class Helper: UITableViewController {
         
         return controller
     }
+    
 
 }

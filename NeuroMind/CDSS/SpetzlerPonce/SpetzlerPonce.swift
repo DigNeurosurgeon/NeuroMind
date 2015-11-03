@@ -48,7 +48,7 @@ class SpetzlerPonce {
                 postopDeficitRisk.lower = 27
                 postopDeficitRisk.upper = 38
             default:
-                return "Not all parameters have been entered."
+                return Helper.inputIncomplete
         }
         
         return  "<h3>Spetzler Ponce Class \(spetzlerPonceClass)" +
