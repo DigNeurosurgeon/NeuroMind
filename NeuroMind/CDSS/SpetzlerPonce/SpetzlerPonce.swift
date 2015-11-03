@@ -59,7 +59,12 @@ class SpetzlerPonce {
                 "\(treatmentSuggestion)" +
         
                 "<h4>Risk for postoperative deficit</h4>" +
-                "\(postopDeficitRisk.percentage)% (95% CI \(postopDeficitRisk.lower)% - \(postopDeficitRisk.upper)%)"
+                "\(postopDeficitRisk.percentage)% (95% CI \(postopDeficitRisk.lower)% - \(postopDeficitRisk.upper)%)" +
+        
+                "<h4>Input parameters</h4>" +
+                "<li>Size: \(size)</li>" +
+                "<li>Eloquence: \(eloquence)</li>" +
+                "<li>Venous drainage: \(venousDrainage)</li>"
     }
     
 }

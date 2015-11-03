@@ -125,14 +125,11 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cdssItemPresent = true
         let score = scoreForCellAtIndexPath(indexPath)
         resultSearchController.active = false
         
-        if cdssItemPresent {
-            let storyboard = UIStoryboard(name: "SpetzlerPonce", bundle: nil)
-            let controller = storyboard.instantiateInitialViewController() as! SpetzlerPonceTVC
-            controller.title = "Spetzler Ponce"
+        if score.cdssPresent {
+            let controller = Helper.getTVCWithStoryboardName(score.storyboardName, forScore: score)
             navigationController?.pushViewController(controller, animated: true)
             
         } else {

@@ -37,11 +37,20 @@ class Helper: UITableViewController {
     }
     
     
-    static func initRecommendationController() -> RecommendationViewController {
+    static func getTVCWithStoryboardName<T: UITableViewController>(name: String, forScore score: Score) -> T {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
+        let controller = storyboard.instantiateInitialViewController() as! T
+        controller.title = score.name
+        return controller
+    }
+    
+    
+    static func getRecommendationVCWithContent(content: String) -> RecommendationVC {
         let recommendationString = "Recommendation"
         let storyboard = UIStoryboard(name: recommendationString, bundle: nil)
-        let controller = storyboard.instantiateInitialViewController() as! RecommendationViewController
+        let controller = storyboard.instantiateInitialViewController() as! RecommendationVC
         controller.title = recommendationString
+        controller.content = content
         
         return controller
     }

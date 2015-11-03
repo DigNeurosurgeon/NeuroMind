@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class RecommendationViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     var content = ""

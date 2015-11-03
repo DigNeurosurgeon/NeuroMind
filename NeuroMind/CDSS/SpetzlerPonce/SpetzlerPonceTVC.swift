@@ -36,8 +36,7 @@ class SpetzlerPonceTVC: UITableViewController {
     
     
     @IBAction func onSubmit(sender: AnyObject) {
-        let controller = Helper.initRecommendationController()
-        controller.content = score.giveRecommendation()
+        let controller = Helper.getRecommendationVCWithContent(score.giveRecommendation())
         navigationController?.pushViewController(controller, animated: true)
     }
     

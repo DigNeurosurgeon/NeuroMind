@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Recommendation View Controller-->
+        <!--RecommendationVC-->
         <scene sceneID="97x-ff-87H">
             <objects>
-                <viewController id="u52-Ki-Qye" customClass="RecommendationViewController" customModule="NeuroMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u52-Ki-Qye" customClass="RecommendationVC" customModule="NeuroMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rtu-0k-hof"/>
                         <viewControllerLayoutGuide type="bottom" id="QH8-qQ-lA1"/>

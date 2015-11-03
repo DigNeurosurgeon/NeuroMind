@@ -29,7 +29,7 @@
 		F54DC0C91BE253C70059E641 /* SpetzlerPonce.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0C81BE253C70059E641 /* SpetzlerPonce.storyboard */; };
 		F54DC0CB1BE25A9C0059E641 /* SpetzlerPonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0CA1BE25A9C0059E641 /* SpetzlerPonce.swift */; };
 		F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */; };
-		F54DC0CF1BE264860059E641 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0CE1BE264860059E641 /* RecommendationViewController.swift */; };
+		F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0CE1BE264860059E641 /* RecommendationVC.swift */; };
 		F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0D11BE26BAF0059E641 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +86,7 @@
 		F54DC0C81BE253C70059E641 /* SpetzlerPonce.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SpetzlerPonce.storyboard; path = CDSS/SpetzlerPonce/SpetzlerPonce.storyboard; sourceTree = "<group>"; };
 		F54DC0CA1BE25A9C0059E641 /* SpetzlerPonce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpetzlerPonce.swift; path = CDSS/SpetzlerPonce/SpetzlerPonce.swift; sourceTree = "<group>"; };
 		F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Recommendation.storyboard; path = CDSS/Recommendation.storyboard; sourceTree = "<group>"; };
-		F54DC0CE1BE264860059E641 /* RecommendationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecommendationViewController.swift; path = CDSS/RecommendationViewController.swift; sourceTree = "<group>"; };
+		F54DC0CE1BE264860059E641 /* RecommendationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecommendationVC.swift; path = CDSS/RecommendationVC.swift; sourceTree = "<group>"; };
 		F54DC0D11BE26BAF0059E641 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = CDSS/Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */,
-				F54DC0CE1BE264860059E641 /* RecommendationViewController.swift */,
+				F54DC0CE1BE264860059E641 /* RecommendationVC.swift */,
 			);
 			name = Recommendation;
 			sourceTree = "<group>";
@@ -378,7 +378,7 @@
 			files = (
 				F54DC0CB1BE25A9C0059E641 /* SpetzlerPonce.swift in Sources */,
 				F511314B1BB5A0B4004B4ED7 /* ScoreDetailVC.swift in Sources */,
-				F54DC0CF1BE264860059E641 /* RecommendationViewController.swift in Sources */,
+				F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */,
 				F54DC0C71BE2523A0059E641 /* SpetzlerPonceTVC.swift in Sources */,
 				F54DC0BE1BE208950059E641 /* DatabaseManager.swift in Sources */,
 				F511313F1BB1BACE004B4ED7 /* FMDatabaseQueue.m in Sources */,

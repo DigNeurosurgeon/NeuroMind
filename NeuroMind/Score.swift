@@ -16,9 +16,10 @@ class Score {
     var content: String
     var category: String
     var reference: String
-    var cdss: Int
+    var cdssPresent: Bool
+    var storyboardName: String
     
-    init(id: Int = 0, name: String = "", topic: String = "", content: String = "", category: String = "", reference: String = "", cdss: Int = 0) {
+    init(id: Int = 0, name: String = "", topic: String = "", content: String = "", category: String = "", reference: String = "", cdss: Int = 0, storyboardName: String = "") {
         
         self.id = id
         self.name = name
@@ -26,7 +27,8 @@ class Score {
         self.content = content
         self.category = category
         self.reference = reference
-        self.cdss = cdss
+        self.cdssPresent = cdss == 1 ? true : false
+        self.storyboardName = storyboardName
     }
     
 }

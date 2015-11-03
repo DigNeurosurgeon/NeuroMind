@@ -52,14 +52,21 @@ class DatabaseManager {
         
         if let scoresDB = database, results = scoresDB.executeQuery(sqlString, withArgumentsInArray: nil) {
             while results.next() {
+                
                 let score = Score(
+                    id: Int(results.intForColumn("id")),
                     name: results.stringForColumn("name"),
                     topic: results.stringForColumn("topic"),
                     content: results.stringForColumn("content"),
                     category: results.stringForColumn("category"),
-                    reference: results.stringForColumn("reference")
-                    //cdss: results.intForColumn("cdss")
+                    reference: results.stringForColumn("reference"),
+                    cdss: Int(results.intForColumn("cdss"))
                 )
+                
+                if let storyboard = results.stringForColumn("storyboard") {
+                    score.storyboardName = storyboard
+                }
+                
                 scores.append(score)
             }
             scoresDB.close()
