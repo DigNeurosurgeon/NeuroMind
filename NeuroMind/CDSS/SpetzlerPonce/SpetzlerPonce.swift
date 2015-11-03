@@ -10,9 +10,38 @@ import Foundation
 
 class SpetzlerPonce {
     
+    let sections = ["Size", "Eloquence", "Venous drainage"]
+    let items = [
+        [Size.UpToThreeCm.rawValue, Size.ThreeToSixCm.rawValue, Size.MoreThanSixCm.rawValue],
+        [Eloquence.NonEloquent.rawValue, Eloquence.Eloquent.rawValue],
+        [VenousDrainage.SuperficialOnly.rawValue, VenousDrainage.Deep.rawValue]
+    ]
+    
+    enum Size: String {
+        case UpToThreeCm = "< 3 cm"
+        case ThreeToSixCm = "3 - 6 cm"
+        case MoreThanSixCm = "> 6 cm"
+    }
+    
+    enum Eloquence: String {
+        case NonEloquent = "Non eloquent"
+        case Eloquent = "Eloquent"
+    }
+    
+    enum VenousDrainage: String {
+        case SuperficialOnly = "Superficial Only"
+        case Deep = "Deep"
+    }
+    
     var size: Int
     var eloquence: Int
     var venousDrainage: Int
+    var spetzlerMartinScore: Int {
+        get {
+            return size + eloquence + venousDrainage
+        }
+    }
+    var input = ["", "", ""]
     
     
     init(size: Int = -100, eloquence: Int = -100, venousDrainage: Int = -100) {
@@ -23,7 +52,6 @@ class SpetzlerPonce {
     
     
     func giveRecommendation() -> String {
-        let spetzlerMartinScore = size + eloquence + venousDrainage
         var spetzlerPonceClass = ""
         var treatmentSuggestion = ""
         var postopDeficitRisk = (percentage: 0, lower: 0, upper: 0)
@@ -62,9 +90,9 @@ class SpetzlerPonce {
                 "\(postopDeficitRisk.percentage)% (95% CI \(postopDeficitRisk.lower)% - \(postopDeficitRisk.upper)%)" +
         
                 "<h4>Input parameters</h4>" +
-                "<li>Size: \(size)</li>" +
-                "<li>Eloquence: \(eloquence)</li>" +
-                "<li>Venous drainage: \(venousDrainage)</li>"
+                "<li>Size: \(input[0])</li>" +
+                "<li>Eloquence: \(input[1])</li>" +
+                "<li>Venous drainage: \(input[2])</li>"
     }
     
 }
