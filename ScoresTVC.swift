@@ -32,7 +32,10 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
         resultSearchController.searchBar.sizeToFit()
         resultSearchController.hidesNavigationBarDuringPresentation = false
         tableView.tableHeaderView = resultSearchController.searchBar
-
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
     }
     
     
@@ -121,6 +124,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
         
         cell.nameLabel.text = score.name
         cell.descriptionLabel.text = score.topic
+        configureFavoriteButtonForScore(score, inItemCell: cell)
         
         return cell
     }
@@ -158,21 +162,35 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     @IBAction func favoritesButtonTapped(sender: AnyObject) {
-        toggleFavorites()
-    }
-    
-    
-    func toggleFavorites() {
+        showFavorites = !showFavorites
+        
         if showFavorites {
             //showFavorites = false
-            favoritesButton.image = UIImage(named: "Favorite")
+            favoritesButton.image = UIImage(named: "FavoriteSelected")
         } else {
             //showFavorites = true
-            favoritesButton.image = UIImage(named: "FavoriteSelected")
+            favoritesButton.image = UIImage(named: "Favorite")
         }
-        
-        showFavorites = !showFavorites
+
     }
     
+    
+    @IBAction func favoriteButtonInCellTapped(sender: AnyObject) {
+        let cell = (sender.superview)!!.superview as! ItemCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let score = scoreForCellAtIndexPath(indexPath!)
+        
+        score.isFavorite = !score.isFavorite
+        configureFavoriteButtonForScore(score, inItemCell: cell)
+    }
+    
+    
+    func configureFavoriteButtonForScore(score: Score, inItemCell itemCell: ItemCell) {
+        if score.isFavorite {
+            itemCell.favoriteItemButton.setImage(UIImage(named: "FavoriteSelected"), forState: .Normal)
+        } else {
+            itemCell.favoriteItemButton.setImage(UIImage(named: "Favorite"), forState: .Normal)
+        }
+    }
     
 }

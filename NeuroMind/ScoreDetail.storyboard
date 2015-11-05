@@ -30,8 +30,16 @@
                             <constraint firstAttribute="trailing" secondItem="BeM-dH-EBM" secondAttribute="trailing" id="doa-TM-1d8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Score name" id="cH5-ox-OiD"/>
+                    <navigationItem key="navigationItem" title="Score name" id="cH5-ox-OiD">
+                        <barButtonItem key="rightBarButtonItem" image="Favorite" id="kaW-EI-LjH">
+                            <connections>
+                                <action selector="favoriteButtonForItemTapped:" destination="BjV-jy-dyz" id="itV-eY-zzc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="favoriteButton" destination="kaW-EI-LjH" id="zee-4C-85U"/>
                         <outlet property="scoreName" destination="cH5-ox-OiD" id="N1V-J0-6XS"/>
                         <outlet property="scoreWebView" destination="BeM-dH-EBM" id="ltj-eA-Zpg"/>
                     </connections>
@@ -41,4 +49,7 @@
             <point key="canvasLocation" x="2174" y="279"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Favorite" width="22" height="22"/>
+    </resources>
 </document>
