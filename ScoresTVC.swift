@@ -10,6 +10,8 @@ import UIKit
 
 class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
+    @IBOutlet weak var favoritesButton: UIBarButtonItem!
+    var showFavorites = false
     var databasePath = NSString()
     var allScores = [Score]()
     var allSections = [String]()
@@ -114,11 +116,11 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ScoreCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! ItemCell
         let score = scoreForCellAtIndexPath(indexPath)
         
-        cell.textLabel?.text = score.name
-        cell.detailTextLabel?.text = score.topic
+        cell.nameLabel.text = score.name
+        cell.descriptionLabel.text = score.topic
         
         return cell
     }
@@ -149,6 +151,27 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
         let searchText = searchController.searchBar.text
         filteredTableData = allScores.filter{$0.name.localizedCaseInsensitiveContainsString(searchText!) || $0.topic.localizedCaseInsensitiveContainsString(searchText!)}
         tableView.reloadData()
+    }
+    
+    
+    // MARK:- Favorites
+    
+    
+    @IBAction func favoritesButtonTapped(sender: AnyObject) {
+        toggleFavorites()
+    }
+    
+    
+    func toggleFavorites() {
+        if showFavorites {
+            //showFavorites = false
+            favoritesButton.image = UIImage(named: "Favorite")
+        } else {
+            //showFavorites = true
+            favoritesButton.image = UIImage(named: "FavoriteSelected")
+        }
+        
+        showFavorites = !showFavorites
     }
     
     

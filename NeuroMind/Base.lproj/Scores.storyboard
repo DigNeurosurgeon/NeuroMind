@@ -1,41 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2ZC-Px-6Re">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--NeuroMind 3 beta-->
+        <!--NeuroMind 3-->
         <scene sceneID="yzt-c7-Tcp">
             <objects>
                 <tableViewController id="Z90-Ki-MWJ" customClass="ScoresTVC" customModule="NeuroMind" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tf6-tv-8X4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tf6-tv-8X4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ScoreCell" textLabel="ROh-8o-rLY" detailTextLabel="5ik-xo-QcR" style="IBUITableViewCellStyleSubtitle" id="cNy-fb-ClR">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="66" id="cNy-fb-ClR" customClass="ItemCell" customModule="NeuroMind" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cNy-fb-ClR" id="6gZ-h5-ysN">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="65.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ROh-8o-rLY">
-                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIe-vc-up7">
+                                            <rect key="frame" x="8" y="13" width="518" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5ik-xo-QcR">
-                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="descriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzL-JR-eq4">
+                                            <rect key="frame" x="8" y="36" width="518" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojv-yL-K68">
+                                            <rect key="frame" x="537" y="22" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="f5O-Ob-1Js"/>
+                                                <constraint firstAttribute="width" constant="22" id="jWA-KD-0XB"/>
+                                            </constraints>
+                                            <state key="normal" image="Favorite"/>
+                                            <connections>
+                                                <action selector="favoriteItemButtonTapped:" destination="cNy-fb-ClR" eventType="touchUpInside" id="YoN-z5-pLM"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ojv-yL-K68" firstAttribute="centerY" secondItem="6gZ-h5-ysN" secondAttribute="centerY" id="40b-0b-HHu"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ojv-yL-K68" secondAttribute="trailing" constant="8" id="fVd-uz-btN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="AzL-JR-eq4" id="BSK-DH-VQl"/>
+                                    <outlet property="favoriteItemButton" destination="Ojv-yL-K68" id="mfi-2q-FVI"/>
+                                    <outlet property="nameLabel" destination="BIe-vc-up7" id="Su9-UB-xkE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -43,14 +62,22 @@
                             <outlet property="delegate" destination="Z90-Ki-MWJ" id="YDJ-fT-Djy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="NeuroMind 3 beta" id="zYl-Ka-cB7">
+                    <navigationItem key="navigationItem" title="NeuroMind 3" id="zYl-Ka-cB7">
                         <barButtonItem key="backBarButtonItem" title="Scores" id="JSm-T5-I1l"/>
+                        <barButtonItem key="leftBarButtonItem" image="Favorite" id="fEm-nh-PxW">
+                            <connections>
+                                <action selector="favoritesButtonTapped:" destination="Z90-Ki-MWJ" id="gUz-Ux-SHn"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="?" id="j9F-Zv-MPX">
                             <connections>
                                 <segue destination="bq7-oh-0du" kind="show" id="38U-Rc-7jQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="favoritesButton" destination="fEm-nh-PxW" id="ZKR-DT-Nxi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPW-V6-XT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,4 +256,7 @@
             <point key="canvasLocation" x="506" y="279"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Favorite" width="22" height="22"/>
+    </resources>
 </document>

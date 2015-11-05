@@ -31,6 +31,7 @@
 		F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */; };
 		F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0CE1BE264860059E641 /* RecommendationVC.swift */; };
 		F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0D11BE26BAF0059E641 /* Helper.swift */; };
+		F5E8D2BE1BE9DEF1000AE8CF /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Recommendation.storyboard; path = CDSS/Recommendation.storyboard; sourceTree = "<group>"; };
 		F54DC0CE1BE264860059E641 /* RecommendationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecommendationVC.swift; path = CDSS/RecommendationVC.swift; sourceTree = "<group>"; };
 		F54DC0D11BE26BAF0059E641 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = CDSS/Helper.swift; sourceTree = "<group>"; };
+		F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				F51131481BB1CAD8004B4ED7 /* Score.swift */,
 				F54DC0BB1BE119FD0059E641 /* ScoreDetail.storyboard */,
 				F511314A1BB5A0B4004B4ED7 /* ScoreDetailVC.swift */,
+				F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */,
 			);
 			name = Scores;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				F51131411BB1BACE004B4ED7 /* FMDatabasePool.m in Sources */,
 				F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */,
 				F51131491BB1CAD8004B4ED7 /* Score.swift in Sources */,
+				F5E8D2BE1BE9DEF1000AE8CF /* ItemCell.swift in Sources */,
 				F51131401BB1BACE004B4ED7 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
