@@ -17,11 +17,21 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     var allSections = [String]()
     var scoresPerSection = [[Score]]()
     
+//    var keystore = NSUbiquitousKeyValueStore()
+    
     var filteredTableData = [Score]()
     var resultSearchController = UISearchController(searchResultsController: nil)
 
+    // MARK:- View Managers
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Notify of iCloud sync
+//        NSNotificationCenter.defaultCenter().addObserver(self,
+//            selector: "keyValueStoreDidChange:",
+//            name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification,
+//            object: keystore)
         
         // Configure tableview
         sortScoresPerSection()
@@ -35,6 +45,8 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+//        keystore.synchronize()
         tableView.reloadData()
     }
     
@@ -80,7 +92,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     func scoreForCellAtIndexPath(indexPath: NSIndexPath) -> Score {
-        if resultSearchController.active {
+        if filteredTableData.count > 0 {
             return filteredTableData[indexPath.row]
         } else {
             return scoresPerSection[indexPath.section][indexPath.row]
@@ -92,8 +104,8 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if resultSearchController.active {
-            return 1;
+        if filteredTableData.count > 0 {
+            return 1
         } else {
             return allSections.count
         }
@@ -101,7 +113,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if resultSearchController.active {
+        if filteredTableData.count > 0 {
             return nil
         } else {
             return allSections[section]
@@ -110,7 +122,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if resultSearchController.active {
+        if filteredTableData.count > 0 {
             return filteredTableData.count
         } else {
             return scoresPerSection[section].count
@@ -135,8 +147,17 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
         resultSearchController.active = false
         
         if score.cdssPresent {
-            let controller = Helper.getTVCWithStoryboardName(score.storyboardName, forScore: score)
-            navigationController?.pushViewController(controller, animated: true)
+            
+            switch score.id {
+            case 25:
+                let storyboard = UIStoryboard(name: "SpetzlerPonce", bundle: nil)
+                let controller = storyboard.instantiateInitialViewController() as! SpetzlerPonceTVC
+                controller.title = score.name
+                controller.score = score
+                navigationController?.pushViewController(controller, animated: true)
+            default:
+                break
+            }
             
         } else {
             let storyboard = UIStoryboard(name: "ScoreDetail", bundle: nil)
@@ -144,6 +165,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
             controller.score = score
             navigationController?.pushViewController(controller, animated: true)
         }
+
     }
     
     
@@ -162,16 +184,30 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     @IBAction func favoritesButtonTapped(sender: AnyObject) {
+        let score = Score()
         showFavorites = !showFavorites
         
         if showFavorites {
-            //showFavorites = false
-            favoritesButton.image = UIImage(named: "FavoriteSelected")
+            filteredTableData = allScores.filter{$0.isFavorite.boolValue == true}
+            if filteredTableData.count > 0 {
+                favoritesButton.image = UIImage(named: score.kFavoriteSelected)
+            } else {
+                showFavorites = false
+                let alertController = UIAlertController(
+                        title: "No favorites found",
+                        message: "You have no favorite items yet. \n\nTap the star behind an item to add one.",
+                        preferredStyle: .Alert
+                )
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+                alertController.addAction(okAction)
+                presentViewController(alertController, animated: true, completion: nil)
+            }
         } else {
-            //showFavorites = true
-            favoritesButton.image = UIImage(named: "Favorite")
+            favoritesButton.image = UIImage(named: score.kFavorite)
+            filteredTableData.removeAll(keepCapacity: false)
         }
-
+        
+        tableView.reloadData()
     }
     
     
@@ -181,16 +217,24 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
         let score = scoreForCellAtIndexPath(indexPath!)
         
         score.isFavorite = !score.isFavorite
+        score.saveFavoriteStatus(score.isFavorite)
         configureFavoriteButtonForScore(score, inItemCell: cell)
+        tableView.reloadData()
     }
     
     
     func configureFavoriteButtonForScore(score: Score, inItemCell itemCell: ItemCell) {
         if score.isFavorite {
-            itemCell.favoriteItemButton.setImage(UIImage(named: "FavoriteSelected"), forState: .Normal)
+            itemCell.favoriteItemButton.setImage(UIImage(named: score.kFavoriteSelected), forState: .Normal)
         } else {
-            itemCell.favoriteItemButton.setImage(UIImage(named: "Favorite"), forState: .Normal)
+            itemCell.favoriteItemButton.setImage(UIImage(named: score.kFavorite), forState: .Normal)
         }
     }
+    
+    
+//    func keyValueStoreDidChange(notification: NSNotification) {
+//        tableView.reloadData()
+//        print("iCloud updated: \(notification.description)")
+//    }
     
 }

@@ -78,6 +78,34 @@ class DatabaseManager {
     }
     
     
+    func loadScoreFromDatabaseWithID(id: Int) -> Score {
+        
+        var score = Score()
+        let sqlString = "SELECT * FROM scores WHERE id = \(id)"
+        
+        if let scoresDB = database, results = scoresDB.executeQuery(sqlString, withArgumentsInArray: nil) {
+            while results.next() {
+                
+                score = Score(
+                    id: id,
+                    name: results.stringForColumn("name"),
+                    topic: results.stringForColumn("topic"),
+                    content: results.stringForColumn("content"),
+                    category: results.stringForColumn("category"),
+                    reference: results.stringForColumn("reference"),
+                    cdss: Int(results.intForColumn("cdss"))
+                )
+            }
+            
+            scoresDB.close()
+        } else {
+            print("Error loading score with id \(id).")
+        }
+        
+        return score
+    }
+    
+    
     func closeDatabase() {
         if (database != nil) {
             database.close()

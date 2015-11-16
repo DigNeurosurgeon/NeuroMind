@@ -15,6 +15,7 @@ class ScoreDetailVC: UIViewController {
     @IBOutlet weak var scoreName: UINavigationItem!
     @IBOutlet weak var scoreWebView: UIWebView!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
+//    var keystore = NSUbiquitousKeyValueStore()
     
     
     override func viewDidLoad() {
@@ -33,21 +34,23 @@ class ScoreDetailVC: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
+//        keystore.synchronize()
         configureFavoriteButton()
     }
     
     
     @IBAction func favoriteButtonForItemTapped(sender: AnyObject) {
         score.isFavorite = !score.isFavorite
+        score.saveFavoriteStatus(score.isFavorite)
         configureFavoriteButton()
     }
     
     
     func configureFavoriteButton() {
         if score.isFavorite {
-            favoriteButton.image = UIImage(named: "FavoriteSelected")
+            favoriteButton.image = UIImage(named: score.kFavoriteSelected)
         } else {
-            favoriteButton.image = UIImage(named: "Favorite")
+            favoriteButton.image = UIImage(named: score.kFavorite)
         }
     }
     

@@ -10,10 +10,23 @@ import UIKit
 
 class SpetzlerPonceTVC: UITableViewController {
     
-    var score = SpetzlerPonce()
+    var score = Score()
+    var cdss = SpetzlerPonce()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Add favorite button
+        let favoriteIconImage = score.isFavorite ? UIImage(named: score.kFavoriteSelected) : UIImage(named: score.kFavorite)
+        let favoriteBarButton = UIBarButtonItem(image: favoriteIconImage, style: .Plain, target: self, action: "setFavoriteStatus:")
+        navigationItem.rightBarButtonItem = favoriteBarButton
+    }
+    
     
     // MARK:- Data processing
 
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         Helper.updateSelectionAtIndexPath(indexPath, forTableView: tableView)
         let row = indexPath.row
@@ -21,46 +34,61 @@ class SpetzlerPonceTVC: UITableViewController {
         
         switch indexPath.section {
             case 0:
-                score.size = row + 1
+                cdss.size = row + 1
             case 1:
-                score.eloquence = row
+                cdss.eloquence = row
             case 2:
-                score.venousDrainage = row
+                cdss.venousDrainage = row
             default:
                 break
         }
         
-        score.input[indexPath.section] = (cell?.textLabel?.text)!
+        cdss.input[indexPath.section] = (cell?.textLabel?.text)!
         
     }
     
     
     @IBAction func onSubmit(sender: AnyObject) {
-        let controller = Helper.getRecommendationVCWithContent(score.giveRecommendation())
+        let controller = Helper.getRecommendationVCWithContent(cdss.giveRecommendation())
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+    // MARK: - Set favorite status
+    
+    
+    func setFavoriteStatus(barButton: UIBarButtonItem) {
+        score.isFavorite = !score.isFavorite
+        score.saveFavoriteStatus(score.isFavorite)
+        
+        if score.isFavorite {
+            barButton.image = UIImage(named: score.kFavoriteSelected)
+        } else {
+            barButton.image = UIImage(named: score.kFavorite)
+        }
     }
     
     
     // MARK:- Table data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return score.sections.count
+        return cdss.sections.count
     }
     
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return score.sections[section]
+        return cdss.sections[section]
     }
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return score.items[section].count
+        return cdss.items[section].count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Default, reuseIdentifier: "CDSS")
-        cell.textLabel?.text = score.items[indexPath.section][indexPath.row]
+        cell.textLabel?.text = cdss.items[indexPath.section][indexPath.row]
         return cell
     }
     
