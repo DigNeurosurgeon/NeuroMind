@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51131001BB1B855004B4ED7 /* AppDelegate.swift */; };
-		F51131061BB1B855004B4ED7 /* Scores.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51131041BB1B855004B4ED7 /* Scores.storyboard */; };
+		F51131061BB1B855004B4ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51131041BB1B855004B4ED7 /* Main.storyboard */; };
 		F51131081BB1B855004B4ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51131071BB1B855004B4ED7 /* Assets.xcassets */; };
 		F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51131091BB1B855004B4ED7 /* LaunchScreen.storyboard */; };
 		F51131161BB1B855004B4ED7 /* NeuroMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51131151BB1B855004B4ED7 /* NeuroMindTests.swift */; };
@@ -22,6 +22,9 @@
 		F51131451BB1C119004B4ED7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F51131441BB1C119004B4ED7 /* libsqlite3.tbd */; };
 		F51131491BB1CAD8004B4ED7 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51131481BB1CAD8004B4ED7 /* Score.swift */; };
 		F511314B1BB5A0B4004B4ED7 /* ScoreDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511314A1BB5A0B4004B4ED7 /* ScoreDetailVC.swift */; };
+		F52CFC751BFDF9540072660B /* IRIS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52CFC721BFDF9540072660B /* IRIS.swift */; };
+		F52CFC761BFDF9540072660B /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52CFC731BFDF9540072660B /* Status.swift */; };
+		F52CFC771BFDF9540072660B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52CFC741BFDF9540072660B /* SwiftyJSON.swift */; };
 		F54DC0BC1BE119FD0059E641 /* ScoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0BB1BE119FD0059E641 /* ScoreDetail.storyboard */; };
 		F54DC0BE1BE208950059E641 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0BD1BE208950059E641 /* DatabaseManager.swift */; };
 		F54DC0C01BE21C5B0059E641 /* scores.db in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0BF1BE21C5B0059E641 /* scores.db */; };
@@ -56,7 +59,7 @@
 /* Begin PBXFileReference section */
 		F51130FD1BB1B855004B4ED7 /* NeuroMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51131001BB1B855004B4ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F51131051BB1B855004B4ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scores.storyboard; sourceTree = "<group>"; };
+		F51131051BB1B855004B4ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F51131071BB1B855004B4ED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F511310A1BB1B855004B4ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F511310C1BB1B855004B4ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +85,9 @@
 		F51131441BB1C119004B4ED7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F51131481BB1CAD8004B4ED7 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		F511314A1BB5A0B4004B4ED7 /* ScoreDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreDetailVC.swift; sourceTree = "<group>"; };
+		F52CFC721BFDF9540072660B /* IRIS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRIS.swift; sourceTree = "<group>"; };
+		F52CFC731BFDF9540072660B /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		F52CFC741BFDF9540072660B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F54DC0BB1BE119FD0059E641 /* ScoreDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoreDetail.storyboard; sourceTree = "<group>"; };
 		F54DC0BD1BE208950059E641 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		F54DC0BF1BE21C5B0059E641 /* scores.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = scores.db; path = NeuroMind/scores.db; sourceTree = "<group>"; };
@@ -205,7 +211,7 @@
 		F511314D1BB687D8004B4ED7 /* Scores */ = {
 			isa = PBXGroup;
 			children = (
-				F51131041BB1B855004B4ED7 /* Scores.storyboard */,
+				F51131041BB1B855004B4ED7 /* Main.storyboard */,
 				F511312E1BB1B8CF004B4ED7 /* ScoresTVC.swift */,
 				F51131481BB1CAD8004B4ED7 /* Score.swift */,
 				F54DC0BB1BE119FD0059E641 /* ScoreDetail.storyboard */,
@@ -217,9 +223,20 @@
 			name = Scores;
 			sourceTree = "<group>";
 		};
+		F52CFC781BFDF96B0072660B /* iRIS */ = {
+			isa = PBXGroup;
+			children = (
+				F52CFC721BFDF9540072660B /* IRIS.swift */,
+				F52CFC731BFDF9540072660B /* Status.swift */,
+				F52CFC741BFDF9540072660B /* SwiftyJSON.swift */,
+			);
+			name = iRIS;
+			sourceTree = "<group>";
+		};
 		F54DC0C11BE24F750059E641 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				F52CFC781BFDF96B0072660B /* iRIS */,
 				F51131301BB1BABE004B4ED7 /* fmdb */,
 				F51131001BB1B855004B4ED7 /* AppDelegate.swift */,
 				F54DC0BD1BE208950059E641 /* DatabaseManager.swift */,
@@ -367,7 +384,7 @@
 				F54DC0C01BE21C5B0059E641 /* scores.db in Resources */,
 				F51131081BB1B855004B4ED7 /* Assets.xcassets in Resources */,
 				F54DC0BC1BE119FD0059E641 /* ScoreDetail.storyboard in Resources */,
-				F51131061BB1B855004B4ED7 /* Scores.storyboard in Resources */,
+				F51131061BB1B855004B4ED7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +412,7 @@
 				F54DC0CB1BE25A9C0059E641 /* SpetzlerPonce.swift in Sources */,
 				F511314B1BB5A0B4004B4ED7 /* ScoreDetailVC.swift in Sources */,
 				F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */,
+				F52CFC771BFDF9540072660B /* SwiftyJSON.swift in Sources */,
 				F54DC0C71BE2523A0059E641 /* SpetzlerPonceTVC.swift in Sources */,
 				F54DC0BE1BE208950059E641 /* DatabaseManager.swift in Sources */,
 				F5B525371BFB881600D7FB1C /* InfoTVC.swift in Sources */,
@@ -402,12 +420,14 @@
 				F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */,
 				F511313D1BB1BACE004B4ED7 /* FMDatabase.m in Sources */,
 				F511312F1BB1B8D0004B4ED7 /* ScoresTVC.swift in Sources */,
+				F52CFC751BFDF9540072660B /* IRIS.swift in Sources */,
 				F511313E1BB1BACE004B4ED7 /* FMResultSet.m in Sources */,
 				F51131411BB1BACE004B4ED7 /* FMDatabasePool.m in Sources */,
 				F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */,
 				F5B525351BFB87E300D7FB1C /* InfoDetailVC.swift in Sources */,
 				F51131491BB1CAD8004B4ED7 /* Score.swift in Sources */,
 				F5E8D2BE1BE9DEF1000AE8CF /* ItemCell.swift in Sources */,
+				F52CFC761BFDF9540072660B /* Status.swift in Sources */,
 				F51131401BB1BACE004B4ED7 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,12 +464,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F51131041BB1B855004B4ED7 /* Scores.storyboard */ = {
+		F51131041BB1B855004B4ED7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F51131051BB1B855004B4ED7 /* Base */,
 			);
-			name = Scores.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		F51131091BB1B855004B4ED7 /* LaunchScreen.storyboard */ = {

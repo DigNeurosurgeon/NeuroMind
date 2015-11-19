@@ -16,6 +16,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     var allScores = [Score]()
     var allSections = [String]()
     var scoresPerSection = [[Score]]()
+    var iris: IRIS!
     
 //    var keystore = NSUbiquitousKeyValueStore()
     
@@ -26,6 +27,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        iris = IRIS(version: "3.0", statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
         
         // Notify of iCloud sync
 //        NSNotificationCenter.defaultCenter().addObserver(self,
@@ -46,6 +48,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        iris.checkIfUserAcceptedEULA()
 //        keystore.synchronize()
         tableView.reloadData()
     }
