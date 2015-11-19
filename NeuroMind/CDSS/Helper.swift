@@ -46,11 +46,12 @@ class Helper: UITableViewController {
     }
     
     
-    static func getRecommendationVCWithContent(content: String) -> RecommendationVC {
+    static func getRecommendationVCWithContent(content: String, forScore score: Score) -> RecommendationVC {
         let recommendationString = "Recommendation"
         let storyboard = UIStoryboard(name: recommendationString, bundle: nil)
         let controller = storyboard.instantiateInitialViewController() as! RecommendationVC
         controller.title = recommendationString
+        controller.score = score
         controller.content = content
         
         return controller

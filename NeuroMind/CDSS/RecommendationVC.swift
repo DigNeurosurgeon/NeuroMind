@@ -12,6 +12,7 @@ import MessageUI
 class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var webView: UIWebView!
+    var score = Score()
     var content = ""
 
     override func viewDidLoad() {
@@ -24,6 +25,14 @@ class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
         let formattedContent = "<html><body style='font-family: Arial'>\(content)</body></html>"
         webView.loadHTMLString(formattedContent, baseURL: nil)
         
+    }
+    
+    
+    @IBAction func showTextVersionForScore(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "ScoreDetail", bundle: nil)
+        let controller = storyboard.instantiateInitialViewController() as! ScoreDetailVC
+        controller.score = score
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     

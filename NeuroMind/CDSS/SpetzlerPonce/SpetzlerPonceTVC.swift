@@ -14,8 +14,8 @@ class SpetzlerPonceTVC: UITableViewController {
     var cdss = SpetzlerPonce()
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         // Add favorite button
         let favoriteIconImage = score.isFavorite ? UIImage(named: score.kFavoriteSelected) : UIImage(named: score.kFavorite)
@@ -49,7 +49,7 @@ class SpetzlerPonceTVC: UITableViewController {
     
     
     @IBAction func onSubmit(sender: AnyObject) {
-        let controller = Helper.getRecommendationVCWithContent(cdss.giveRecommendation())
+        let controller = Helper.getRecommendationVCWithContent(cdss.giveRecommendation(), forScore: score)
         navigationController?.pushViewController(controller, animated: true)
     }
     

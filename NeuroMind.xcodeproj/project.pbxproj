@@ -31,6 +31,8 @@
 		F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */; };
 		F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0CE1BE264860059E641 /* RecommendationVC.swift */; };
 		F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0D11BE26BAF0059E641 /* Helper.swift */; };
+		F5B525351BFB87E300D7FB1C /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */; };
+		F5B525371BFB881600D7FB1C /* InfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B525361BFB881600D7FB1C /* InfoTVC.swift */; };
 		F5E8D2BE1BE9DEF1000AE8CF /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,8 @@
 		F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Recommendation.storyboard; path = CDSS/Recommendation.storyboard; sourceTree = "<group>"; };
 		F54DC0CE1BE264860059E641 /* RecommendationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecommendationVC.swift; path = CDSS/RecommendationVC.swift; sourceTree = "<group>"; };
 		F54DC0D11BE26BAF0059E641 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = CDSS/Helper.swift; sourceTree = "<group>"; };
+		F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDetailVC.swift; sourceTree = "<group>"; };
+		F5B525361BFB881600D7FB1C /* InfoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTVC.swift; sourceTree = "<group>"; };
 		F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		F5ECFCF51BEC8D8200FFFDBB /* NeuroMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NeuroMind.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +211,8 @@
 				F54DC0BB1BE119FD0059E641 /* ScoreDetail.storyboard */,
 				F511314A1BB5A0B4004B4ED7 /* ScoreDetailVC.swift */,
 				F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */,
+				F5B525361BFB881600D7FB1C /* InfoTVC.swift */,
+				F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */,
 			);
 			name = Scores;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */,
 				F54DC0C71BE2523A0059E641 /* SpetzlerPonceTVC.swift in Sources */,
 				F54DC0BE1BE208950059E641 /* DatabaseManager.swift in Sources */,
+				F5B525371BFB881600D7FB1C /* InfoTVC.swift in Sources */,
 				F511313F1BB1BACE004B4ED7 /* FMDatabaseQueue.m in Sources */,
 				F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */,
 				F511313D1BB1BACE004B4ED7 /* FMDatabase.m in Sources */,
@@ -398,6 +405,7 @@
 				F511313E1BB1BACE004B4ED7 /* FMResultSet.m in Sources */,
 				F51131411BB1BACE004B4ED7 /* FMDatabasePool.m in Sources */,
 				F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */,
+				F5B525351BFB87E300D7FB1C /* InfoDetailVC.swift in Sources */,
 				F51131491BB1CAD8004B4ED7 /* Score.swift in Sources */,
 				F5E8D2BE1BE9DEF1000AE8CF /* ItemCell.swift in Sources */,
 				F51131401BB1BACE004B4ED7 /* FMDatabaseAdditions.m in Sources */,
