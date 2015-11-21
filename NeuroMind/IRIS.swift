@@ -21,16 +21,22 @@ class IRIS {
     let expirationTimeInDays: Int
     let eulaURL: NSURL
     
+    enum DefaultStatusButtonText: String {
+        case OK = "OK"
+        case Understood = "Understood"
+        case Ignore = "Ignore"
+    }
+    
     
     // MARK: - Text values
     // Can be localized and customized
     
     
     private let txtOK = "OK"
-    private let txtUpdateRequired = "Update required"
-    private let txtUpdateNow = "Update now!"
-    private let txtLastSavedDateUnknown = "Last saved date unknown"
-    private let txtCheckForUpdatesOnline = "You need to check online for status updates."
+    private let txtUpdateRequired = "Safety check required"
+    private let txtUpdateNow = "Check now!"
+    private let txtLastSavedDateUnknown = "Last safety check unknown."
+    private let txtCheckForUpdatesOnline = "You have used this app offline for a while. Please perform a safety check online to see if all content is up to date."
     private let txtStatusErrorText = "HTTP status code has unexpected value."
     private let txtEulaWelcome = "Welcome"
     private let txtEulaRead = "Read EULA"
@@ -85,7 +91,7 @@ class IRIS {
         
         // Check for update before setting the text
         if localStatusNeedsUpdate() {
-            statusAlert(txtUpdateRequired, messageText: txtCheckForUpdatesOnline, showUpdateButton: true)
+            statusAlert(txtUpdateRequired, messageText: txtCheckForUpdatesOnline, defaultButton: .Ignore, showUpdateButton: true)
         }
         
         if let issue = preferences.stringForKey("statusHasIssue") {
@@ -170,9 +176,9 @@ class IRIS {
     }
     
     
-    private func statusAlert(titleText: String, messageText: String, showUpdateButton: Bool) {
+    private func statusAlert(titleText: String, messageText: String, defaultButton: DefaultStatusButtonText, showUpdateButton: Bool) {
         let alertController = UIAlertController(title: titleText, message: messageText, preferredStyle: UIAlertControllerStyle.Alert)
-        let defaultAction = UIAlertAction(title: txtOK, style: .Default, handler: nil)
+        let defaultAction = UIAlertAction(title: defaultButton.rawValue, style: .Default, handler: nil)
         alertController.addAction(defaultAction)
         
         if showUpdateButton {
@@ -188,7 +194,7 @@ class IRIS {
     
     private func issueAlert(description: String) {
         let issueText = "There is an issue with the current version of this app. \n\nDescription: \n\(description)"
-        statusAlert("Warning", messageText: issueText, showUpdateButton: false)
+        statusAlert("Warning", messageText: issueText, defaultButton: .OK, showUpdateButton: false)
     }
     
     

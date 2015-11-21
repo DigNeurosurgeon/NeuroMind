@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +16,50 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch Brain" translatesAutoresizingMaskIntoConstraints="NO" id="w3o-hC-gj5">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="aPy-d9-O0W"/>
+                                    <constraint firstAttribute="width" constant="300" id="zqV-GM-aL5"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch CE" translatesAutoresizingMaskIntoConstraints="NO" id="TfI-de-ega">
+                                <rect key="frame" x="250" y="508" width="100" height="72"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="Fvj-d8-f7m"/>
+                                    <constraint firstAttribute="width" constant="100" id="iLT-HV-b16"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NeuroMind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjq-3J-7sr">
+                                <rect key="frame" x="196" y="68" width="208.5" height="48"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pieter Kubben's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0M-hy-BBQ">
+                                <rect key="frame" x="226" y="36" width="148" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="TfI-de-ega" secondAttribute="bottom" constant="20" id="56b-G1-s13"/>
+                            <constraint firstItem="Kjq-3J-7sr" firstAttribute="top" secondItem="Y0M-hy-BBQ" secondAttribute="bottom" constant="8" id="PmK-qc-Rhj"/>
+                            <constraint firstItem="Y0M-hy-BBQ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="16" id="ZLy-DL-2I5"/>
+                            <constraint firstItem="TfI-de-ega" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kFF-7i-tKI"/>
+                            <constraint firstItem="w3o-hC-gj5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uCl-Bj-9qz"/>
+                            <constraint firstItem="w3o-hC-gj5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yLU-Dc-GUv"/>
+                            <constraint firstItem="Kjq-3J-7sr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yhh-Ww-uoI"/>
+                            <constraint firstItem="Y0M-hy-BBQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yxE-Jm-YdM"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,4 +67,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Launch Brain" width="300" height="270"/>
+        <image name="Launch CE" width="100" height="72"/>
+    </resources>
 </document>

@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        window?.tintColor = UIColor.init(red: 0.1, green: 0.5, blue: 0.1, alpha: 1.0)
+        window?.tintColor = UIColor.init(red: 16/255, green: 125/255, blue: 118/255, alpha: 1.0)
         return true
     }
 

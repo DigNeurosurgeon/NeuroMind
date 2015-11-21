@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoDetailVC: UIViewController {
+class InfoDetailVC: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var infoWebView: UIWebView!
@@ -17,6 +17,7 @@ class InfoDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        infoWebView.delegate = self
         activityIndicator.hidden = true
         activityIndicator.hidesWhenStopped = true
 
@@ -24,11 +25,7 @@ class InfoDetailVC: UIViewController {
             // Load website
             let url = NSURL(string: content)
             let request = NSURLRequest(URL: url!)
-            
-            activityIndicator.hidden = false
-            activityIndicator.startAnimating()
             infoWebView.loadRequest(request)
-            activityIndicator.stopAnimating()
             
         } else {
             // Show local info
@@ -38,6 +35,16 @@ class InfoDetailVC: UIViewController {
             infoWebView.loadHTMLString(infoContent, baseURL: nil)
         }
     }
+    
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
+    }
 
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        activityIndicator.stopAnimating()
+    }
 
 }
