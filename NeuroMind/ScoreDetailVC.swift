@@ -20,6 +20,8 @@ class ScoreDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
         configureView()
     }
     
@@ -40,14 +42,19 @@ class ScoreDetailVC: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         scoreName.title = score.name
+        var scoreDetails = "<html><body style=\"font-family: Arial;\"><br/><br/><br/>" +
+                            "<h4 style='text-align: center'>Please select an item from the menu.</h4>" +
+                            "</body></html>"
         
-        let scoreDetails =  "<html><body style=\"font-family: Arial;\">" +
-            "<h1>\(score.name)</h1>" +
-            "<h2>\(score.topic)</h2>" +
-            "\(score.content)" +
-            "<h4><em>Reference</em></h4>" +
-            "<p><em>\(score.reference)</em></p>" +
-        "</body></html>"
+        if score.name.characters.count > 0 {
+            scoreDetails =  "<html><body style=\"font-family: Arial;\">" +
+                "<h1>\(score.name)</h1>" +
+                "<h2>\(score.topic)</h2>" +
+                "\(score.content)" +
+                "<h4><em>Reference</em></h4>" +
+                "<p><em>\(score.reference)</em></p>" +
+            "</body></html>"
+        }
         scoreWebView.loadHTMLString(scoreDetails, baseURL: nil)
     }
     
@@ -68,9 +75,3 @@ class ScoreDetailVC: UIViewController {
     }
     
 }
-
-//extension ScoreDetailVC: ItemSelectionDelegate {
-//    func itemSelected(selectedScore: Score) {
-//        score = selectedScore
-//    }
-//}

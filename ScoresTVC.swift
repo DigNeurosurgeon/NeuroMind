@@ -8,10 +8,6 @@
 
 import UIKit
 
-//protocol ItemSelectionDelegate: class {
-//    func itemSelected(selectedScore: Score)
-//}
-
 class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     var detailViewController: ScoreDetailVC? = nil
@@ -33,7 +29,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        iris = IRIS(version: "3.0", statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
+        //iris = IRIS(version: "3.0", statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
         
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -60,7 +56,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
-        iris.checkIfUserAcceptedEULA()
+        //iris.checkIfUserAcceptedEULA()
 //        keystore.synchronize()
         tableView.reloadData()
     }
@@ -160,16 +156,17 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let score = scoreForCellAtIndexPath(indexPath)
         resultSearchController.active = false
+        var navigationController: UINavigationController!
         
         if score.cdssPresent {
             switch score.id {
             case 25:
                 let storyboard = UIStoryboard(name: "SpetzlerPonce", bundle: nil)
-//                let controller = (storyboard.instantiateInitialViewController() as! UINavigationController).topViewController as! SpetzlerPonceTVC
                 let controller = storyboard.instantiateInitialViewController() as! SpetzlerPonceTVC
                 controller.title = score.name
                 controller.score = score
-                splitViewController?.showDetailViewController(controller, sender: nil)
+                navigationController = UINavigationController(rootViewController: controller)
+                splitViewController?.showDetailViewController(navigationController, sender: nil)
             default:
                 break
             }
@@ -177,7 +174,8 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
             let storyboard = UIStoryboard(name: "ScoreDetail", bundle: nil)
             let controller = storyboard.instantiateInitialViewController() as! ScoreDetailVC
             controller.score = score
-            splitViewController?.showDetailViewController(controller, sender: nil)
+            navigationController = UINavigationController(rootViewController: controller)
+            splitViewController?.showDetailViewController(navigationController, sender: nil)
         }
 
     }

@@ -16,6 +16,8 @@ class SpetzlerPonceTVC: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
         
         // Add favorite button
         let favoriteIconImage = score.isFavorite ? UIImage(named: score.kFavoriteSelected) : UIImage(named: score.kFavorite)
@@ -49,19 +51,14 @@ class SpetzlerPonceTVC: UITableViewController {
     
     
     @IBAction func onSubmit(sender: AnyObject) {
-        //let controller = Helper.getRecommendationVCWithContent(cdss.giveRecommendation(), forScore: score)
-        //navigationController?.pushViewController(controller, animated: true)
-        //splitViewController?.showDetailViewController(controller, sender: nil)
-        /*let navController = splitViewController!.viewControllers[splitViewController!.viewControllers.count-1] as! UINavigationController
-        navController.pushViewController(controller, animated: true)*/
-        
+        // let controller = Helper.getRecommendationVCWithContent(cdss.giveRecommendation(), forScore: score)
         let recommendationString = "Recommendation"
         let storyboard = UIStoryboard(name: recommendationString, bundle: nil)
         let controller = storyboard.instantiateInitialViewController() as! RecommendationVC
         controller.title = recommendationString
         controller.score = score
         controller.content = cdss.giveRecommendation()
-        splitViewController?.showDetailViewController(controller, sender: nil)
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     
