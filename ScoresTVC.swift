@@ -8,9 +8,15 @@
 
 import UIKit
 
+//protocol ItemSelectionDelegate: class {
+//    func itemSelected(selectedScore: Score)
+//}
+
 class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
+    var detailViewController: ScoreDetailVC? = nil
     @IBOutlet weak var favoritesButton: UIBarButtonItem!
+    //weak var delegate: ItemSelectionDelegate?
     var showFavorites = false
     var databasePath = NSString()
     var allScores = [Score]()
@@ -28,6 +34,11 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
         iris = IRIS(version: "3.0", statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
+        
+        if let split = self.splitViewController {
+            let controllers = split.viewControllers
+            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ScoreDetailVC
+        }
         
         // Notify of iCloud sync
 //        NSNotificationCenter.defaultCenter().addObserver(self,
@@ -48,6 +59,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         iris.checkIfUserAcceptedEULA()
 //        keystore.synchronize()
         tableView.reloadData()
@@ -150,27 +162,26 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
         resultSearchController.active = false
         
         if score.cdssPresent {
-            
             switch score.id {
             case 25:
                 let storyboard = UIStoryboard(name: "SpetzlerPonce", bundle: nil)
+//                let controller = (storyboard.instantiateInitialViewController() as! UINavigationController).topViewController as! SpetzlerPonceTVC
                 let controller = storyboard.instantiateInitialViewController() as! SpetzlerPonceTVC
                 controller.title = score.name
                 controller.score = score
-                navigationController?.pushViewController(controller, animated: true)
+                splitViewController?.showDetailViewController(controller, sender: nil)
             default:
                 break
             }
-            
         } else {
             let storyboard = UIStoryboard(name: "ScoreDetail", bundle: nil)
             let controller = storyboard.instantiateInitialViewController() as! ScoreDetailVC
             controller.score = score
-            navigationController?.pushViewController(controller, animated: true)
+            splitViewController?.showDetailViewController(controller, sender: nil)
         }
 
     }
-    
+
     
     // MARK:- UISearchResultsUpdating protocol
     

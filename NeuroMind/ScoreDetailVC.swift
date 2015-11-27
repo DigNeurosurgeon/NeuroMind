@@ -20,22 +20,35 @@ class ScoreDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scoreName.title = score.name
-        
-        let scoreDetails =  "<html><body style=\"font-family: Arial;\">" +
-                            "<h1>\(score.name)</h1>" +
-                            "<h2>\(score.topic)</h2>" +
-                            "\(score.content)" +
-                            "<h4><em>Reference</em></h4>" +
-                            "<p><em>\(score.reference)</em></p>" +
-                            "</body></html>"
-        scoreWebView.loadHTMLString(scoreDetails, baseURL: nil)
+        configureView()
     }
     
     
     override func viewWillAppear(animated: Bool) {
 //        keystore.synchronize()
         configureFavoriteButton()
+    }
+    
+    
+    var detailItem: Score? {
+        didSet {
+            // Update the view.
+            self.configureView()
+        }
+    }
+    
+    func configureView() {
+        // Update the user interface for the detail item.
+        scoreName.title = score.name
+        
+        let scoreDetails =  "<html><body style=\"font-family: Arial;\">" +
+            "<h1>\(score.name)</h1>" +
+            "<h2>\(score.topic)</h2>" +
+            "\(score.content)" +
+            "<h4><em>Reference</em></h4>" +
+            "<p><em>\(score.reference)</em></p>" +
+        "</body></html>"
+        scoreWebView.loadHTMLString(scoreDetails, baseURL: nil)
     }
     
     
@@ -55,3 +68,9 @@ class ScoreDetailVC: UIViewController {
     }
     
 }
+
+//extension ScoreDetailVC: ItemSelectionDelegate {
+//    func itemSelected(selectedScore: Score) {
+//        score = selectedScore
+//    }
+//}

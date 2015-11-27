@@ -51,10 +51,11 @@
                             <outlet property="delegate" destination="8sP-Gc-S4s" id="x5h-cE-SnG"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="BwP-li-yvm"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roG-br-3nT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="585" y="273"/>
+            <point key="canvasLocation" x="1397" y="273"/>
         </scene>
     </scenes>
 </document>
