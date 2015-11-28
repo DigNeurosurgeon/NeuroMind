@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BjV-jy-dyz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bLl-py-vlb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--Score name-->
-        <scene sceneID="9bE-gx-16l">
+        <scene sceneID="GJR-yp-uNg">
             <objects>
-                <viewController id="BjV-jy-dyz" customClass="ScoreDetailVC" customModule="NeuroMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bLl-py-vlb" customClass="ScoreDetailVC" customModule="NeuroMind" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EKd-x5-Hk6"/>
-                        <viewControllerLayoutGuide type="bottom" id="ddG-Ha-BSj"/>
+                        <viewControllerLayoutGuide type="top" id="qDO-Lt-OwK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q0l-ak-RpZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tC9-2B-9Ii">
+                    <view key="view" contentMode="scaleToFill" id="jBV-BV-9gZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeM-dH-EBM">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5F-5c-Smc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,29 +26,29 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BeM-dH-EBM" firstAttribute="top" secondItem="tC9-2B-9Ii" secondAttribute="top" id="GEV-cb-xIi"/>
-                            <constraint firstItem="BeM-dH-EBM" firstAttribute="bottom" secondItem="ddG-Ha-BSj" secondAttribute="top" id="Qr1-gF-sbx"/>
-                            <constraint firstItem="BeM-dH-EBM" firstAttribute="leading" secondItem="tC9-2B-9Ii" secondAttribute="leading" id="RV1-Zl-HII"/>
-                            <constraint firstAttribute="trailing" secondItem="BeM-dH-EBM" secondAttribute="trailing" id="doa-TM-1d8"/>
+                            <constraint firstItem="I5F-5c-Smc" firstAttribute="bottom" secondItem="Q0l-ak-RpZ" secondAttribute="top" id="0jN-zo-uT0"/>
+                            <constraint firstItem="I5F-5c-Smc" firstAttribute="leading" secondItem="jBV-BV-9gZ" secondAttribute="leading" id="3lH-w1-rSk"/>
+                            <constraint firstAttribute="trailing" secondItem="I5F-5c-Smc" secondAttribute="trailing" id="Kzc-jk-zB2"/>
+                            <constraint firstItem="I5F-5c-Smc" firstAttribute="top" secondItem="jBV-BV-9gZ" secondAttribute="top" id="lP6-9n-lQL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Score name" id="cH5-ox-OiD">
-                        <barButtonItem key="rightBarButtonItem" image="Favorite" id="kaW-EI-LjH">
+                    <navigationItem key="navigationItem" title="Score name" id="Eoc-rk-dUH">
+                        <barButtonItem key="rightBarButtonItem" image="Favorite" id="qOW-yt-ump">
                             <connections>
-                                <action selector="favoriteButtonForItemTapped:" destination="BjV-jy-dyz" id="itV-eY-zzc"/>
+                                <action selector="favoriteButtonForItemTapped:" destination="bLl-py-vlb" id="xNX-dR-5bm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="favoriteButton" destination="kaW-EI-LjH" id="zee-4C-85U"/>
-                        <outlet property="scoreName" destination="cH5-ox-OiD" id="N1V-J0-6XS"/>
-                        <outlet property="scoreWebView" destination="BeM-dH-EBM" id="ltj-eA-Zpg"/>
+                        <outlet property="favoriteButton" destination="qOW-yt-ump" id="b5o-MV-rux"/>
+                        <outlet property="scoreName" destination="Eoc-rk-dUH" id="7mh-4R-qsZ"/>
+                        <outlet property="scoreWebView" destination="I5F-5c-Smc" id="m7U-cS-8TY"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gA3-Yn-Ldy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SmL-a0-8Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2174" y="279"/>
+            <point key="canvasLocation" x="1454" y="561"/>
         </scene>
     </scenes>
     <resources>

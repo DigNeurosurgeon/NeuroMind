@@ -25,7 +25,6 @@
 		F52CFC751BFDF9540072660B /* IRIS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52CFC721BFDF9540072660B /* IRIS.swift */; };
 		F52CFC761BFDF9540072660B /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52CFC731BFDF9540072660B /* Status.swift */; };
 		F52CFC771BFDF9540072660B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52CFC741BFDF9540072660B /* SwiftyJSON.swift */; };
-		F54DC0BC1BE119FD0059E641 /* ScoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0BB1BE119FD0059E641 /* ScoreDetail.storyboard */; };
 		F54DC0BE1BE208950059E641 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0BD1BE208950059E641 /* DatabaseManager.swift */; };
 		F54DC0C01BE21C5B0059E641 /* scores.db in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0BF1BE21C5B0059E641 /* scores.db */; };
 		F54DC0C71BE2523A0059E641 /* SpetzlerPonceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0C61BE2523A0059E641 /* SpetzlerPonceTVC.swift */; };
@@ -37,6 +36,8 @@
 		F5B525351BFB87E300D7FB1C /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */; };
 		F5B525371BFB881600D7FB1C /* InfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B525361BFB881600D7FB1C /* InfoTVC.swift */; };
 		F5E8D2BE1BE9DEF1000AE8CF /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */; };
+		F5F219191C09A32700EA02FF /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219181C09A32700EA02FF /* Info.storyboard */; };
+		F5F2191C1C09A42E00EA02FF /* ScoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F2191B1C09A42E00EA02FF /* ScoreDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +89,6 @@
 		F52CFC721BFDF9540072660B /* IRIS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRIS.swift; sourceTree = "<group>"; };
 		F52CFC731BFDF9540072660B /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		F52CFC741BFDF9540072660B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		F54DC0BB1BE119FD0059E641 /* ScoreDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoreDetail.storyboard; sourceTree = "<group>"; };
 		F54DC0BD1BE208950059E641 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		F54DC0BF1BE21C5B0059E641 /* scores.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = scores.db; path = NeuroMind/scores.db; sourceTree = "<group>"; };
 		F54DC0C61BE2523A0059E641 /* SpetzlerPonceTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpetzlerPonceTVC.swift; path = CDSS/SpetzlerPonce/SpetzlerPonceTVC.swift; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 		F5B525361BFB881600D7FB1C /* InfoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTVC.swift; sourceTree = "<group>"; };
 		F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		F5ECFCF51BEC8D8200FFFDBB /* NeuroMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NeuroMind.entitlements; sourceTree = "<group>"; };
+		F5F219181C09A32700EA02FF /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		F5F2191B1C09A42E00EA02FF /* ScoreDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoreDetail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,11 +216,10 @@
 				F51131041BB1B855004B4ED7 /* Main.storyboard */,
 				F511312E1BB1B8CF004B4ED7 /* ScoresTVC.swift */,
 				F51131481BB1CAD8004B4ED7 /* Score.swift */,
-				F54DC0BB1BE119FD0059E641 /* ScoreDetail.storyboard */,
+				F5F2191B1C09A42E00EA02FF /* ScoreDetail.storyboard */,
 				F511314A1BB5A0B4004B4ED7 /* ScoreDetailVC.swift */,
 				F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */,
-				F5B525361BFB881600D7FB1C /* InfoTVC.swift */,
-				F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */,
+				F5F2191A1C09A33000EA02FF /* Info */,
 			);
 			name = Scores;
 			sourceTree = "<group>";
@@ -266,6 +267,16 @@
 				F54DC0CE1BE264860059E641 /* RecommendationVC.swift */,
 			);
 			name = Recommendation;
+			sourceTree = "<group>";
+		};
+		F5F2191A1C09A33000EA02FF /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				F5F219181C09A32700EA02FF /* Info.storyboard */,
+				F5B525361BFB881600D7FB1C /* InfoTVC.swift */,
+				F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */,
+			);
+			name = Info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,11 +390,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F54DC0C91BE253C70059E641 /* SpetzlerPonce.storyboard in Resources */,
+				F5F219191C09A32700EA02FF /* Info.storyboard in Resources */,
 				F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */,
 				F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */,
+				F5F2191C1C09A42E00EA02FF /* ScoreDetail.storyboard in Resources */,
 				F54DC0C01BE21C5B0059E641 /* scores.db in Resources */,
 				F51131081BB1B855004B4ED7 /* Assets.xcassets in Resources */,
-				F54DC0BC1BE119FD0059E641 /* ScoreDetail.storyboard in Resources */,
 				F51131061BB1B855004B4ED7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

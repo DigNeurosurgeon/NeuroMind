@@ -22,6 +22,12 @@ class InfoTVC: UITableViewController, MFMailComposeViewControllerDelegate {
     }
     
     
+    override func viewDidLoad() {
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
+    }
+    
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if cell?.reuseIdentifier == "Email" {

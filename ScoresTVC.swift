@@ -244,9 +244,24 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     }
     
     
-//    func keyValueStoreDidChange(notification: NSNotification) {
-//        tableView.reloadData()
-//        print("iCloud updated: \(notification.description)")
-//    }
+    /*
+    func keyValueStoreDidChange(notification: NSNotification) {
+        tableView.reloadData()
+        print("iCloud updated: \(notification.description)")
+    }
+    */
+    
+    
+    // MARK:- Info Button
+    
+    
+    @IBAction func infoButtonTapped(sender: AnyObject) {
+        print("infoButtonTapped")
+        let storyboard = UIStoryboard(name: "Info", bundle: nil)
+        let controller = storyboard.instantiateInitialViewController() as! InfoTVC
+        let navigationController = UINavigationController(rootViewController: controller)
+        splitViewController?.showDetailViewController(navigationController, sender: nil)
+    }
+    
     
 }
