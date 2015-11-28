@@ -51,13 +51,7 @@ class SpetzlerPonceTVC: UITableViewController {
     
     
     @IBAction func onSubmit(sender: AnyObject) {
-        // let controller = Helper.getRecommendationVCWithContent(cdss.giveRecommendation(), forScore: score)
-        let recommendationString = "Recommendation"
-        let storyboard = UIStoryboard(name: recommendationString, bundle: nil)
-        let controller = storyboard.instantiateInitialViewController() as! RecommendationVC
-        controller.title = recommendationString
-        controller.score = score
-        controller.content = cdss.giveRecommendation()
+        let controller = Helper.getRecommendationVCWithContent(cdss.giveRecommendation(), forScore: score)
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -95,7 +89,8 @@ class SpetzlerPonceTVC: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: "CDSS")
+        //let cell = UITableViewCell(style: .Default, reuseIdentifier: "CDSS")
+        let cell = tableView.dequeueReusableCellWithIdentifier("CDSS", forIndexPath: indexPath)
         cell.textLabel?.text = cdss.items[indexPath.section][indexPath.row]
         return cell
     }

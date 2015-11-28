@@ -38,6 +38,9 @@
 		F5E8D2BE1BE9DEF1000AE8CF /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */; };
 		F5F219191C09A32700EA02FF /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219181C09A32700EA02FF /* Info.storyboard */; };
 		F5F2191C1C09A42E00EA02FF /* ScoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F2191B1C09A42E00EA02FF /* ScoreDetail.storyboard */; };
+		F5F219201C09A90F00EA02FF /* SLIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2191F1C09A90F00EA02FF /* SLIC.swift */; };
+		F5F219241C09A93D00EA02FF /* SLICTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219221C09A93D00EA02FF /* SLICTableViewController.swift */; };
+		F5F219261C09A9D700EA02FF /* SLIC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219251C09A9D700EA02FF /* SLIC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,9 @@
 		F5ECFCF51BEC8D8200FFFDBB /* NeuroMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NeuroMind.entitlements; sourceTree = "<group>"; };
 		F5F219181C09A32700EA02FF /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		F5F2191B1C09A42E00EA02FF /* ScoreDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoreDetail.storyboard; sourceTree = "<group>"; };
+		F5F2191F1C09A90F00EA02FF /* SLIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLIC.swift; sourceTree = "<group>"; };
+		F5F219221C09A93D00EA02FF /* SLICTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLICTableViewController.swift; sourceTree = "<group>"; };
+		F5F219251C09A9D700EA02FF /* SLIC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SLIC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +209,7 @@
 		F511314C1BB687C6004B4ED7 /* CDSS */ = {
 			isa = PBXGroup;
 			children = (
+				F5F2191E1C09A8FE00EA02FF /* SLIC */,
 				F54DC0C51BE250DD0059E641 /* Spetzler Ponce */,
 				F54DC0D01BE2648C0059E641 /* Recommendation */,
 				F54DC0D11BE26BAF0059E641 /* Helper.swift */,
@@ -216,9 +223,8 @@
 				F51131041BB1B855004B4ED7 /* Main.storyboard */,
 				F511312E1BB1B8CF004B4ED7 /* ScoresTVC.swift */,
 				F51131481BB1CAD8004B4ED7 /* Score.swift */,
-				F5F2191B1C09A42E00EA02FF /* ScoreDetail.storyboard */,
-				F511314A1BB5A0B4004B4ED7 /* ScoreDetailVC.swift */,
 				F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */,
+				F5F2191D1C09A6D200EA02FF /* ScoreDetail */,
 				F5F2191A1C09A33000EA02FF /* Info */,
 			);
 			name = Scores;
@@ -277,6 +283,25 @@
 				F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */,
 			);
 			name = Info;
+			sourceTree = "<group>";
+		};
+		F5F2191D1C09A6D200EA02FF /* ScoreDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F5F2191B1C09A42E00EA02FF /* ScoreDetail.storyboard */,
+				F511314A1BB5A0B4004B4ED7 /* ScoreDetailVC.swift */,
+			);
+			name = ScoreDetail;
+			sourceTree = "<group>";
+		};
+		F5F2191E1C09A8FE00EA02FF /* SLIC */ = {
+			isa = PBXGroup;
+			children = (
+				F5F219251C09A9D700EA02FF /* SLIC.storyboard */,
+				F5F219221C09A93D00EA02FF /* SLICTableViewController.swift */,
+				F5F2191F1C09A90F00EA02FF /* SLIC.swift */,
+			);
+			name = SLIC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +421,7 @@
 				F5F2191C1C09A42E00EA02FF /* ScoreDetail.storyboard in Resources */,
 				F54DC0C01BE21C5B0059E641 /* scores.db in Resources */,
 				F51131081BB1B855004B4ED7 /* Assets.xcassets in Resources */,
+				F5F219261C09A9D700EA02FF /* SLIC.storyboard in Resources */,
 				F51131061BB1B855004B4ED7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +449,7 @@
 			files = (
 				F54DC0CB1BE25A9C0059E641 /* SpetzlerPonce.swift in Sources */,
 				F511314B1BB5A0B4004B4ED7 /* ScoreDetailVC.swift in Sources */,
+				F5F219241C09A93D00EA02FF /* SLICTableViewController.swift in Sources */,
 				F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */,
 				F52CFC771BFDF9540072660B /* SwiftyJSON.swift in Sources */,
 				F54DC0C71BE2523A0059E641 /* SpetzlerPonceTVC.swift in Sources */,
@@ -435,6 +462,7 @@
 				F52CFC751BFDF9540072660B /* IRIS.swift in Sources */,
 				F511313E1BB1BACE004B4ED7 /* FMResultSet.m in Sources */,
 				F51131411BB1BACE004B4ED7 /* FMDatabasePool.m in Sources */,
+				F5F219201C09A90F00EA02FF /* SLIC.swift in Sources */,
 				F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */,
 				F5B525351BFB87E300D7FB1C /* InfoDetailVC.swift in Sources */,
 				F51131491BB1CAD8004B4ED7 /* Score.swift in Sources */,

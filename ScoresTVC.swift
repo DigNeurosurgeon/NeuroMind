@@ -12,20 +12,20 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     var detailViewController: ScoreDetailVC? = nil
     @IBOutlet weak var favoritesButton: UIBarButtonItem!
-    //weak var delegate: ItemSelectionDelegate?
     var showFavorites = false
     var databasePath = NSString()
     var allScores = [Score]()
     var allSections = [String]()
     var scoresPerSection = [[Score]]()
     var iris: IRIS!
-    
-//    var keystore = NSUbiquitousKeyValueStore()
+    // var keystore = NSUbiquitousKeyValueStore()
     
     var filteredTableData = [Score]()
     var resultSearchController = UISearchController(searchResultsController: nil)
 
+    
     // MARK:- View Managers
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +36,13 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ScoreDetailVC
         }
         
+        /*
         // Notify of iCloud sync
-//        NSNotificationCenter.defaultCenter().addObserver(self,
-//            selector: "keyValueStoreDidChange:",
-//            name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification,
-//            object: keystore)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "keyValueStoreDidChange:",
+            name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification,
+            object: keystore)
+        */
         
         // Configure tableview
         sortScoresPerSection()
@@ -57,7 +59,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
         super.viewWillAppear(animated)
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         iris.checkIfUserAcceptedEULA()
-//        keystore.synchronize()
+        // keystore.synchronize()
         tableView.reloadData()
     }
     
@@ -158,19 +160,22 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
         resultSearchController.active = false
         var navigationController: UINavigationController!
         
-        if score.cdssPresent {
-            switch score.id {
-            case 25:
-                let storyboard = UIStoryboard(name: "SpetzlerPonce", bundle: nil)
-                let controller = storyboard.instantiateInitialViewController() as! SpetzlerPonceTVC
-                controller.title = score.name
-                controller.score = score
-                navigationController = UINavigationController(rootViewController: controller)
-                splitViewController?.showDetailViewController(navigationController, sender: nil)
-            default:
-                break
-            }
-        } else {
+        switch score.id {
+        case 20:
+            let storyboard = UIStoryboard(name: "SLIC", bundle: nil)
+            let controller = storyboard.instantiateInitialViewController() as! SLICTableViewController
+            controller.title = score.name
+            controller.score = score
+            navigationController = UINavigationController(rootViewController: controller)
+            splitViewController?.showDetailViewController(navigationController, sender: nil)
+        case 25:
+            let storyboard = UIStoryboard(name: "SpetzlerPonce", bundle: nil)
+            let controller = storyboard.instantiateInitialViewController() as! SpetzlerPonceTVC
+            controller.title = score.name
+            controller.score = score
+            navigationController = UINavigationController(rootViewController: controller)
+            splitViewController?.showDetailViewController(navigationController, sender: nil)
+        default:
             let storyboard = UIStoryboard(name: "ScoreDetail", bundle: nil)
             let controller = storyboard.instantiateInitialViewController() as! ScoreDetailVC
             controller.score = score
@@ -256,7 +261,6 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     @IBAction func infoButtonTapped(sender: AnyObject) {
-        print("infoButtonTapped")
         let storyboard = UIStoryboard(name: "Info", bundle: nil)
         let controller = storyboard.instantiateInitialViewController() as! InfoTVC
         let navigationController = UINavigationController(rootViewController: controller)
