@@ -29,7 +29,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //iris = IRIS(version: "3.0", statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
+        iris = IRIS(version: "3.0", statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
         
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -56,7 +56,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
-        //iris.checkIfUserAcceptedEULA()
+        iris.checkIfUserAcceptedEULA()
 //        keystore.synchronize()
         tableView.reloadData()
     }
