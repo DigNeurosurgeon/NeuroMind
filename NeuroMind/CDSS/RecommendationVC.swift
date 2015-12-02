@@ -8,12 +8,14 @@
 
 import UIKit
 import MessageUI
+import MobileCoreServices
 
 class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     var score = Score()
-    var content = ""
+    var contentAsHTML = ""
+    var contentAsCSV: NSURL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +23,11 @@ class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
         navigationItem.leftItemsSupplementBackButton = true
         
-        if content.characters.count > Helper.inputIncompleteLength {
+        if contentAsHTML.characters.count > Helper.inputIncompleteLength {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: Selector("exportRecommendation"))
         }
         
-        let formattedContent = "<html><body style='font-family: Arial'>\(content)</body></html>"
+        let formattedContent = "<html><body style='font-family: Arial'>\(contentAsHTML)</body></html>"
         webView.loadHTMLString(formattedContent, baseURL: nil)
         
     }
@@ -43,7 +45,22 @@ class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     
     func exportRecommendation() {
-        createEmailMessageWithReport()
+        //createEmailMessageWithReport() 
+        
+        if let content = contentAsCSV {
+            let activityViewController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
+            if activityViewController.respondsToSelector("popoverPresentationController") {
+                activityViewController.popoverPresentationController?.sourceView = self.view
+                activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+            }
+            presentViewController(activityViewController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "CSV file could not be created.", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            alertController.addAction(okAction)
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+        
     }
     
     
@@ -60,7 +77,7 @@ class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
             "<p>Optional comments:</p>" +
             
             "<h2>Recommendation</h2>" +
-            "\(content)"
+            "\(contentAsHTML)"
         
         email.setMessageBody(messageBodyText, isHTML: true)
         

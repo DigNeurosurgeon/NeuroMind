@@ -95,6 +95,17 @@ class SpetzlerPonce {
                 "<li>Venous drainage: \(input[2])</li>"
     }
     
+    
+    func exportParametersAsCSV() -> NSURL {
+        let header = "size_input,size_score,eloquence_input,eloquence_score,venous_drainage_input,venous_drainage_score"
+        let content = "\(input[0]),\(size),\(input[1]),\(eloquence),\(input[2]),\(venousDrainage)"
+        
+        return Helper.createFileWithDateAndParametersAsCSVForItem("spetzler_ponce", withHeader: header, andContent: content)
+    }
+    
+    
+    
+    
 }
 
 

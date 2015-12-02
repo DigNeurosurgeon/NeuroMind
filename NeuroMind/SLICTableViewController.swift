@@ -95,10 +95,13 @@ class SLICTableViewController: UITableViewController {
         switch (currentSection) {
             case 0:
                 cdss.morphology = currentRow
+                cdss.input[0] = (cell?.textLabel?.text)!
             case 1:
                 cdss.discoLigamentousComplex = currentRow
+                cdss.input[1] = (cell?.textLabel?.text)!
             case 2:
                 cdss.neurologicalStatus = currentRow
+                cdss.input[2] = (cell?.textLabel?.text)!
             default:
                 print("An error occurred when assigning a value to slicScore")
         }
@@ -111,6 +114,7 @@ class SLICTableViewController: UITableViewController {
 
     @IBAction func submitButtonTapped(sender: AnyObject) {
         let controller = Helper.getRecommendationVCWithContent(cdss.giveTreatmentRecommendation(), forScore: score)
+        controller.contentAsCSV = cdss.getParametersAsCSV()
         navigationController?.pushViewController(controller, animated: true)
     }
 

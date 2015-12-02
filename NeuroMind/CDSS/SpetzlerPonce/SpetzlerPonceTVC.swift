@@ -52,6 +52,7 @@ class SpetzlerPonceTVC: UITableViewController {
     
     @IBAction func onSubmit(sender: AnyObject) {
         let controller = Helper.getRecommendationVCWithContent(cdss.giveRecommendation(), forScore: score)
+        controller.contentAsCSV = cdss.exportParametersAsCSV()
         navigationController?.pushViewController(controller, animated: true)
     }
     

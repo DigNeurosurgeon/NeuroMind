@@ -22,6 +22,7 @@ class SLIC {
     var discoLigamentousComplex: Int
     var neurologicalStatus: Int
     var selectedCellIndices = [-1, -1, -1]
+    var input = ["","",""]
     
     var final: Int {
         get {
@@ -61,9 +62,9 @@ class SLIC {
                 "<h4>SLIC score: \(final)</h4>" +
                 "<p>Components:<p>" +
                 "<ul>" +
-                "<li>Morphology: \(morphology)</li>" +
-                "<li>Disco-ligamentous complex: \(discoLigamentousComplex)</li>" +
-                "<li>Neurological status: \(neurologicalStatus)</li>" +
+                "<li>Morphology: \(input[0])</li>" +
+                "<li>Disco-ligamentous complex: \(input[1])</li>" +
+                "<li>Neurological status: \(input[2])</li>" +
                 "</ul>" +
                 "</body>"
         } else {
@@ -72,6 +73,13 @@ class SLIC {
             "</body>"
         }
         
+    }
+    
+    
+    func getParametersAsCSV() -> NSURL {
+        let header = "morphology_input,morphology_score,discoligamentous_complex_input,discoligamentous_complex_score,neurological_status_input,neurological_status_score"
+        let content = "\(input[0]),\(morphology),\(input[1]),\(discoLigamentousComplex),\(input[2]),\(neurologicalStatus)"
+        return Helper.createFileWithDateAndParametersAsCSVForItem("slic_score", withHeader: header, andContent: content)
     }
     
 }

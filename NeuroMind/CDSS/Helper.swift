@@ -52,12 +52,46 @@ class Helper: UITableViewController {
         let controller = storyboard.instantiateInitialViewController() as! RecommendationVC
         controller.title = recommendationString
         controller.score = score
-        controller.content = content
+        controller.contentAsHTML = content
         
         return controller
     }
     
 
+    static func createFileWithDateAndParametersAsCSVForItem(item: String, withHeader header: String, andContent content: String) -> NSURL {
+        // Create date string from local timezone
+        let date = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeZone = NSTimeZone()
+        
+        // Format for database
+        dateFormatter.dateFormat = "YYYY-MM-dd hh:mm"
+        let localDate = dateFormatter.stringFromDate(date)
+        let csvHeader = "date_time,\(header)"
+        let csvContent = "\(localDate),\(content)"
+        let csvString = "\(csvHeader)\n\(csvContent)"
+        
+        // Format for filename
+        dateFormatter.dateFormat = "YYYY_MM_dd_hh_mm"
+        let localDateForFileName = dateFormatter.stringFromDate(date)
+        
+        // Create CSV file
+        let dirPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let docsDir = dirPaths[0]
+        let csvFileName = "\(item)_\(localDateForFileName).csv"
+        let csvFilePath = docsDir.stringByAppendingString("/" + csvFileName)
+        
+        // Generate output
+        var csvURL: NSURL?
+        do {
+            try csvString.writeToFile(csvFilePath, atomically: true, encoding: NSUTF8StringEncoding)
+            csvURL = NSURL(fileURLWithPath: csvFilePath)
+        } catch {
+            csvURL = nil
+        }
+        
+        return csvURL!
+    }
     
 
 }
