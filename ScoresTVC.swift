@@ -168,6 +168,13 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
             controller.score = score
             navigationController = UINavigationController(rootViewController: controller)
             splitViewController?.showDetailViewController(navigationController, sender: nil)
+        case 22:
+            let storyboard = UIStoryboard(name: "TLICS", bundle: nil)
+            let controller = storyboard.instantiateInitialViewController() as! TLICS_TVC
+            controller.title = score.name
+            controller.score = score
+            navigationController = UINavigationController(rootViewController: controller)
+            splitViewController?.showDetailViewController(navigationController, sender: nil)
         case 25:
             let storyboard = UIStoryboard(name: "SpetzlerPonce", bundle: nil)
             let controller = storyboard.instantiateInitialViewController() as! SpetzlerPonceTVC

@@ -90,7 +90,6 @@ class SpetzlerPonceTVC: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = UITableViewCell(style: .Default, reuseIdentifier: "CDSS")
         let cell = tableView.dequeueReusableCellWithIdentifier("CDSS", forIndexPath: indexPath)
         cell.textLabel?.text = cdss.items[indexPath.section][indexPath.row]
         return cell

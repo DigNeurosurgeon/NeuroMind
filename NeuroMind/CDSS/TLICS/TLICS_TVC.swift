@@ -1,27 +1,22 @@
 //
-//  SLICTableViewController.swift
-//  SLIC
+//  TLICS_TVC.swift
+//  NeuroMind
 //
-//  Created by Pieter Kubben on 09-07-15.
-//  Copyright (c) 2015 DigitalNeurosurgeon.com. All rights reserved.
+//  Created by Pieter Kubben on 03-12-15.
+//  Copyright © 2015 DigitalNeurosurgeon.com. All rights reserved.
 //
 
 import UIKit
 
-class SLICTableViewController: UITableViewController {
-    
-    // @IBOutlet weak var statusBarButton: UIBarButtonItem!
+class TLICS_TVC: UITableViewController {
     
     var score = Score()
-    var cdss = SLIC()
-    let sections = SLIC.sections
-    let items = SLIC.items
-    var selectedCellIndices = [Int]()
-
+    var cdss = TLICS()
+    let sections = TLICS.sections
+    let items = TLICS.items
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedCellIndices = cdss.selectedCellIndices
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
         navigationItem.leftItemsSupplementBackButton = true
         
@@ -30,17 +25,17 @@ class SLICTableViewController: UITableViewController {
         let favoriteBarButton = UIBarButtonItem(image: favoriteIconImage, style: .Plain, target: self, action: "setFavoriteStatus:")
         navigationItem.rightBarButtonItem = favoriteBarButton
     }
-
-
+    
+    
     // MARK: - Table view data source
-
+    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return sections.count
     }
-
-
+    
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return items[section].count
@@ -50,19 +45,11 @@ class SLICTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CDSS", forIndexPath: indexPath)
-
         cell.textLabel?.text = items[indexPath.section][indexPath.row]
-        
-        if selectedCellIndices[indexPath.section] == indexPath.row {
-            cell.accessoryType = .Checkmark
-        } else {
-            cell.accessoryType = .None
-        }
-
         return cell
     }
     
@@ -75,31 +62,40 @@ class SLICTableViewController: UITableViewController {
         
         // Save corresponding value to score
         switch (currentSection) {
+        case 0:
+            cdss.morphology = currentRow
+            cdss.input[0] = (cell?.textLabel?.text)!
+        case 1:
+            cdss.posteriorLigamentousComplex = (currentRow == 0) ? currentRow : currentRow + 1
+            cdss.input[1] = (cell?.textLabel?.text)!
+        case 2:
+            switch currentRow {
             case 0:
-                cdss.morphology = currentRow
-                cdss.input[0] = (cell?.textLabel?.text)!
-            case 1:
-                cdss.discoLigamentousComplex = currentRow
-                cdss.input[1] = (cell?.textLabel?.text)!
-            case 2:
-                cdss.neurologicalStatus = currentRow
-                cdss.input[2] = (cell?.textLabel?.text)!
+                cdss.neurologicalStatus = 0
+            case 1, 2:
+                cdss.neurologicalStatus = 2
+            case 3, 4:
+                cdss.neurologicalStatus = 3
             default:
-                print("An error occurred when assigning a value to SLIC score.")
+                break
+            }
+            cdss.input[2] = (cell?.textLabel?.text)!
+        default:
+            break
         }
         
     }
     
     
     // MARK: - Navigation
-
-
+    
+    
     @IBAction func submitButtonTapped(sender: AnyObject) {
         let controller = Helper.getRecommendationVCWithContent(cdss.giveTreatmentRecommendation(), forScore: score)
         controller.contentAsCSV = cdss.getParametersAsCSV()
         navigationController?.pushViewController(controller, animated: true)
     }
-
+    
     
     // MARK: - Set favorite status
     
@@ -114,6 +110,5 @@ class SLICTableViewController: UITableViewController {
             barButton.image = UIImage(named: score.kFavorite)
         }
     }
-    
 
 }

@@ -41,6 +41,9 @@
 		F5F219201C09A90F00EA02FF /* SLIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2191F1C09A90F00EA02FF /* SLIC.swift */; };
 		F5F219241C09A93D00EA02FF /* SLICTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219221C09A93D00EA02FF /* SLICTableViewController.swift */; };
 		F5F219261C09A9D700EA02FF /* SLIC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219251C09A9D700EA02FF /* SLIC.storyboard */; };
+		F5F2192C1C10D41100EA02FF /* TLICS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F2192B1C10D41100EA02FF /* TLICS.storyboard */; };
+		F5F2192E1C10D4E000EA02FF /* TLICS_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2192D1C10D4E000EA02FF /* TLICS_TVC.swift */; };
+		F5F219301C10D4FD00EA02FF /* TLICS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2192F1C10D4FD00EA02FF /* TLICS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,9 @@
 		F5F2191F1C09A90F00EA02FF /* SLIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLIC.swift; sourceTree = "<group>"; };
 		F5F219221C09A93D00EA02FF /* SLICTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLICTableViewController.swift; sourceTree = "<group>"; };
 		F5F219251C09A9D700EA02FF /* SLIC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SLIC.storyboard; sourceTree = "<group>"; };
+		F5F2192B1C10D41100EA02FF /* TLICS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TLICS.storyboard; path = CDSS/TLICS/TLICS.storyboard; sourceTree = "<group>"; };
+		F5F2192D1C10D4E000EA02FF /* TLICS_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLICS_TVC.swift; path = CDSS/TLICS/TLICS_TVC.swift; sourceTree = "<group>"; };
+		F5F2192F1C10D4FD00EA02FF /* TLICS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLICS.swift; path = CDSS/TLICS/TLICS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 			children = (
 				F5F2191E1C09A8FE00EA02FF /* SLIC */,
 				F54DC0C51BE250DD0059E641 /* Spetzler Ponce */,
+				F5F219281C10D3AF00EA02FF /* TLICS */,
 				F54DC0D01BE2648C0059E641 /* Recommendation */,
 				F54DC0D11BE26BAF0059E641 /* Helper.swift */,
 			);
@@ -302,6 +309,16 @@
 				F5F2191F1C09A90F00EA02FF /* SLIC.swift */,
 			);
 			name = SLIC;
+			sourceTree = "<group>";
+		};
+		F5F219281C10D3AF00EA02FF /* TLICS */ = {
+			isa = PBXGroup;
+			children = (
+				F5F2192B1C10D41100EA02FF /* TLICS.storyboard */,
+				F5F2192D1C10D4E000EA02FF /* TLICS_TVC.swift */,
+				F5F2192F1C10D4FD00EA02FF /* TLICS.swift */,
+			);
+			name = TLICS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +434,7 @@
 				F54DC0C91BE253C70059E641 /* SpetzlerPonce.storyboard in Resources */,
 				F5F219191C09A32700EA02FF /* Info.storyboard in Resources */,
 				F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */,
+				F5F2192C1C10D41100EA02FF /* TLICS.storyboard in Resources */,
 				F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */,
 				F5F2191C1C09A42E00EA02FF /* ScoreDetail.storyboard in Resources */,
 				F54DC0C01BE21C5B0059E641 /* scores.db in Resources */,
@@ -460,7 +478,9 @@
 				F511313D1BB1BACE004B4ED7 /* FMDatabase.m in Sources */,
 				F511312F1BB1B8D0004B4ED7 /* ScoresTVC.swift in Sources */,
 				F52CFC751BFDF9540072660B /* IRIS.swift in Sources */,
+				F5F219301C10D4FD00EA02FF /* TLICS.swift in Sources */,
 				F511313E1BB1BACE004B4ED7 /* FMResultSet.m in Sources */,
+				F5F2192E1C10D4E000EA02FF /* TLICS_TVC.swift in Sources */,
 				F51131411BB1BACE004B4ED7 /* FMDatabasePool.m in Sources */,
 				F5F219201C09A90F00EA02FF /* SLIC.swift in Sources */,
 				F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */,

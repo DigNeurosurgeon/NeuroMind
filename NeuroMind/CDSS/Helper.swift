@@ -8,9 +8,6 @@
 
 import UIKit
 
-// comm in master
-// yep
-
 class Helper: UITableViewController {
     
     static let inputIncomplete = "Not all parameters have been entered."
@@ -44,7 +41,6 @@ class Helper: UITableViewController {
         let storyboard = UIStoryboard(name: score.storyboardName, bundle: nil)
         let controller = storyboard.instantiateInitialViewController() as! T
         controller.title = score.name
-
         return controller
     }
     
