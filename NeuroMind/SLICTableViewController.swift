@@ -69,27 +69,10 @@ class SLICTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
+        Helper.updateSelectionAtIndexPath(indexPath, forTableView: tableView)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         let currentSection = indexPath.section
         let currentRow = indexPath.row
-
-        // Uncheck previously selected cell
-        if selectedCellIndices[currentSection] != currentRow {
-            let oldRow = selectedCellIndices[currentSection]
-            let oldPath = NSIndexPath(forRow: oldRow, inSection: currentSection)
-            let oldCell = tableView.cellForRowAtIndexPath(oldPath)
-            oldCell?.accessoryType = .None
-            
-            selectedCellIndices[currentSection] = currentRow
-        }
-        
-        // Check selected cell
-        if cell?.accessoryType == UITableViewCellAccessoryType.None {
-            cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
-            
-        } 
         
         // Save corresponding value to score
         switch (currentSection) {

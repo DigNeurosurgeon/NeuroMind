@@ -8,6 +8,8 @@
 
 import UIKit
 
+// comment in test
+
 class Helper: UITableViewController {
     
     static let inputIncomplete = "Not all parameters have been entered."

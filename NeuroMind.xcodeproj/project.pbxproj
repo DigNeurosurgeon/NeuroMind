@@ -109,7 +109,6 @@
 		F5F2191F1C09A90F00EA02FF /* SLIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLIC.swift; sourceTree = "<group>"; };
 		F5F219221C09A93D00EA02FF /* SLICTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLICTableViewController.swift; sourceTree = "<group>"; };
 		F5F219251C09A9D700EA02FF /* SLIC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SLIC.storyboard; sourceTree = "<group>"; };
-		F5F219271C0FA8D500EA02FF /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +213,6 @@
 				F54DC0C51BE250DD0059E641 /* Spetzler Ponce */,
 				F54DC0D01BE2648C0059E641 /* Recommendation */,
 				F54DC0D11BE26BAF0059E641 /* Helper.swift */,
-				F5F219271C0FA8D500EA02FF /* MyPlayground.playground */,
 			);
 			name = CDSS;
 			sourceTree = "<group>";
