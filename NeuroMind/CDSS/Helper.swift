@@ -8,7 +8,8 @@
 
 import UIKit
 
-// comment in master
+// comment in test2
+// another comment
 
 class Helper: UITableViewController {
     
