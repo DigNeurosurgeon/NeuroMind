@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScoresTVC: UITableViewController, UISearchResultsUpdating {
+class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresentationControllerDelegate {
     
     var detailViewController: ScoreDetailVC? = nil
     @IBOutlet weak var favoritesButton: UIBarButtonItem!
@@ -28,8 +28,24 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
     
     
     override func viewDidLoad() {
+        let currentNeuroMindVersion = "3.0"
+        
+        // Show release notes at first load of current version
+        let preferences = NSUserDefaults.standardUserDefaults()
+        let key = "NeuroMindVersion\(currentNeuroMindVersion)"
+        if let _ = preferences.stringForKey(key) {
+        // if 1 == 2 {      // for testing only
+        } else {
+            let storyboard = UIStoryboard(name: "ReleaseNotes", bundle: nil)
+            let controller = storyboard.instantiateInitialViewController() as! ReleaseNotesVC
+            let navigationController = UINavigationController(rootViewController: controller)
+            preferences.setValue(currentNeuroMindVersion, forKey: key)
+            splitViewController?.showDetailViewController(navigationController, sender: nil)
+        }
+        
+        // Continue with loading menu
         super.viewDidLoad()
-        iris = IRIS(version: "3.0", statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
+        iris = IRIS(version: currentNeuroMindVersion, statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
         
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -53,6 +69,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating {
         resultSearchController.searchBar.sizeToFit()
         resultSearchController.hidesNavigationBarDuringPresentation = false
         tableView.tableHeaderView = resultSearchController.searchBar
+        
     }
     
     override func viewWillAppear(animated: Bool) {

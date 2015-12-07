@@ -18,8 +18,7 @@ class Helper: UITableViewController {
     }
     
     
-    // MARK:- Functions
-    
+    // MARK:- Functions    
 
     static func updateSelectionAtIndexPath(indexPath: NSIndexPath, forTableView tableView: UITableView) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

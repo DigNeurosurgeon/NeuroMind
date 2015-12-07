@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class InfoDetailVC: UIViewController, UIWebViewDelegate {
     
@@ -14,6 +15,7 @@ class InfoDetailVC: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var infoWebView: UIWebView!
     var loadRemoteContent = true // default setting based on majority of menu items
     var content = ""
+    var remoteURL = NSURL()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +25,8 @@ class InfoDetailVC: UIViewController, UIWebViewDelegate {
 
         if loadRemoteContent {
             // Load website
-            let url = NSURL(string: content)
-            let request = NSURLRequest(URL: url!)
+            remoteURL = NSURL(string: content)!
+            let request = NSURLRequest(URL: remoteURL)
             infoWebView.loadRequest(request)
             
         } else {
@@ -46,5 +48,16 @@ class InfoDetailVC: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
         activityIndicator.stopAnimating()
     }
+    
+    
+    @IBAction func actionButtonTapped(sender: AnyObject) {
+        let activityViewController = UIActivityViewController(activityItems: [self.title!, remoteURL], applicationActivities: nil)
+        if activityViewController.respondsToSelector("popoverPresentationController") {
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        }
+        presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
 
 }

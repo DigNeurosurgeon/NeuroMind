@@ -30,8 +30,18 @@ class InfoTVC: UITableViewController, MFMailComposeViewControllerDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        if cell?.reuseIdentifier == "Email" {
-            createEmailMessage()
+        if let id = cell?.reuseIdentifier {
+            switch id {
+            case "ReleaseNotes":
+                let storyboard = UIStoryboard(name: "ReleaseNotes", bundle: nil)
+                let controller = storyboard.instantiateInitialViewController() as! ReleaseNotesVC
+                let navigationController = UINavigationController(rootViewController: controller)
+                splitViewController?.showDetailViewController(navigationController, sender: nil)
+            case "Email":
+                createEmailMessage()
+            default:
+                break
+            }
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

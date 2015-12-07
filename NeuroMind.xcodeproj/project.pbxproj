@@ -44,6 +44,9 @@
 		F5F2192C1C10D41100EA02FF /* TLICS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F2192B1C10D41100EA02FF /* TLICS.storyboard */; };
 		F5F2192E1C10D4E000EA02FF /* TLICS_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2192D1C10D4E000EA02FF /* TLICS_TVC.swift */; };
 		F5F219301C10D4FD00EA02FF /* TLICS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2192F1C10D4FD00EA02FF /* TLICS.swift */; };
+		F5F219421C1428F300EA02FF /* ReleaseNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */; };
+		F5F219441C142EC300EA02FF /* ReleaseNotes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */; };
+		F5F219471C15B57100EA02FF /* release_notes.html in Resources */ = {isa = PBXBuildFile; fileRef = F5F219461C15B57100EA02FF /* release_notes.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,19 @@
 			remoteInfo = NeuroMind;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F5F219401C1426BA00EA02FF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F51130FD1BB1B855004B4ED7 /* NeuroMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +131,11 @@
 		F5F2192B1C10D41100EA02FF /* TLICS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TLICS.storyboard; path = CDSS/TLICS/TLICS.storyboard; sourceTree = "<group>"; };
 		F5F2192D1C10D4E000EA02FF /* TLICS_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLICS_TVC.swift; path = CDSS/TLICS/TLICS_TVC.swift; sourceTree = "<group>"; };
 		F5F2192F1C10D4FD00EA02FF /* TLICS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLICS.swift; path = CDSS/TLICS/TLICS.swift; sourceTree = "<group>"; };
+		F5F219371C1426B900EA02FF /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		F5F219391C1426B900EA02FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseNotesVC.swift; sourceTree = "<group>"; };
+		F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReleaseNotes.storyboard; sourceTree = "<group>"; };
+		F5F219461C15B57100EA02FF /* release_notes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = release_notes.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +171,7 @@
 				F51130FF1BB1B855004B4ED7 /* NeuroMind */,
 				F51131141BB1B855004B4ED7 /* NeuroMindTests */,
 				F511311F1BB1B855004B4ED7 /* NeuroMindUITests */,
+				F5F219361C1426B900EA02FF /* testSharing */,
 				F51130FE1BB1B855004B4ED7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -233,6 +255,7 @@
 				F5E8D2BD1BE9DEF1000AE8CF /* ItemCell.swift */,
 				F5F2191D1C09A6D200EA02FF /* ScoreDetail */,
 				F5F2191A1C09A33000EA02FF /* Info */,
+				F5F219451C142ED200EA02FF /* ReleaseNotes */,
 			);
 			name = Scores;
 			sourceTree = "<group>";
@@ -321,6 +344,25 @@
 			name = TLICS;
 			sourceTree = "<group>";
 		};
+		F5F219361C1426B900EA02FF /* testSharing */ = {
+			isa = PBXGroup;
+			children = (
+				F5F219371C1426B900EA02FF /* RequestHandler.swift */,
+				F5F219391C1426B900EA02FF /* Info.plist */,
+			);
+			path = testSharing;
+			sourceTree = "<group>";
+		};
+		F5F219451C142ED200EA02FF /* ReleaseNotes */ = {
+			isa = PBXGroup;
+			children = (
+				F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */,
+				F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */,
+				F5F219461C15B57100EA02FF /* release_notes.html */,
+			);
+			name = ReleaseNotes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -331,6 +373,7 @@
 				F51130F91BB1B855004B4ED7 /* Sources */,
 				F51130FA1BB1B855004B4ED7 /* Frameworks */,
 				F51130FB1BB1B855004B4ED7 /* Resources */,
+				F5F219401C1426BA00EA02FF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -383,7 +426,7 @@
 		F51130F51BB1B855004B4ED7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = DigitalNeurosurgeon.com;
 				TargetAttributes = {
@@ -435,7 +478,9 @@
 				F5F219191C09A32700EA02FF /* Info.storyboard in Resources */,
 				F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */,
 				F5F2192C1C10D41100EA02FF /* TLICS.storyboard in Resources */,
+				F5F219441C142EC300EA02FF /* ReleaseNotes.storyboard in Resources */,
 				F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */,
+				F5F219471C15B57100EA02FF /* release_notes.html in Resources */,
 				F5F2191C1C09A42E00EA02FF /* ScoreDetail.storyboard in Resources */,
 				F54DC0C01BE21C5B0059E641 /* scores.db in Resources */,
 				F51131081BB1B855004B4ED7 /* Assets.xcassets in Resources */,
@@ -466,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F54DC0CB1BE25A9C0059E641 /* SpetzlerPonce.swift in Sources */,
+				F5F219421C1428F300EA02FF /* ReleaseNotesVC.swift in Sources */,
 				F511314B1BB5A0B4004B4ED7 /* ScoreDetailVC.swift in Sources */,
 				F5F219241C09A93D00EA02FF /* SLICTableViewController.swift in Sources */,
 				F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */,
@@ -633,6 +679,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NeuroMind/NeuroMind.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NeuroMind/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -650,6 +697,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NeuroMind/NeuroMind.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NeuroMind/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

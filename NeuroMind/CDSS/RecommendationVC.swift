@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import MessageUI
+//import MessageUI
 import MobileCoreServices
 
-class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
+class RecommendationVC: UIViewController { //, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     var score = Score()
@@ -48,7 +48,7 @@ class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
         //createEmailMessageWithReport() 
         
         if let content = contentAsCSV {
-            let activityViewController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
+            let activityViewController = UIActivityViewController(activityItems: ["Recommendation for \(score.name)", content], applicationActivities: nil)
             if activityViewController.respondsToSelector("popoverPresentationController") {
                 activityViewController.popoverPresentationController?.sourceView = self.view
                 activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
@@ -64,6 +64,7 @@ class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     
+    /*
     func createEmailMessageWithReport() {
         let email = MFMailComposeViewController()
         email.mailComposeDelegate = self
@@ -89,6 +90,7 @@ class RecommendationVC: UIViewController, MFMailComposeViewControllerDelegate {
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+*/
 
     
 }
