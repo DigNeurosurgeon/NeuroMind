@@ -176,6 +176,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
         let score = scoreForCellAtIndexPath(indexPath)
         resultSearchController.active = false
         var navigationController: UINavigationController!
+        let preferences = NSUserDefaults.standardUserDefaults()
         
         switch score.id {
         case 20:
@@ -199,6 +200,31 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
             controller.score = score
             navigationController = UINavigationController(rootViewController: controller)
             splitViewController?.showDetailViewController(navigationController, sender: nil)
+        case 180:
+            // IAP non-consumable item
+            let productID = "NeuroMind.PHASES"
+            // NSUserDefaults.standardUserDefaults().setValue(nil, forKey: productID)  // for testing only
+            if let _ = preferences.stringForKey(productID) {
+                // Item purchased
+                let storyboard = UIStoryboard(name: "PHASES", bundle: nil)
+//                var phasesTVC: UITableViewController
+//                phasesTVC = PHASES_TVC as! UITableViewController
+                let controller = storyboard.instantiateInitialViewController() as! PHASES_TVC
+                controller.title = score.name
+                controller.score = score
+                navigationController = UINavigationController(rootViewController: controller)
+                splitViewController?.showDetailViewController(navigationController, sender: nil)
+            } else {
+                // Item not (yet) purchased
+                let storyboard = UIStoryboard(name: "Purchase", bundle: nil)
+                let controller = storyboard.instantiateInitialViewController() as! PurchaseVC
+                controller.title = score.name
+                controller.score = score
+                controller.productID = productID
+                navigationController = UINavigationController(rootViewController: controller)
+                splitViewController?.showDetailViewController(navigationController, sender: nil)
+                
+            }
         default:
             let storyboard = UIStoryboard(name: "ScoreDetail", bundle: nil)
             let controller = storyboard.instantiateInitialViewController() as! ScoreDetailVC

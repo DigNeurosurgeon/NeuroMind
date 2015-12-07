@@ -47,6 +47,12 @@
 		F5F219421C1428F300EA02FF /* ReleaseNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */; };
 		F5F219441C142EC300EA02FF /* ReleaseNotes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */; };
 		F5F219471C15B57100EA02FF /* release_notes.html in Resources */ = {isa = PBXBuildFile; fileRef = F5F219461C15B57100EA02FF /* release_notes.html */; };
+		F5F219491C15BFC200EA02FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F219481C15BFC200EA02FF /* StoreKit.framework */; };
+		F5F2194C1C15C56000EA02FF /* PHASES.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F2194B1C15C56000EA02FF /* PHASES.storyboard */; };
+		F5F2194E1C15C57F00EA02FF /* PHASES_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2194D1C15C57F00EA02FF /* PHASES_TVC.swift */; };
+		F5F219501C15C58C00EA02FF /* PHASES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2194F1C15C58C00EA02FF /* PHASES.swift */; };
+		F5F219531C16056A00EA02FF /* Purchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219521C16056A00EA02FF /* Purchase.storyboard */; };
+		F5F219551C16058300EA02FF /* PurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219541C16058300EA02FF /* PurchaseVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +142,12 @@
 		F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseNotesVC.swift; sourceTree = "<group>"; };
 		F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReleaseNotes.storyboard; sourceTree = "<group>"; };
 		F5F219461C15B57100EA02FF /* release_notes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = release_notes.html; sourceTree = "<group>"; };
+		F5F219481C15BFC200EA02FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F5F2194B1C15C56000EA02FF /* PHASES.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PHASES.storyboard; path = CDSS/PHASES/PHASES.storyboard; sourceTree = "<group>"; };
+		F5F2194D1C15C57F00EA02FF /* PHASES_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PHASES_TVC.swift; path = CDSS/PHASES/PHASES_TVC.swift; sourceTree = "<group>"; };
+		F5F2194F1C15C58C00EA02FF /* PHASES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PHASES.swift; path = CDSS/PHASES/PHASES.swift; sourceTree = "<group>"; };
+		F5F219521C16056A00EA02FF /* Purchase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Purchase.storyboard; sourceTree = "<group>"; };
+		F5F219541C16058300EA02FF /* PurchaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F51131451BB1C119004B4ED7 /* libsqlite3.tbd in Frameworks */,
+				F5F219491C15BFC200EA02FF /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,10 +250,12 @@
 		F511314C1BB687C6004B4ED7 /* CDSS */ = {
 			isa = PBXGroup;
 			children = (
+				F5F2194A1C15C54400EA02FF /* PHASES */,
 				F5F2191E1C09A8FE00EA02FF /* SLIC */,
 				F54DC0C51BE250DD0059E641 /* Spetzler Ponce */,
 				F5F219281C10D3AF00EA02FF /* TLICS */,
 				F54DC0D01BE2648C0059E641 /* Recommendation */,
+				F5F219511C15CAD100EA02FF /* Purchase */,
 				F54DC0D11BE26BAF0059E641 /* Helper.swift */,
 			);
 			name = CDSS;
@@ -282,6 +297,7 @@
 				F51131441BB1C119004B4ED7 /* libsqlite3.tbd */,
 				F511310C1BB1B855004B4ED7 /* Info.plist */,
 				F5ECFCF51BEC8D8200FFFDBB /* NeuroMind.entitlements */,
+				F5F219481C15BFC200EA02FF /* StoreKit.framework */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -363,6 +379,25 @@
 			name = ReleaseNotes;
 			sourceTree = "<group>";
 		};
+		F5F2194A1C15C54400EA02FF /* PHASES */ = {
+			isa = PBXGroup;
+			children = (
+				F5F2194B1C15C56000EA02FF /* PHASES.storyboard */,
+				F5F2194D1C15C57F00EA02FF /* PHASES_TVC.swift */,
+				F5F2194F1C15C58C00EA02FF /* PHASES.swift */,
+			);
+			name = PHASES;
+			sourceTree = "<group>";
+		};
+		F5F219511C15CAD100EA02FF /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				F5F219521C16056A00EA02FF /* Purchase.storyboard */,
+				F5F219541C16058300EA02FF /* PurchaseVC.swift */,
+			);
+			name = Purchase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,8 +469,11 @@
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = XJW89ZK9NM;
 						SystemCapabilities = {
-							com.apple.iCloud = {
+							com.apple.InAppPurchase = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -477,7 +515,9 @@
 				F54DC0C91BE253C70059E641 /* SpetzlerPonce.storyboard in Resources */,
 				F5F219191C09A32700EA02FF /* Info.storyboard in Resources */,
 				F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */,
+				F5F2194C1C15C56000EA02FF /* PHASES.storyboard in Resources */,
 				F5F2192C1C10D41100EA02FF /* TLICS.storyboard in Resources */,
+				F5F219531C16056A00EA02FF /* Purchase.storyboard in Resources */,
 				F5F219441C142EC300EA02FF /* ReleaseNotes.storyboard in Resources */,
 				F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */,
 				F5F219471C15B57100EA02FF /* release_notes.html in Resources */,
@@ -513,14 +553,17 @@
 				F54DC0CB1BE25A9C0059E641 /* SpetzlerPonce.swift in Sources */,
 				F5F219421C1428F300EA02FF /* ReleaseNotesVC.swift in Sources */,
 				F511314B1BB5A0B4004B4ED7 /* ScoreDetailVC.swift in Sources */,
+				F5F219551C16058300EA02FF /* PurchaseVC.swift in Sources */,
 				F5F219241C09A93D00EA02FF /* SLICTableViewController.swift in Sources */,
 				F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */,
 				F52CFC771BFDF9540072660B /* SwiftyJSON.swift in Sources */,
 				F54DC0C71BE2523A0059E641 /* SpetzlerPonceTVC.swift in Sources */,
 				F54DC0BE1BE208950059E641 /* DatabaseManager.swift in Sources */,
+				F5F219501C15C58C00EA02FF /* PHASES.swift in Sources */,
 				F5B525371BFB881600D7FB1C /* InfoTVC.swift in Sources */,
 				F511313F1BB1BACE004B4ED7 /* FMDatabaseQueue.m in Sources */,
 				F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */,
+				F5F2194E1C15C57F00EA02FF /* PHASES_TVC.swift in Sources */,
 				F511313D1BB1BACE004B4ED7 /* FMDatabase.m in Sources */,
 				F511312F1BB1B8D0004B4ED7 /* ScoresTVC.swift in Sources */,
 				F52CFC751BFDF9540072660B /* IRIS.swift in Sources */,
@@ -677,7 +720,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = NeuroMind/NeuroMind.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NeuroMind/Info.plist;
@@ -695,7 +737,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = NeuroMind/NeuroMind.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NeuroMind/Info.plist;
