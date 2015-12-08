@@ -9,11 +9,13 @@
 import UIKit
 import StoreKit
 
-class PurchaseVC: UIViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
+class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver, SKProductsRequestDelegate {
     
     @IBOutlet weak var purchaseButton: UIButton!
     @IBOutlet weak var restorePurchaseButton: UIButton!
-    var score: Score!
+    @IBOutlet weak var textVersionButton: UIButton!
+    
+    var score = Score()
     var product: SKProduct?
     var productID: String?
 
@@ -72,7 +74,7 @@ class PurchaseVC: UIViewController, SKPaymentTransactionObserver, SKProductsRequ
                 unlockItem()
                 SKPaymentQueue.defaultQueue().finishTransaction(transaction)
             case .Failed:
-                print("Purchase failed")
+                showPurchaseFailedAlert()
                 SKPaymentQueue.defaultQueue().finishTransaction(transaction)
             default:
                 break
@@ -95,7 +97,8 @@ class PurchaseVC: UIViewController, SKPaymentTransactionObserver, SKProductsRequ
         NSUserDefaults.standardUserDefaults().setValue(productID, forKey: productID!)
         purchaseButton.setTitle("Thank you!", forState: .Normal)
         purchaseButton.enabled = false
-        restorePurchaseButton.enabled = false
+        textVersionButton.hidden = true
+        restorePurchaseButton.hidden = true
         
         // Load CDSS
         let storyboard = UIStoryboard(name: "PHASES", bundle: nil)
@@ -104,6 +107,14 @@ class PurchaseVC: UIViewController, SKPaymentTransactionObserver, SKProductsRequ
         controller.score = score
         let navigationController = UINavigationController(rootViewController: controller)
         splitViewController?.showDetailViewController(navigationController, sender: nil)
+    }
+    
+    
+    func showPurchaseFailedAlert() {
+        let alertController = UIAlertController(title: "Error", message: "Sorry, your purchase failed.", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+        alertController.addAction(okAction)
+        presentViewController(alertController, animated: true, completion: nil)
     }
     
     

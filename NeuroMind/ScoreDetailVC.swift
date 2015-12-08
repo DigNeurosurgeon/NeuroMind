@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ScoreDetailVC: UIViewController {
+class ScoreDetailVC: UIViewController, ContainsScore {
 
     var score = Score()
+    var productID: String?
     
     @IBOutlet weak var scoreName: UINavigationItem!
     @IBOutlet weak var scoreWebView: UIWebView!

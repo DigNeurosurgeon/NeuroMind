@@ -99,6 +99,7 @@ Your purchase will work on all your NeuroMind installations on all iOS devices.<
                     <connections>
                         <outlet property="purchaseButton" destination="V55-DN-Uzc" id="IcY-5c-DkQ"/>
                         <outlet property="restorePurchaseButton" destination="HH6-kH-AwT" id="xKd-2F-fnh"/>
+                        <outlet property="textVersionButton" destination="kem-bJ-OU9" id="Lm6-fz-Jnx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzE-Kp-dKd" userLabel="First Responder" sceneMemberID="firstResponder"/>

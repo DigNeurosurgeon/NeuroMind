@@ -36,10 +36,10 @@ class Helper: UITableViewController {
     }
     
     
-    static func getTVCForDecisionSupportFromScore<T: UITableViewController>(score: Score) -> T {
+    static func getTVCForDecisionSupportFromScore<T>(score: Score, withTypeAlias: T.Type) -> T {
         let storyboard = UIStoryboard(name: score.storyboardName, bundle: nil)
         let controller = storyboard.instantiateInitialViewController() as! T
-        controller.title = score.name
+        //controller.title = score.name
         return controller
     }
     

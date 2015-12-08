@@ -8,12 +8,13 @@
 
 import UIKit
 
-class TLICS_TVC: UITableViewController {
+class TLICS_TVC: UITableViewController, ContainsScore {
     
     var score = Score()
     var cdss = TLICS()
     let sections = TLICS.sections
     let items = TLICS.items
+    var productID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ContainsScore: class {
+    var score: Score {get set}
+    var productID: String? {get set}
+}
+
 class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresentationControllerDelegate {
     
     var detailViewController: ScoreDetailVC? = nil
@@ -175,66 +180,44 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let score = scoreForCellAtIndexPath(indexPath)
         resultSearchController.active = false
-        var navigationController: UINavigationController!
         let preferences = NSUserDefaults.standardUserDefaults()
+        var productID: String?
         
         switch score.id {
         case 20:
-            let storyboard = UIStoryboard(name: "SLIC", bundle: nil)
-            let controller = storyboard.instantiateInitialViewController() as! SLICTableViewController
-            controller.title = score.name
-            controller.score = score
-            navigationController = UINavigationController(rootViewController: controller)
-            splitViewController?.showDetailViewController(navigationController, sender: nil)
+            openStoryboardWithName("SLIC", asType: SLICTableViewController.self, forScore: score)
         case 22:
-            let storyboard = UIStoryboard(name: "TLICS", bundle: nil)
-            let controller = storyboard.instantiateInitialViewController() as! TLICS_TVC
-            controller.title = score.name
-            controller.score = score
-            navigationController = UINavigationController(rootViewController: controller)
-            splitViewController?.showDetailViewController(navigationController, sender: nil)
+            openStoryboardWithName("TLICS", asType: TLICS_TVC.self, forScore: score)
         case 25:
-            let storyboard = UIStoryboard(name: "SpetzlerPonce", bundle: nil)
-            let controller = storyboard.instantiateInitialViewController() as! SpetzlerPonceTVC
-            controller.title = score.name
-            controller.score = score
-            navigationController = UINavigationController(rootViewController: controller)
-            splitViewController?.showDetailViewController(navigationController, sender: nil)
-        case 180:
-            // IAP non-consumable item
-            let productID = "NeuroMind.PHASES"
-            // NSUserDefaults.standardUserDefaults().setValue(nil, forKey: productID)  // for testing only
-            if let _ = preferences.stringForKey(productID) {
+            openStoryboardWithName("SpetzlerPonce", asType: SpetzlerPonceTVC.self, forScore: score)
+        case 180: // IAP
+            //preferences.setValue(nil, forKey: productID!)  // for testing only
+            productID = "NeuroMind.PHASES"
+            if let _ = preferences.stringForKey(productID!) {
                 // Item purchased
-                let storyboard = UIStoryboard(name: "PHASES", bundle: nil)
-//                var phasesTVC: UITableViewController
-//                phasesTVC = PHASES_TVC as! UITableViewController
-                let controller = storyboard.instantiateInitialViewController() as! PHASES_TVC
-                controller.title = score.name
-                controller.score = score
-                navigationController = UINavigationController(rootViewController: controller)
-                splitViewController?.showDetailViewController(navigationController, sender: nil)
+                openStoryboardWithName("PHASES", asType: PHASES_TVC.self, forScore: score)
             } else {
                 // Item not (yet) purchased
-                let storyboard = UIStoryboard(name: "Purchase", bundle: nil)
-                let controller = storyboard.instantiateInitialViewController() as! PurchaseVC
-                controller.title = score.name
-                controller.score = score
-                controller.productID = productID
-                navigationController = UINavigationController(rootViewController: controller)
-                splitViewController?.showDetailViewController(navigationController, sender: nil)
-                
+                openStoryboardWithName("Purchase", asType: PurchaseVC.self, forScore: score)
             }
         default:
-            let storyboard = UIStoryboard(name: "ScoreDetail", bundle: nil)
-            let controller = storyboard.instantiateInitialViewController() as! ScoreDetailVC
-            controller.score = score
-            navigationController = UINavigationController(rootViewController: controller)
-            splitViewController?.showDetailViewController(navigationController, sender: nil)
+            openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
         }
-
     }
-
+    
+    
+    func openStoryboardWithName<T: UIViewController where T: ContainsScore>(name: String, asType type: T.Type, forScore score: Score) {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
+        let controller = storyboard.instantiateInitialViewController() as! T
+        controller.title = score.name
+        controller.score = score
+        if score.id == 180  {
+            controller.productID = "NeuroMind.PHASES"
+        }
+        let navigationController = UINavigationController(rootViewController: controller)
+        splitViewController?.showDetailViewController(navigationController, sender: nil)
+    }
+    
     
     // MARK:- UISearchResultsUpdating protocol
     

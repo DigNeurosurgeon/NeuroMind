@@ -8,10 +8,11 @@
 
 import UIKit
 
-class PHASES_TVC: UITableViewController {
+class PHASES_TVC: UITableViewController, ContainsScore {
     
     var score = Score()
     var cdss = PHASES()
+    var productID: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SLICTableViewController: UITableViewController {
+class SLICTableViewController: UITableViewController, ContainsScore {
     
     // @IBOutlet weak var statusBarButton: UIBarButtonItem!
     
@@ -17,6 +17,7 @@ class SLICTableViewController: UITableViewController {
     let sections = SLIC.sections
     let items = SLIC.items
     var selectedCellIndices = [Int]()
+    var productID: String?
 
     
     override func viewDidLoad() {
