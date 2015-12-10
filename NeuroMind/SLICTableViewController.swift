@@ -17,7 +17,6 @@ class SLICTableViewController: UITableViewController, ContainsScore {
     let sections = SLIC.sections
     let items = SLIC.items
     var selectedCellIndices = [Int]()
-    var productID: String?
 
     
     override func viewDidLoad() {

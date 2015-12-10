@@ -20,13 +20,14 @@ class Score {
     var category: String
     var reference: String
     var cdssPresent: Bool
-    var storyboardName: String
+    var productID: String
     var isFavorite: Bool
+    var hasInAppPurchase: Bool
     
     var localDefaults = NSUserDefaults.standardUserDefaults()
-//    var keystore = NSUbiquitousKeyValueStore()
+    // var keystore = NSUbiquitousKeyValueStore()
     
-    init(id: Int = 0, name: String = "", topic: String = "", content: String = "", category: String = "", reference: String = "", cdss: Int = 0, storyboardName: String = "", isFavorite: Bool = false) {
+    init(id: Int = 0, name: String = "", topic: String = "", content: String = "", category: String = "", reference: String = "", cdss: Int = 0, productID: String = "", isFavorite: Bool = false) {
         
         self.id = id
         self.name = name
@@ -35,9 +36,11 @@ class Score {
         self.category = category
         self.reference = reference
         self.cdssPresent = cdss == 1 ? true : false
-        self.storyboardName = storyboardName
+        self.productID = productID
+        self.hasInAppPurchase = productID.characters.count > 0 ? true : false
+        
         self.isFavorite = isFavorite // provide default value
-//        self.isFavorite = keystore.boolForKey(String(id)) // update from favorites
+        // self.isFavorite = keystore.boolForKey(String(id)) // update from favorites
         if let savedValue: Bool = localDefaults.valueForKey(String(id)) as? Bool {
             self.isFavorite = savedValue
         }

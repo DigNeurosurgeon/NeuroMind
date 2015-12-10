@@ -12,7 +12,6 @@ class PHASES_TVC: UITableViewController, ContainsScore {
     
     var score = Score()
     var cdss = PHASES()
-    var productID: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +31,9 @@ class PHASES_TVC: UITableViewController, ContainsScore {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         Helper.updateSelectionAtIndexPath(indexPath, forTableView: tableView)
-        let row = indexPath.row
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        
+//        let row = indexPath.row
+//        let cell = tableView.cellForRowAtIndexPath(indexPath)
+//        
 //        switch indexPath.section {
 //        case 0:
 //            cdss.size = row + 1
@@ -52,7 +51,6 @@ class PHASES_TVC: UITableViewController, ContainsScore {
 
     
     @IBAction func submitButtonTapped(sender: AnyObject) {
-        print("PHASES score submitted")
 //        let controller = Helper.getRecommendationVCWithContent(cdss.giveRecommendation(), forScore: score)
 //        controller.contentAsCSV = cdss.exportParametersAsCSV()
 //        navigationController?.pushViewController(controller, animated: true)

@@ -14,13 +14,17 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     @IBOutlet weak var purchaseButton: UIButton!
     @IBOutlet weak var restorePurchaseButton: UIButton!
     @IBOutlet weak var textVersionButton: UIButton!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    var descriptionText = ""
     
     var score = Score()
     var product: SKProduct?
-    var productID: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        descriptionText = "\(score.name) is available for purchase as interactive clinical decision support.\n\n"
+        let additionalText = "A description is being loaded from the App Store..."
+        descriptionTextView.text = descriptionText.stringByAppendingString(additionalText)
         
         // Configure navigation bar
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
@@ -37,7 +41,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     
     func getProductInfo() {
         if SKPaymentQueue.canMakePayments() {
-            let request = SKProductsRequest(productIdentifiers: NSSet(objects: self.productID!) as! Set<String>)
+            let request = SKProductsRequest(productIdentifiers: NSSet(objects: score.productID) as! Set<String>)
             request.delegate = self
             request.start()
         } else {
@@ -53,10 +57,12 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
             purchaseButton.enabled = true
             restorePurchaseButton.enabled = true
             
-            let productTitle = product!.localizedTitle
-            let productDescription = product!.localizedDescription
+//            let productTitle = product!.localizedTitle
+//            let productDescription = product!.localizedDescription
+//            print("Item found with title \"\(productTitle)\" and description \"\(productDescription)\"")
+            
+            descriptionTextView.text = "\(descriptionText)Description: \(product!.localizedDescription)"
             purchaseButton.setTitle("Buy now for \(product!.localizedPrice())!", forState: .Normal)
-            print("Item found with title \"\(productTitle)\" and description \"\(productDescription)\"")
         } else {
             print("Item not found")
         }
@@ -94,7 +100,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
 
     func unlockItem() {
         // Save purchase and say thanks
-        NSUserDefaults.standardUserDefaults().setValue(productID, forKey: productID!)
+        NSUserDefaults.standardUserDefaults().setValue(score.productID, forKey: score.productID)
         purchaseButton.setTitle("Thank you!", forState: .Normal)
         purchaseButton.enabled = false
         textVersionButton.hidden = true

@@ -14,7 +14,6 @@ class TLICS_TVC: UITableViewController, ContainsScore {
     var cdss = TLICS()
     let sections = TLICS.sections
     let items = TLICS.items
-    var productID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

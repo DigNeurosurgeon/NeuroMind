@@ -10,7 +10,7 @@ import UIKit
 
 protocol ContainsScore: class {
     var score: Score {get set}
-    var productID: String? {get set}
+//    var productID: String? {get set}
 }
 
 class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresentationControllerDelegate {
@@ -166,12 +166,12 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! ItemCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ScoreCell", forIndexPath: indexPath) as! ScoreCell
         let score = scoreForCellAtIndexPath(indexPath)
         
         cell.nameLabel.text = score.name
         cell.descriptionLabel.text = score.topic
-        configureFavoriteButtonForScore(score, inItemCell: cell)
+        configureFavoriteButtonForScore(score, inScoreCell: cell)
         
         return cell
     }
@@ -180,8 +180,6 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let score = scoreForCellAtIndexPath(indexPath)
         resultSearchController.active = false
-        let preferences = NSUserDefaults.standardUserDefaults()
-        var productID: String?
         
         switch score.id {
         case 20:
@@ -190,20 +188,16 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
             openStoryboardWithName("TLICS", asType: TLICS_TVC.self, forScore: score)
         case 25:
             openStoryboardWithName("SpetzlerPonce", asType: SpetzlerPonceTVC.self, forScore: score)
-        case 180: // IAP
-            //preferences.setValue(nil, forKey: productID!)  // for testing only
-            productID = "NeuroMind.PHASES"
-            if let _ = preferences.stringForKey(productID!) {
-                // Item purchased
-                openStoryboardWithName("PHASES", asType: PHASES_TVC.self, forScore: score)
-            } else {
-                // Item not (yet) purchased
-                openStoryboardWithName("Purchase", asType: PurchaseVC.self, forScore: score)
-            }
+        case 180:
+            // resetInAppPurchaseMemoryForScore(score)  // for testing only
+            openStoryboardWithName("PHASES", asType: PHASES_TVC.self, forScore: score)
         default:
             openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
         }
     }
+    
+    
+    // MARK:- Storyboard navigation
     
     
     func openStoryboardWithName<T: UIViewController where T: ContainsScore>(name: String, asType type: T.Type, forScore score: Score) {
@@ -211,11 +205,28 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
         let controller = storyboard.instantiateInitialViewController() as! T
         controller.title = score.name
         controller.score = score
-        if score.id == 180  {
-            controller.productID = "NeuroMind.PHASES"
+        
+        if score.hasInAppPurchase && NSUserDefaults.standardUserDefaults().stringForKey(score.productID) == "" {
+            openPurchaseVCForScore(score)
+        } else {
+            let navigationController = UINavigationController(rootViewController: controller)
+            splitViewController?.showDetailViewController(navigationController, sender: nil)
         }
+    }
+    
+    
+    func openPurchaseVCForScore(score: Score) {
+        let storyboard = UIStoryboard(name: "Purchase", bundle: nil)
+        let controller = storyboard.instantiateInitialViewController() as! PurchaseVC
+        controller.title = score.name
+        controller.score = score
         let navigationController = UINavigationController(rootViewController: controller)
         splitViewController?.showDetailViewController(navigationController, sender: nil)
+    }
+    
+    
+    func resetInAppPurchaseMemoryForScore(score: Score) {
+        NSUserDefaults.standardUserDefaults().setValue("", forKey: score.productID)
     }
     
     
@@ -262,22 +273,22 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     
     
     @IBAction func favoriteButtonInCellTapped(sender: AnyObject) {
-        let cell = (sender.superview)!!.superview as! ItemCell
+        let cell = (sender.superview)!!.superview as! ScoreCell
         let indexPath = tableView.indexPathForCell(cell)
         let score = scoreForCellAtIndexPath(indexPath!)
         
         score.isFavorite = !score.isFavorite
         score.saveFavoriteStatus(score.isFavorite)
-        configureFavoriteButtonForScore(score, inItemCell: cell)
+        configureFavoriteButtonForScore(score, inScoreCell: cell)
         tableView.reloadData()
     }
     
     
-    func configureFavoriteButtonForScore(score: Score, inItemCell itemCell: ItemCell) {
+    func configureFavoriteButtonForScore(score: Score, inScoreCell scoreCell: ScoreCell) {
         if score.isFavorite {
-            itemCell.favoriteItemButton.setImage(UIImage(named: score.kFavoriteSelected), forState: .Normal)
+            scoreCell.favoriteItemButton.setImage(UIImage(named: score.kFavoriteSelected), forState: .Normal)
         } else {
-            itemCell.favoriteItemButton.setImage(UIImage(named: score.kFavorite), forState: .Normal)
+            scoreCell.favoriteItemButton.setImage(UIImage(named: score.kFavorite), forState: .Normal)
         }
     }
     

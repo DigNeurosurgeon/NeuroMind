@@ -12,7 +12,6 @@ class SpetzlerPonceTVC: UITableViewController, ContainsScore {
     
     var score = Score()
     var cdss = SpetzlerPonce()
-    var productID: String?
     
     
     override func viewWillAppear(animated: Bool) {

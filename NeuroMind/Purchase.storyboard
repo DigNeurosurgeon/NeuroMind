@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--PurchaseVC-->
@@ -19,8 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kem-bJ-OU9">
-                                <rect key="frame" x="20" y="337" width="560" height="30"/>
+                                <rect key="frame" x="20" y="309" width="560" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6hf-Xf-XZI"/>
+                                </constraints>
                                 <state key="normal" title="No thanks, take me to the text version"/>
                                 <connections>
                                     <action selector="textVersionButtonTapped:" destination="zrK-S4-nga" eventType="touchUpInside" id="SDD-An-ev4"/>
@@ -29,74 +31,67 @@
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH6-kH-AwT">
                                 <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9Cv-Th-R9z"/>
+                                </constraints>
                                 <state key="normal" title="Already purchased? Click here to restore."/>
                                 <connections>
                                     <action selector="restorePurchaseButtonTapped:" destination="zrK-S4-nga" eventType="touchUpInside" id="SE2-2t-6kq"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W1f-md-ewc">
-                                <rect key="frame" x="20" y="119" width="560" height="150"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="(descriptionText comes here)" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W1f-md-ewc">
+                                <rect key="frame" x="20" y="96" width="560" height="150"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="9nR-P5-VWD"/>
+                                    <constraint firstAttribute="height" constant="150" id="kjQ-mn-B1k"/>
                                 </constraints>
-                                <string key="text">Let NeuroMind do the math for you! 
-
-This item is available for purchase as interactive clinical decision support. 
-Your purchase will work on all your NeuroMind installations on all iOS devices.</string>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go Pro!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQV-xe-wiu">
-                                <rect key="frame" x="20" y="88" width="560" height="28"/>
+                                <rect key="frame" x="20" y="60" width="560" height="33.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V55-DN-Uzc">
-                                <rect key="frame" x="20" y="277" width="560" height="46"/>
+                                <rect key="frame" x="20" y="249" width="560" height="46"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="uje-Qg-zOv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <state key="normal" title="Loading..."/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="231" width="560" height="46"/>
-                                </variation>
                                 <connections>
                                     <action selector="purchaseButtonTapped:" destination="zrK-S4-nga" eventType="touchUpInside" id="Zzh-bG-TA9"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DsG-E9-Ibn">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem title="Purchase" id="JQr-4V-3eQ"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aQV-xe-wiu" firstAttribute="top" secondItem="MLz-v9-9tQ" secondAttribute="bottom" constant="68" id="24N-O1-Jp4"/>
-                            <constraint firstItem="qTC-Ev-vlP" firstAttribute="top" secondItem="HH6-kH-AwT" secondAttribute="bottom" constant="20" id="3fM-tN-51n"/>
-                            <constraint firstItem="aQV-xe-wiu" firstAttribute="centerX" secondItem="Yxf-D5-Lkv" secondAttribute="centerX" id="60h-Ru-Usb"/>
-                            <constraint firstItem="W1f-md-ewc" firstAttribute="top" secondItem="Yxf-D5-Lkv" secondAttribute="top" constant="119" id="72G-ZX-brf"/>
-                            <constraint firstItem="kem-bJ-OU9" firstAttribute="top" secondItem="V55-DN-Uzc" secondAttribute="bottom" constant="14" id="IEE-0B-DPZ"/>
-                            <constraint firstItem="W1f-md-ewc" firstAttribute="top" secondItem="aQV-xe-wiu" secondAttribute="bottom" constant="3" id="IW8-TH-mXF"/>
-                            <constraint firstItem="W1f-md-ewc" firstAttribute="leading" secondItem="aQV-xe-wiu" secondAttribute="leading" id="JWK-2s-bmW"/>
-                            <constraint firstItem="kem-bJ-OU9" firstAttribute="centerX" secondItem="Yxf-D5-Lkv" secondAttribute="centerX" id="MDn-1I-U1i"/>
-                            <constraint firstItem="W1f-md-ewc" firstAttribute="leading" secondItem="V55-DN-Uzc" secondAttribute="leading" id="MVw-Rx-rEx"/>
-                            <constraint firstItem="W1f-md-ewc" firstAttribute="centerX" secondItem="Yxf-D5-Lkv" secondAttribute="centerX" id="Po3-KY-Aw6"/>
-                            <constraint firstItem="W1f-md-ewc" firstAttribute="leading" secondItem="Yxf-D5-Lkv" secondAttribute="leadingMargin" id="gqM-hD-2Zb"/>
-                            <constraint firstItem="HH6-kH-AwT" firstAttribute="centerX" secondItem="Yxf-D5-Lkv" secondAttribute="centerX" id="hZM-9B-5rO"/>
-                            <constraint firstItem="W1f-md-ewc" firstAttribute="leading" secondItem="HH6-kH-AwT" secondAttribute="leading" id="j7b-ek-436"/>
-                            <constraint firstItem="V55-DN-Uzc" firstAttribute="top" secondItem="W1f-md-ewc" secondAttribute="bottom" constant="8" id="mKy-S8-3ui"/>
-                            <constraint firstItem="V55-DN-Uzc" firstAttribute="centerX" secondItem="Yxf-D5-Lkv" secondAttribute="centerX" id="s3t-qK-IMC"/>
-                            <constraint firstItem="W1f-md-ewc" firstAttribute="leading" secondItem="kem-bJ-OU9" secondAttribute="leading" id="uiF-51-kG8"/>
+                            <constraint firstAttribute="trailing" secondItem="V55-DN-Uzc" secondAttribute="trailing" constant="20" id="0eG-gy-xfd"/>
+                            <constraint firstItem="HH6-kH-AwT" firstAttribute="leading" secondItem="Yxf-D5-Lkv" secondAttribute="leading" constant="20" id="CKd-ld-2Gc"/>
+                            <constraint firstAttribute="trailing" secondItem="W1f-md-ewc" secondAttribute="trailing" constant="20" id="GRf-L6-RQe"/>
+                            <constraint firstAttribute="trailing" secondItem="HH6-kH-AwT" secondAttribute="trailing" constant="20" id="Hni-CX-Hbo"/>
+                            <constraint firstItem="V55-DN-Uzc" firstAttribute="top" secondItem="W1f-md-ewc" secondAttribute="bottom" constant="3" id="KEU-wB-avb"/>
+                            <constraint firstAttribute="trailing" secondItem="kem-bJ-OU9" secondAttribute="trailing" constant="20" id="RMr-jk-3Ej"/>
+                            <constraint firstAttribute="trailing" secondItem="aQV-xe-wiu" secondAttribute="trailing" constant="20" id="XmF-3H-oDQ"/>
+                            <constraint firstItem="aQV-xe-wiu" firstAttribute="leading" secondItem="Yxf-D5-Lkv" secondAttribute="leading" constant="20" id="ZV0-AF-TkV"/>
+                            <constraint firstItem="kem-bJ-OU9" firstAttribute="leading" secondItem="Yxf-D5-Lkv" secondAttribute="leading" constant="20" id="au6-Ge-cSi"/>
+                            <constraint firstItem="W1f-md-ewc" firstAttribute="leading" secondItem="Yxf-D5-Lkv" secondAttribute="leading" constant="20" id="baZ-WA-rH6"/>
+                            <constraint firstItem="W1f-md-ewc" firstAttribute="top" secondItem="aQV-xe-wiu" secondAttribute="bottom" constant="3" id="h7p-Dg-LkO"/>
+                            <constraint firstItem="kem-bJ-OU9" firstAttribute="top" secondItem="V55-DN-Uzc" secondAttribute="bottom" constant="14" id="kQG-DI-jmy"/>
+                            <constraint firstItem="HH6-kH-AwT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kem-bJ-OU9" secondAttribute="bottom" priority="750" constant="100" id="vif-No-wh9"/>
+                            <constraint firstItem="aQV-xe-wiu" firstAttribute="top" secondItem="MLz-v9-9tQ" secondAttribute="bottom" constant="40" id="xk0-Wx-m4f"/>
+                            <constraint firstItem="V55-DN-Uzc" firstAttribute="leading" secondItem="Yxf-D5-Lkv" secondAttribute="leading" constant="20" id="zPv-fT-jdz"/>
+                            <constraint firstItem="qTC-Ev-vlP" firstAttribute="top" secondItem="HH6-kH-AwT" secondAttribute="bottom" priority="250" constant="20" id="zbZ-hs-E7F"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionTextView" destination="W1f-md-ewc" id="1vr-DJ-E2P"/>
                         <outlet property="purchaseButton" destination="V55-DN-Uzc" id="IcY-5c-DkQ"/>
                         <outlet property="restorePurchaseButton" destination="HH6-kH-AwT" id="xKd-2F-fnh"/>
                         <outlet property="textVersionButton" destination="kem-bJ-OU9" id="Lm6-fz-Jnx"/>

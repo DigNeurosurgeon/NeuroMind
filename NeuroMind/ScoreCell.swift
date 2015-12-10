@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemCell: UITableViewCell {
+class ScoreCell: UITableViewCell {
 
     
     @IBOutlet weak var nameLabel: UILabel!
