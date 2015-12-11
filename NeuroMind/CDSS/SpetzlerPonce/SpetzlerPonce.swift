@@ -37,9 +37,7 @@ class SpetzlerPonce {
     var eloquence: Int
     var venousDrainage: Int
     var spetzlerMartinScore: Int {
-        get {
-            return size + eloquence + venousDrainage
-        }
+        return size + eloquence + venousDrainage
     }
     var input = ["", "", ""]
     

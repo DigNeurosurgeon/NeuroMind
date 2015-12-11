@@ -87,7 +87,7 @@
 
 /* Begin PBXFileReference section */
 		F51130FD1BB1B855004B4ED7 /* NeuroMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F51131001BB1B855004B4ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F51131001BB1B855004B4ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NeuroMind/AppDelegate.swift; sourceTree = "<group>"; };
 		F51131051BB1B855004B4ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F51131071BB1B855004B4ED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F511310A1BB1B855004B4ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				F54DC0BF1BE21C5B0059E641 /* scores.db */,
+				F51131001BB1B855004B4ED7 /* AppDelegate.swift */,
 				F51130FF1BB1B855004B4ED7 /* NeuroMind */,
 				F51131141BB1B855004B4ED7 /* NeuroMindTests */,
 				F511311F1BB1B855004B4ED7 /* NeuroMindUITests */,
@@ -292,7 +293,6 @@
 			children = (
 				F52CFC781BFDF96B0072660B /* iRIS */,
 				F51131301BB1BABE004B4ED7 /* fmdb */,
-				F51131001BB1B855004B4ED7 /* AppDelegate.swift */,
 				F54DC0BD1BE208950059E641 /* DatabaseManager.swift */,
 				F51131091BB1B855004B4ED7 /* LaunchScreen.storyboard */,
 				F51131071BB1B855004B4ED7 /* Assets.xcassets */,

@@ -10,6 +10,8 @@ import UIKit
 
 class Helper: UITableViewController {
     
+    static let lesserThanOrEqualTo = "\u{2264}"
+    static let greaterThanOrEqualTo = "\u{2265}"
     static let inputIncomplete = "Not all parameters have been entered."
     static var inputIncompleteLength: Int {
         get {
@@ -33,6 +35,17 @@ class Helper: UITableViewController {
         
         cell?.accessoryType = .Checkmark
         
+        /*
+        // More elegant code with selectedCellIndices
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let selectedRowInSection = cdss.selectedCellIndices[indexPath.section]
+        for row in 0..<tableView.numberOfRowsInSection(indexPath.section) {
+        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: indexPath.section))
+        cell!.accessoryType = row == selectedRowInSection ? .Checkmark : .None
+        }
+        */
+        
     }
     
     
@@ -47,10 +60,10 @@ class Helper: UITableViewController {
     
     
     static func getRecommendationVCWithContent(content: String, forScore score: Score) -> RecommendationVC {
-        let recommendationString = "Recommendation"
-        let storyboard = UIStoryboard(name: recommendationString, bundle: nil)
+        let kRecommendationString = "Recommendation"
+        let storyboard = UIStoryboard(name: kRecommendationString, bundle: nil)
         let controller = storyboard.instantiateInitialViewController() as! RecommendationVC
-        controller.title = recommendationString
+        controller.title = kRecommendationString
         controller.score = score
         controller.contentAsHTML = content
         

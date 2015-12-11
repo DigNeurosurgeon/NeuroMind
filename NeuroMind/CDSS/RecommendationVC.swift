@@ -48,12 +48,18 @@ class RecommendationVC: UIViewController { //, MFMailComposeViewControllerDelega
         //createEmailMessageWithReport() 
         
         if let content = contentAsCSV {
-            let activityViewController = UIActivityViewController(activityItems: ["Recommendation for \(score.name)", content], applicationActivities: nil)
+            /*
+            let documentController = UIDocumentInteractionController(URL: content)
+            documentController.presentOpenInMenuFromBarButtonItem(navigationItem.rightBarButtonItem!, animated: true)
+            */
+            
+            let activityViewController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
             if activityViewController.respondsToSelector("popoverPresentationController") {
                 activityViewController.popoverPresentationController?.sourceView = self.view
                 activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
             }
             presentViewController(activityViewController, animated: true, completion: nil)
+            
         } else {
             let alertController = UIAlertController(title: "Error", message: "CSV file could not be created.", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)

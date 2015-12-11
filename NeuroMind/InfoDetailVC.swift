@@ -51,7 +51,7 @@ class InfoDetailVC: UIViewController, UIWebViewDelegate {
     
     
     @IBAction func actionButtonTapped(sender: AnyObject) {
-        let activityViewController = UIActivityViewController(activityItems: [self.title!, remoteURL], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [remoteURL], applicationActivities: nil)
         if activityViewController.respondsToSelector("popoverPresentationController") {
             activityViewController.popoverPresentationController?.sourceView = self.view
             activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
