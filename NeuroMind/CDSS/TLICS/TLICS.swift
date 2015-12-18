@@ -56,20 +56,16 @@ class TLICS {
         }
         
         if showComponents {
-            return "<body style=\"font-family: Arial; \"> " +
-                "<h3>\(recommendation)</h3>" +
+            return "<h3>\(recommendation)</h3>" +
                 "<h4>TLICS score: \(final)</h4>" +
                 "<p class='info'>Components:<p>" +
                 "<ul>" +
                 "<li>Morphology: \(input[0])</li>" +
                 "<li>Posterior Ligamentous complex: \(input[1])</li>" +
                 "<li>Neurological status: \(input[2])</li>" +
-                "</ul>" +
-            "</body>"
+                "</ul>"
         } else {
-            return "<body style=\"font-family: Arial; \"> " +
-                "<h3>\(recommendation)</h3>" +
-            "</body>"
+            return recommendation
         }
         
     }

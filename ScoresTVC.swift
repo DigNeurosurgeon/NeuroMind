@@ -235,6 +235,12 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
+        // Deactivate favorites mode
+        let score = Score()
+        showFavorites = false
+        favoritesButton.image = UIImage(named: score.kFavorite)
+        
+        // Filter results
         filteredTableData.removeAll(keepCapacity: false)
         let searchText = searchController.searchBar.text
         filteredTableData = allScores.filter{$0.name.localizedCaseInsensitiveContainsString(searchText!) || $0.topic.localizedCaseInsensitiveContainsString(searchText!)}
