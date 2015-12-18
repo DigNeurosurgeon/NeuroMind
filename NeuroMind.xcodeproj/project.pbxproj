@@ -154,7 +154,6 @@
 		F5F2194F1C15C58C00EA02FF /* PHASES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PHASES.swift; path = CDSS/PHASES/PHASES.swift; sourceTree = "<group>"; };
 		F5F219521C16056A00EA02FF /* Purchase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Purchase.storyboard; sourceTree = "<group>"; };
 		F5F219541C16058300EA02FF /* PurchaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
-		F5F219561C17497C00EA02FF /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +212,6 @@
 				F54DC0C11BE24F750059E641 /* Global */,
 				F511314D1BB687D8004B4ED7 /* Scores */,
 				F511314C1BB687C6004B4ED7 /* CDSS */,
-				F5F219561C17497C00EA02FF /* MyPlayground.playground */,
 			);
 			path = NeuroMind;
 			sourceTree = "<group>";

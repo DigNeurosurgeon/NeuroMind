@@ -81,13 +81,13 @@ class SpetzlerPonce {
             
                 "<h4>Spetzler Martin score \(spetzlerMartinScore)</h4>" +
             
-                "<h4>Treatment suggestion</h4>" +
+                "<p class='info'>Treatment suggestion</p>" +
                 "\(treatmentSuggestion)" +
         
-                "<h4>Risk for postoperative deficit</h4>" +
+                "<p class='info'>Risk for postoperative deficit</p>" +
                 "\(postopDeficitRisk.percentage)% (95% CI \(postopDeficitRisk.lower)% - \(postopDeficitRisk.upper)%)" +
         
-                "<h4>Input parameters</h4>" +
+                "<p class='info'>Input parameters</p>" +
                 "<li>Size: \(input[0])</li>" +
                 "<li>Eloquence: \(input[1])</li>" +
                 "<li>Venous drainage: \(input[2])</li>"

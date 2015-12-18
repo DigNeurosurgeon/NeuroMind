@@ -27,7 +27,14 @@ class RecommendationVC: UIViewController { //, MFMailComposeViewControllerDelega
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: Selector("exportRecommendation"))
         }
         
-        let formattedContent = "<html><body style='font-family: Arial'>\(contentAsHTML)</body></html>"
+        let formattedContent =  "<html><head><style>" +
+                "body {font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;}" +
+                "h3 {color: #107d76;}" +
+                "h4 {color: #107d76;}" +
+                ".info {font-weight: bold; color: DarkSlateGray;}" +
+            "</style></head><body>" +
+            "\(contentAsHTML)" +
+            "</body></html>"
         webView.loadHTMLString(formattedContent, baseURL: nil)
         
     }

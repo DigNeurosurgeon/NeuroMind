@@ -60,7 +60,7 @@ class SLIC {
             return "<body style=\"font-family: Arial; \"> " +
                 "<h3>\(recommendation)</h3>" +
                 "<h4>SLIC score: \(final)</h4>" +
-                "<p>Components:<p>" +
+                "<p class='info'>Components:<p>" +
                 "<ul>" +
                 "<li>Morphology: \(input[0])</li>" +
                 "<li>Disco-ligamentous complex: \(input[1])</li>" +

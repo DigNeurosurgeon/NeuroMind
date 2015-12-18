@@ -136,7 +136,7 @@ class SINS {
         
         return  "<h3>\(conclusion)</h3>" +
                 "\(surgicalConsultation)" +
-                "<h4>Input parameters:</h4>" +
+                "<p class='info'>Input parameters:</p>" +
                 "<ul>" +
                     "<li>Location: \(locationItem)</li>" +
                     "<li>Pain: \(painItem)</li>" +
