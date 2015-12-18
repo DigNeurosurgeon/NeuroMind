@@ -188,8 +188,9 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
             openStoryboardWithName("TLICS", asType: TLICS_TVC.self, forScore: score)
         case 25:
             openStoryboardWithName("SpetzlerPonce", asType: SpetzlerPonceTVC.self, forScore: score)
+        case 83:
+            openStoryboardWithName("SINS", asType: SINS_TVC.self, forScore: score)
         case 180:
-            // resetInAppPurchaseMemoryForScore(score)  // for testing only
             openStoryboardWithName("PHASES", asType: PHASES_TVC.self, forScore: score)
         default:
             openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
@@ -206,7 +207,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
         controller.title = score.name
         controller.score = score
         
-        if score.hasInAppPurchase && NSUserDefaults.standardUserDefaults().stringForKey(score.productID) == "" {
+        if score.hasInAppPurchase && NSUserDefaults.standardUserDefaults().stringForKey(score.productID) == nil {
             openPurchaseVCForScore(score)
         } else {
             let navigationController = UINavigationController(rootViewController: controller)
@@ -226,7 +227,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     
     
     func resetInAppPurchaseMemoryForScore(score: Score) {
-        NSUserDefaults.standardUserDefaults().setValue("", forKey: score.productID)
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: score.productID)
     }
     
     

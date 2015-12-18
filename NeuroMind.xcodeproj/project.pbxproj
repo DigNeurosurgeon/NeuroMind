@@ -33,6 +33,9 @@
 		F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */; };
 		F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0CE1BE264860059E641 /* RecommendationVC.swift */; };
 		F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0D11BE26BAF0059E641 /* Helper.swift */; };
+		F54FB2F31C20490D003C9E6A /* SINS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54FB2F21C20490D003C9E6A /* SINS.swift */; };
+		F54FB2F71C22C9EC003C9E6A /* SINS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54FB2F61C22C9EC003C9E6A /* SINS.storyboard */; };
+		F54FB2F91C22CA56003C9E6A /* SINS_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54FB2F81C22CA56003C9E6A /* SINS_TVC.swift */; };
 		F5B525351BFB87E300D7FB1C /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */; };
 		F5B525371BFB881600D7FB1C /* InfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B525361BFB881600D7FB1C /* InfoTVC.swift */; };
 		F5E8D2BE1BE9DEF1000AE8CF /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8D2BD1BE9DEF1000AE8CF /* ScoreCell.swift */; };
@@ -125,6 +128,9 @@
 		F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Recommendation.storyboard; path = CDSS/Recommendation.storyboard; sourceTree = "<group>"; };
 		F54DC0CE1BE264860059E641 /* RecommendationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecommendationVC.swift; path = CDSS/RecommendationVC.swift; sourceTree = "<group>"; };
 		F54DC0D11BE26BAF0059E641 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = CDSS/Helper.swift; sourceTree = "<group>"; };
+		F54FB2F21C20490D003C9E6A /* SINS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SINS.swift; path = CDSS/SINS/SINS.swift; sourceTree = "<group>"; };
+		F54FB2F61C22C9EC003C9E6A /* SINS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SINS.storyboard; path = CDSS/SINS/SINS.storyboard; sourceTree = "<group>"; };
+		F54FB2F81C22CA56003C9E6A /* SINS_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SINS_TVC.swift; path = CDSS/SINS/SINS_TVC.swift; sourceTree = "<group>"; };
 		F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDetailVC.swift; sourceTree = "<group>"; };
 		F5B525361BFB881600D7FB1C /* InfoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTVC.swift; sourceTree = "<group>"; };
 		F5E8D2BD1BE9DEF1000AE8CF /* ScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
@@ -253,12 +259,13 @@
 		F511314C1BB687C6004B4ED7 /* CDSS */ = {
 			isa = PBXGroup;
 			children = (
+				F5F219511C15CAD100EA02FF /* _Purchase */,
+				F54DC0D01BE2648C0059E641 /* _Recommendation */,
 				F5F2194A1C15C54400EA02FF /* PHASES */,
+				F54FB2F11C2048F1003C9E6A /* SINS */,
 				F5F2191E1C09A8FE00EA02FF /* SLIC */,
 				F54DC0C51BE250DD0059E641 /* Spetzler Ponce */,
 				F5F219281C10D3AF00EA02FF /* TLICS */,
-				F54DC0D01BE2648C0059E641 /* Recommendation */,
-				F5F219511C15CAD100EA02FF /* Purchase */,
 				F54DC0D11BE26BAF0059E641 /* Helper.swift */,
 			);
 			name = CDSS;
@@ -314,13 +321,23 @@
 			name = "Spetzler Ponce";
 			sourceTree = "<group>";
 		};
-		F54DC0D01BE2648C0059E641 /* Recommendation */ = {
+		F54DC0D01BE2648C0059E641 /* _Recommendation */ = {
 			isa = PBXGroup;
 			children = (
 				F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */,
 				F54DC0CE1BE264860059E641 /* RecommendationVC.swift */,
 			);
-			name = Recommendation;
+			name = _Recommendation;
+			sourceTree = "<group>";
+		};
+		F54FB2F11C2048F1003C9E6A /* SINS */ = {
+			isa = PBXGroup;
+			children = (
+				F54FB2F61C22C9EC003C9E6A /* SINS.storyboard */,
+				F54FB2F81C22CA56003C9E6A /* SINS_TVC.swift */,
+				F54FB2F21C20490D003C9E6A /* SINS.swift */,
+			);
+			name = SINS;
 			sourceTree = "<group>";
 		};
 		F5F2191A1C09A33000EA02FF /* Info */ = {
@@ -391,13 +408,13 @@
 			name = PHASES;
 			sourceTree = "<group>";
 		};
-		F5F219511C15CAD100EA02FF /* Purchase */ = {
+		F5F219511C15CAD100EA02FF /* _Purchase */ = {
 			isa = PBXGroup;
 			children = (
 				F5F219521C16056A00EA02FF /* Purchase.storyboard */,
 				F5F219541C16058300EA02FF /* PurchaseVC.swift */,
 			);
-			name = Purchase;
+			name = _Purchase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,6 +536,7 @@
 				F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */,
 				F5F2194C1C15C56000EA02FF /* PHASES.storyboard in Resources */,
 				F5F2192C1C10D41100EA02FF /* TLICS.storyboard in Resources */,
+				F54FB2F71C22C9EC003C9E6A /* SINS.storyboard in Resources */,
 				F5F219531C16056A00EA02FF /* Purchase.storyboard in Resources */,
 				F5F219441C142EC300EA02FF /* ReleaseNotes.storyboard in Resources */,
 				F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */,
@@ -562,6 +580,7 @@
 				F54DC0C71BE2523A0059E641 /* SpetzlerPonceTVC.swift in Sources */,
 				F54DC0BE1BE208950059E641 /* DatabaseManager.swift in Sources */,
 				F5F219501C15C58C00EA02FF /* PHASES.swift in Sources */,
+				F54FB2F91C22CA56003C9E6A /* SINS_TVC.swift in Sources */,
 				F5B525371BFB881600D7FB1C /* InfoTVC.swift in Sources */,
 				F511313F1BB1BACE004B4ED7 /* FMDatabaseQueue.m in Sources */,
 				F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */,
@@ -577,6 +596,7 @@
 				F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */,
 				F5B525351BFB87E300D7FB1C /* InfoDetailVC.swift in Sources */,
 				F51131491BB1CAD8004B4ED7 /* Score.swift in Sources */,
+				F54FB2F31C20490D003C9E6A /* SINS.swift in Sources */,
 				F5E8D2BE1BE9DEF1000AE8CF /* ScoreCell.swift in Sources */,
 				F52CFC761BFDF9540072660B /* Status.swift in Sources */,
 				F51131401BB1BACE004B4ED7 /* FMDatabaseAdditions.m in Sources */,

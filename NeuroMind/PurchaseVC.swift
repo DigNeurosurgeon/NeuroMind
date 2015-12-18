@@ -117,7 +117,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     
     
     func showPurchaseFailedAlert() {
-        let alertController = UIAlertController(title: "Error", message: "Sorry, your purchase failed.", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Error", message: "Sorry, your purchase failed. Please try again.", preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
         alertController.addAction(okAction)
         presentViewController(alertController, animated: true, completion: nil)

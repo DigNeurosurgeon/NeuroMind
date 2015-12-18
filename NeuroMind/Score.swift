@@ -10,6 +10,7 @@ import Foundation
 
 class Score {
     
+    static let kEmptyString = ""
     let kFavorite = "Favorite"
     let kFavoriteSelected = "FavoriteSelected"
     
@@ -27,7 +28,7 @@ class Score {
     var localDefaults = NSUserDefaults.standardUserDefaults()
     // var keystore = NSUbiquitousKeyValueStore()
     
-    init(id: Int = 0, name: String = "", topic: String = "", content: String = "", category: String = "", reference: String = "", cdss: Int = 0, productID: String = "", isFavorite: Bool = false) {
+    init(id: Int = 0, name: String = kEmptyString, topic: String = kEmptyString, content: String = kEmptyString, category: String = kEmptyString, reference: String = kEmptyString, cdss: Int = 0, productID: String = kEmptyString, isFavorite: Bool = false) {
         
         self.id = id
         self.name = name

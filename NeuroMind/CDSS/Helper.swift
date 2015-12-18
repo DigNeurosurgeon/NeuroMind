@@ -85,7 +85,7 @@ class Helper: UITableViewController {
         let csvString = "\(csvHeader)\n\(csvContent)"
         
         // Format for filename
-        dateFormatter.dateFormat = "YYYY_MM_dd_hh_mm"
+        dateFormatter.dateFormat = "YYYY_MM_dd_hhmm"
         let localDateForFileName = dateFormatter.stringFromDate(date)
         
         // Create CSV file

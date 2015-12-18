@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     
     func loadStoryboardForTestingInSplitViewController(splitViewController: UISplitViewController) {
-        let storyboard = UIStoryboard(name: "PHASES", bundle: nil)
-        let controller = storyboard.instantiateInitialViewController() as! PHASES_TVC
+        let storyboard = UIStoryboard(name: "SINS", bundle: nil)
+        let controller = storyboard.instantiateInitialViewController() as! SINS_TVC
         let testNavigationController = UINavigationController(rootViewController: controller)
         splitViewController.showDetailViewController(testNavigationController, sender: nil)
     }

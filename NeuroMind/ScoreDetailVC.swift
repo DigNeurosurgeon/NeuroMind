@@ -44,12 +44,19 @@ class ScoreDetailVC: UIViewController, ContainsScore {
         // Update the user interface for the detail item.
         scoreName.title = score.name
         
-       let scoreDetails =  "<html><body style=\"font-family: Arial;\">" +
+       let scoreDetails =  "<html><head><style>" +
+                "body {font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;}" +
+                "h1 {color: #107d76;}" +
+                "h2 {color: gray;}" +
+                "h3, h4 {color: white; background-color: #12a199; background: -webkit-linear-gradient(left, #107d76 , #12a199);}" +
+                "#reference {background-color: darkgray;}" +
+                "#reference-text {color: gray}" +
+            "</style></head><body>" +
             "<h1>\(score.name)</h1>" +
             "<h2>\(score.topic)</h2>" +
             "\(score.content)" +
-            "<h4><em>Reference</em></h4>" +
-            "<p><em>\(score.reference)</em></p>" +
+            "<h4 id=\"reference\">Reference</h4>" +
+            "<p id=\"reference-text\">\(score.reference)</p>" +
         "</body></html>"
         scoreWebView.loadHTMLString(scoreDetails, baseURL: nil)
     }
