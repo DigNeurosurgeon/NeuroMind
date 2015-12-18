@@ -48,14 +48,15 @@ class ScoreDetailVC: UIViewController, ContainsScore {
                 "body {font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;}" +
                 "h1 {color: #107d76;}" +
                 "h2 {color: gray;}" +
-                "h3, h4 {color: white; background-color: #12a199; background: -webkit-linear-gradient(left, #107d76 , #12a199);}" +
-                "#reference {background-color: darkgray;}" +
+                "h3 {color: white; background-color: #107d76; background: -webkit-linear-gradient(left, #107d76 , #12a199);}" +
+                "h4 {color: white; background-color: #12a199; background: -webkit-linear-gradient(left, #12a199 , #107d76); width: 90%}" +
+                "#reference {font-weight: bold; color: white; background-color: darkgray;}" +
                 "#reference-text {color: gray}" +
             "</style></head><body>" +
             "<h1>\(score.name)</h1>" +
             "<h2>\(score.topic)</h2>" +
             "\(score.content)" +
-            "<h4 id=\"reference\">Reference</h4>" +
+            "<p id=\"reference\">Reference</p>" +
             "<p id=\"reference-text\">\(score.reference)</p>" +
         "</body></html>"
         scoreWebView.loadHTMLString(scoreDetails, baseURL: nil)
