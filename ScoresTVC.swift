@@ -215,10 +215,12 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
             openStoryboardWithName("TLICS", asType: TLICS_TVC.self, forScore: score)
         case 25:
             openStoryboardWithName("SpetzlerPonce", asType: SpetzlerPonceTVC.self, forScore: score)
-//        case 83:
-//            openStoryboardWithName("SINS", asType: SINS_TVC.self, forScore: score)
-//        case 180:
-//            openStoryboardWithName("PHASES", asType: PHASES_TVC.self, forScore: score)
+        case 83:
+            score.hasInAppPurchase = false
+            openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
+        case 180:
+            score.hasInAppPurchase = false
+            openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
         default:
             openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
         }
