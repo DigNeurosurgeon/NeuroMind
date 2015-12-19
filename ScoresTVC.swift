@@ -180,7 +180,34 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let score = scoreForCellAtIndexPath(indexPath)
         resultSearchController.active = false
+
+        // Message for legacy iPad version
+        let kKeyRemainingUses = "remainingUses"
+        let remainingUses = NSUserDefaults.standardUserDefaults().integerForKey(kKeyRemainingUses)
+        NSUserDefaults.standardUserDefaults().setInteger(remainingUses + 1, forKey: kKeyRemainingUses)
+        var legacyMessage = ""
+        var blockContent = false
+        let maxUses = 25
         
+        if remainingUses > maxUses {
+            legacyMessage = "You have no remaining uses left. \n\nPlease upgrade to the universal version of NeuroMind 3."
+            blockContent = true
+        } else {
+            legacyMessage = "This version will not be supported anymore and will be removed from the App Store later in 2016. \n\nPlease download the universal version of NeuroMind 3 that works on both iPhone and iPad. \n\nYou have \(maxUses - remainingUses) remaining uses."
+        }
+        
+        let iPadAlert = UIAlertController(title: "Warning", message: legacyMessage, preferredStyle: .Alert)
+        let ignoreAction = UIAlertAction(title: "Ignore", style: .Destructive, handler: nil)
+        if !blockContent { iPadAlert.addAction(ignoreAction) }
+        let downloadAction = UIAlertAction(title: "Download now!", style: .Default) { (action) in
+            let url = NSURL(string: "http://itunes.apple.com/us/app/neuromind/id353386909?mt=8")
+            UIApplication.sharedApplication().openURL(url!)
+        }
+        iPadAlert.addAction(downloadAction)
+        presentViewController(iPadAlert, animated: true, completion: nil)
+        
+        
+        // Load content
         switch score.id {
         case 20:
             openStoryboardWithName("SLIC", asType: SLICTableViewController.self, forScore: score)
@@ -188,10 +215,10 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
             openStoryboardWithName("TLICS", asType: TLICS_TVC.self, forScore: score)
         case 25:
             openStoryboardWithName("SpetzlerPonce", asType: SpetzlerPonceTVC.self, forScore: score)
-        case 83:
-            openStoryboardWithName("SINS", asType: SINS_TVC.self, forScore: score)
-        case 180:
-            openStoryboardWithName("PHASES", asType: PHASES_TVC.self, forScore: score)
+//        case 83:
+//            openStoryboardWithName("SINS", asType: SINS_TVC.self, forScore: score)
+//        case 180:
+//            openStoryboardWithName("PHASES", asType: PHASES_TVC.self, forScore: score)
         default:
             openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
         }
