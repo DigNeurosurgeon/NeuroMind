@@ -143,8 +143,6 @@
 		F5F2192B1C10D41100EA02FF /* TLICS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TLICS.storyboard; path = CDSS/TLICS/TLICS.storyboard; sourceTree = "<group>"; };
 		F5F2192D1C10D4E000EA02FF /* TLICS_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLICS_TVC.swift; path = CDSS/TLICS/TLICS_TVC.swift; sourceTree = "<group>"; };
 		F5F2192F1C10D4FD00EA02FF /* TLICS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLICS.swift; path = CDSS/TLICS/TLICS.swift; sourceTree = "<group>"; };
-		F5F219371C1426B900EA02FF /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
-		F5F219391C1426B900EA02FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseNotesVC.swift; sourceTree = "<group>"; };
 		F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReleaseNotes.storyboard; sourceTree = "<group>"; };
 		F5F219461C15B57100EA02FF /* release_notes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = release_notes.html; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				F51130FF1BB1B855004B4ED7 /* NeuroMind */,
 				F51131141BB1B855004B4ED7 /* NeuroMindTests */,
 				F511311F1BB1B855004B4ED7 /* NeuroMindUITests */,
-				F5F219361C1426B900EA02FF /* testSharing */,
 				F51130FE1BB1B855004B4ED7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -375,15 +372,6 @@
 				F5F2192F1C10D4FD00EA02FF /* TLICS.swift */,
 			);
 			name = TLICS;
-			sourceTree = "<group>";
-		};
-		F5F219361C1426B900EA02FF /* testSharing */ = {
-			isa = PBXGroup;
-			children = (
-				F5F219371C1426B900EA02FF /* RequestHandler.swift */,
-				F5F219391C1426B900EA02FF /* Info.plist */,
-			);
-			path = testSharing;
 			sourceTree = "<group>";
 		};
 		F5F219451C142ED200EA02FF /* ReleaseNotes */ = {
