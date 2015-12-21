@@ -76,34 +76,4 @@ class RecommendationVC: UIViewController { //, MFMailComposeViewControllerDelega
         
     }
     
-    
-    /*
-    func createEmailMessageWithReport() {
-        let email = MFMailComposeViewController()
-        email.mailComposeDelegate = self
-        email.setSubject("NeuroMind recommendation")
-        
-        let messageBodyText = "<p><em>Note: this email will be sent unencrypted and data privacy cannot be guaranteed, just as with any other email message. Be aware of privacy issues and do not provide patient identification details.</em></p>" +
-            
-            "If you think there is an error in this app, please send a message (or cc this email) to " +
-            "<a href=\"mailto:support@digitalneurosurgeon.com\">support@digitalneurosurgeon.com</a>." +
-            
-            "<p>Optional comments:</p>" +
-            
-            "<h2>Recommendation</h2>" +
-            "\(contentAsHTML)"
-        
-        email.setMessageBody(messageBodyText, isHTML: true)
-        
-        presentViewController(email, animated: true, completion: nil)
-        
-    }
-    
-    
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-*/
-
-    
 }

@@ -13,7 +13,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     
     @IBOutlet weak var purchaseButton: UIButton!
     @IBOutlet weak var restorePurchaseButton: UIButton!
-    @IBOutlet weak var textVersionButton: UIButton!
+//    @IBOutlet weak var textVersionButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     var descriptionText = ""
     
@@ -22,7 +22,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        descriptionText = "\(score.name) is available for purchase as interactive clinical decision support.\n\n"
+        descriptionText = "Unlock all content with a one time purchase.\n\n"
         let additionalText = "A description is being loaded from the App Store..."
         descriptionTextView.text = descriptionText.stringByAppendingString(additionalText)
         
@@ -41,7 +41,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     
     func getProductInfo() {
         if SKPaymentQueue.canMakePayments() {
-            let request = SKProductsRequest(productIdentifiers: NSSet(objects: score.productID) as! Set<String>)
+            let request = SKProductsRequest(productIdentifiers: NSSet(objects: Score.ProductID) as! Set<String>)
             request.delegate = self
             request.start()
         } else {
@@ -56,11 +56,6 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
             product = products[0]
             purchaseButton.enabled = true
             restorePurchaseButton.enabled = true
-            
-//            let productTitle = product!.localizedTitle
-//            let productDescription = product!.localizedDescription
-//            print("Item found with title \"\(productTitle)\" and description \"\(productDescription)\"")
-            
             descriptionTextView.text = "\(descriptionText)Description: \(product!.localizedDescription)"
             purchaseButton.setTitle("Buy now for \(product!.localizedPrice())!", forState: .Normal)
         } else {
@@ -100,15 +95,15 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
 
     func unlockItem() {
         // Save purchase and say thanks
-        NSUserDefaults.standardUserDefaults().setValue(score.productID, forKey: score.productID)
+        NSUserDefaults.standardUserDefaults().setValue(Score.FullAccessAvailable, forKey: Score.FullAccessAvailable)
         purchaseButton.setTitle("Thank you!", forState: .Normal)
         purchaseButton.enabled = false
-        textVersionButton.hidden = true
+//        textVersionButton.hidden = true
         restorePurchaseButton.hidden = true
         
         // Load CDSS
-        let storyboard = UIStoryboard(name: "PHASES", bundle: nil)
-        let controller = storyboard.instantiateInitialViewController() as! PHASES_TVC
+        let storyboard = UIStoryboard(name: "ScoreDetail", bundle: nil)
+        let controller = storyboard.instantiateInitialViewController() as! ScoreDetailVC
         controller.title = score.name
         controller.score = score
         let navigationController = UINavigationController(rootViewController: controller)

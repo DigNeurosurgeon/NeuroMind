@@ -48,17 +48,11 @@ class DatabaseManager {
     func loadScoresFromDatabase() -> [Score] {
         
         var scores = [Score]()
-        let sqlString = "SELECT * FROM scores WHERE neuro = 1 ORDER BY category, name ASC"
+        let sqlString = "SELECT * FROM scores WHERE ortho = 1 ORDER BY category, name ASC"
         
         if let scoresDB = database, results = scoresDB.executeQuery(sqlString, withArgumentsInArray: nil) {
             while results.next() {
-                
-                var currentProductID = ""
-                
-                if let productID = results.stringForColumn("productID") {
-                    currentProductID = productID
-                }
-                
+
                 let score = Score(
                     id: Int(results.intForColumn("id")),
                     name: results.stringForColumn("name"),
@@ -66,8 +60,7 @@ class DatabaseManager {
                     content: results.stringForColumn("content"),
                     category: results.stringForColumn("category"),
                     reference: results.stringForColumn("reference"),
-                    cdss: Int(results.intForColumn("cdss")),
-                    productID: currentProductID
+                    availableInLiteVersion: Int(results.intForColumn("ortho_lite"))
                 )
                 
                 scores.append(score)
@@ -89,12 +82,6 @@ class DatabaseManager {
         if let scoresDB = database, results = scoresDB.executeQuery(sqlString, withArgumentsInArray: nil) {
             while results.next() {
                 
-                var currentProductID = ""
-                
-                if let productID = results.stringForColumn("productID") {
-                    currentProductID = productID
-                }
-                
                 score = Score(
                     id: id,
                     name: results.stringForColumn("name"),
@@ -102,8 +89,7 @@ class DatabaseManager {
                     content: results.stringForColumn("content"),
                     category: results.stringForColumn("category"),
                     reference: results.stringForColumn("reference"),
-                    cdss: Int(results.intForColumn("cdss")),
-                    productID: currentProductID
+                    availableInLiteVersion: Int(results.intForColumn("ortho_lite"))
                 )
             }
             

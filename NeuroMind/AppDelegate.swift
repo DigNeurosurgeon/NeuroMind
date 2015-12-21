@@ -21,10 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         splitViewController.delegate = self
         
         // Set global tint color
-        window?.tintColor = UIColor.init(red: 16/255, green: 125/255, blue: 118/255, alpha: 1.0)
-        
-        // Load storyboard for testing
-        // loadStoryboardForTestingInSplitViewController(splitViewController)
+        window?.tintColor = UIColor.init(red: 153/255, green: 0/255, blue: 76/255, alpha: 1.0)
         
         return true
     }
@@ -34,14 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return true
         
     }
-    
-    
-    func loadStoryboardForTestingInSplitViewController(splitViewController: UISplitViewController) {
-        let storyboard = UIStoryboard(name: "SINS", bundle: nil)
-        let controller = storyboard.instantiateInitialViewController() as! SINS_TVC
-        let testNavigationController = UINavigationController(rootViewController: controller)
-        splitViewController.showDetailViewController(testNavigationController, sender: nil)
-    }
+
     
 }
 

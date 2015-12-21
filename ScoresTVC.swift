@@ -33,24 +33,24 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     
     
     override func viewDidLoad() {
-        let currentNeuroMindVersion = "3.0"
+        let currentOrthoRefVersion = "3.0"
         
         // Show release notes at first load of current version
         let preferences = NSUserDefaults.standardUserDefaults()
-        let key = "NeuroMindVersion\(currentNeuroMindVersion)"
+        let key = "OrthoRefVersion\(currentOrthoRefVersion)"
         if let _ = preferences.stringForKey(key) {
         // if 1 == 2 {      // for testing only
         } else {
             let storyboard = UIStoryboard(name: "ReleaseNotes", bundle: nil)
             let controller = storyboard.instantiateInitialViewController() as! ReleaseNotesVC
             let navigationController = UINavigationController(rootViewController: controller)
-            preferences.setValue(currentNeuroMindVersion, forKey: key)
+            preferences.setValue(currentOrthoRefVersion, forKey: key)
             splitViewController?.showDetailViewController(navigationController, sender: nil)
         }
         
         // Continue with loading menu
         super.viewDidLoad()
-        iris = IRIS(version: currentNeuroMindVersion, statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
+        iris = IRIS(version: currentOrthoRefVersion, statusURLString: "http://dign.eu/or/orthoref.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
         
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -181,20 +181,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
         let score = scoreForCellAtIndexPath(indexPath)
         resultSearchController.active = false
         
-        switch score.id {
-        case 20:
-            openStoryboardWithName("SLIC", asType: SLICTableViewController.self, forScore: score)
-        case 22:
-            openStoryboardWithName("TLICS", asType: TLICS_TVC.self, forScore: score)
-        case 25:
-            openStoryboardWithName("SpetzlerPonce", asType: SpetzlerPonceTVC.self, forScore: score)
-        case 83:
-            openStoryboardWithName("SINS", asType: SINS_TVC.self, forScore: score)
-        case 180:
-            openStoryboardWithName("PHASES", asType: PHASES_TVC.self, forScore: score)
-        default:
-            openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
-        }
+        openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
     }
     
     
@@ -207,12 +194,17 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
         controller.title = score.name
         controller.score = score
         
-        if score.hasInAppPurchase && NSUserDefaults.standardUserDefaults().stringForKey(score.productID) == nil {
-            openPurchaseVCForScore(score)
-        } else {
-            let navigationController = UINavigationController(rootViewController: controller)
-            splitViewController?.showDetailViewController(navigationController, sender: nil)
-        }
+        // for OrthoRef Lite version
+//        if score.hasInAppPurchase && NSUserDefaults.standardUserDefaults().stringForKey(Score.FullAccessAvailable) == nil {
+//            openPurchaseVCForScore(score)
+//        } else {
+//            let navigationController = UINavigationController(rootViewController: controller)
+//            splitViewController?.showDetailViewController(navigationController, sender: nil)
+//        }
+        
+        // for OrthoRef full version
+        let navigationController = UINavigationController(rootViewController: controller)
+        splitViewController?.showDetailViewController(navigationController, sender: nil)
     }
     
     
@@ -226,8 +218,8 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     }
     
     
-    func resetInAppPurchaseMemoryForScore(score: Score) {
-        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: score.productID)
+    func resetInAppPurchaseMemoryForScores(score: Score) {
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: Score.FullAccessAvailable)
     }
     
     

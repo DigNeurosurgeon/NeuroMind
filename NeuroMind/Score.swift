@@ -11,8 +11,12 @@ import Foundation
 class Score {
     
     static let kEmptyString = ""
+    static let FullAccessAvailable = "FullAccessAvailable"
+    static let ProductID = "OrthoRef.FullAccess"
+    
     let kFavorite = "Favorite"
     let kFavoriteSelected = "FavoriteSelected"
+    let kOrthoRefProductID = "some value"
     
     var id: Int
     var name: String
@@ -20,15 +24,14 @@ class Score {
     var content: String
     var category: String
     var reference: String
-    var cdssPresent: Bool
+    var hasInAppPurchase: Bool
     var productID: String
     var isFavorite: Bool
-    var hasInAppPurchase: Bool
     
     var localDefaults = NSUserDefaults.standardUserDefaults()
     // var keystore = NSUbiquitousKeyValueStore()
     
-    init(id: Int = 0, name: String = kEmptyString, topic: String = kEmptyString, content: String = kEmptyString, category: String = kEmptyString, reference: String = kEmptyString, cdss: Int = 0, productID: String = kEmptyString, isFavorite: Bool = false) {
+    init(id: Int = 0, name: String = kEmptyString, topic: String = kEmptyString, content: String = kEmptyString, category: String = kEmptyString, reference: String = kEmptyString, availableInLiteVersion: Int = 0, isFavorite: Bool = false) {
         
         self.id = id
         self.name = name
@@ -36,9 +39,8 @@ class Score {
         self.content = content
         self.category = category
         self.reference = reference
-        self.cdssPresent = cdss == 1 ? true : false
-        self.productID = productID
-        self.hasInAppPurchase = productID.characters.count > 0 ? true : false
+        self.hasInAppPurchase = availableInLiteVersion == 0 ? true : false
+        self.productID = hasInAppPurchase ? kOrthoRefProductID : ""
         
         self.isFavorite = isFavorite // provide default value
         // self.isFavorite = keystore.boolForKey(String(id)) // update from favorites

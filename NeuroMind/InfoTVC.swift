@@ -52,8 +52,8 @@ class InfoTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         
         switch segue.identifier! {
         case SegueIdentifiers.About.rawValue:
-            destinationController.title = "About NeuroMind"
-            destinationController.content = "http://dign.eu/nm"
+            destinationController.title = "About OrthoRef"
+            destinationController.content = "http://dign.eu/or"
         case SegueIdentifiers.EULA.rawValue:
             destinationController.title = "License Agreement"
             destinationController.content = "http://dign.eu/eula"
@@ -85,7 +85,7 @@ class InfoTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         let email = MFMailComposeViewController()
         email.mailComposeDelegate = self
         email.setToRecipients(["pieter@kubben.nl"])
-        email.setSubject("NeuroMind feedback")
+        email.setSubject("OrthoRef feedback")
         email.setMessageBody("", isHTML: false)
         presentViewController(email, animated: true, completion: nil)
     }
