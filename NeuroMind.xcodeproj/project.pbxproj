@@ -27,33 +27,15 @@
 		F52CFC771BFDF9540072660B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52CFC741BFDF9540072660B /* SwiftyJSON.swift */; };
 		F54DC0BE1BE208950059E641 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0BD1BE208950059E641 /* DatabaseManager.swift */; };
 		F54DC0C01BE21C5B0059E641 /* scores.db in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0BF1BE21C5B0059E641 /* scores.db */; };
-		F54DC0C71BE2523A0059E641 /* SpetzlerPonceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0C61BE2523A0059E641 /* SpetzlerPonceTVC.swift */; };
-		F54DC0C91BE253C70059E641 /* SpetzlerPonce.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0C81BE253C70059E641 /* SpetzlerPonce.storyboard */; };
-		F54DC0CB1BE25A9C0059E641 /* SpetzlerPonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0CA1BE25A9C0059E641 /* SpetzlerPonce.swift */; };
-		F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */; };
-		F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0CE1BE264860059E641 /* RecommendationVC.swift */; };
-		F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54DC0D11BE26BAF0059E641 /* Helper.swift */; };
-		F54FB2F31C20490D003C9E6A /* SINS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54FB2F21C20490D003C9E6A /* SINS.swift */; };
-		F54FB2F71C22C9EC003C9E6A /* SINS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54FB2F61C22C9EC003C9E6A /* SINS.storyboard */; };
-		F54FB2F91C22CA56003C9E6A /* SINS_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54FB2F81C22CA56003C9E6A /* SINS_TVC.swift */; };
 		F5B525351BFB87E300D7FB1C /* InfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */; };
 		F5B525371BFB881600D7FB1C /* InfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B525361BFB881600D7FB1C /* InfoTVC.swift */; };
 		F5E8D2BE1BE9DEF1000AE8CF /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E8D2BD1BE9DEF1000AE8CF /* ScoreCell.swift */; };
 		F5F219191C09A32700EA02FF /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219181C09A32700EA02FF /* Info.storyboard */; };
 		F5F2191C1C09A42E00EA02FF /* ScoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F2191B1C09A42E00EA02FF /* ScoreDetail.storyboard */; };
-		F5F219201C09A90F00EA02FF /* SLIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2191F1C09A90F00EA02FF /* SLIC.swift */; };
-		F5F219241C09A93D00EA02FF /* SLICTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219221C09A93D00EA02FF /* SLICTableViewController.swift */; };
-		F5F219261C09A9D700EA02FF /* SLIC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219251C09A9D700EA02FF /* SLIC.storyboard */; };
-		F5F2192C1C10D41100EA02FF /* TLICS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F2192B1C10D41100EA02FF /* TLICS.storyboard */; };
-		F5F2192E1C10D4E000EA02FF /* TLICS_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2192D1C10D4E000EA02FF /* TLICS_TVC.swift */; };
-		F5F219301C10D4FD00EA02FF /* TLICS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2192F1C10D4FD00EA02FF /* TLICS.swift */; };
 		F5F219421C1428F300EA02FF /* ReleaseNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */; };
 		F5F219441C142EC300EA02FF /* ReleaseNotes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */; };
 		F5F219471C15B57100EA02FF /* release_notes.html in Resources */ = {isa = PBXBuildFile; fileRef = F5F219461C15B57100EA02FF /* release_notes.html */; };
 		F5F219491C15BFC200EA02FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F219481C15BFC200EA02FF /* StoreKit.framework */; };
-		F5F2194C1C15C56000EA02FF /* PHASES.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F2194B1C15C56000EA02FF /* PHASES.storyboard */; };
-		F5F2194E1C15C57F00EA02FF /* PHASES_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2194D1C15C57F00EA02FF /* PHASES_TVC.swift */; };
-		F5F219501C15C58C00EA02FF /* PHASES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2194F1C15C58C00EA02FF /* PHASES.swift */; };
 		F5F219531C16056A00EA02FF /* Purchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219521C16056A00EA02FF /* Purchase.storyboard */; };
 		F5F219551C16058300EA02FF /* PurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219541C16058300EA02FF /* PurchaseVC.swift */; };
 /* End PBXBuildFile section */
@@ -122,34 +104,16 @@
 		F52CFC741BFDF9540072660B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F54DC0BD1BE208950059E641 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		F54DC0BF1BE21C5B0059E641 /* scores.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = scores.db; path = NeuroMind/scores.db; sourceTree = "<group>"; };
-		F54DC0C61BE2523A0059E641 /* SpetzlerPonceTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpetzlerPonceTVC.swift; path = CDSS/SpetzlerPonce/SpetzlerPonceTVC.swift; sourceTree = "<group>"; };
-		F54DC0C81BE253C70059E641 /* SpetzlerPonce.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SpetzlerPonce.storyboard; path = CDSS/SpetzlerPonce/SpetzlerPonce.storyboard; sourceTree = "<group>"; };
-		F54DC0CA1BE25A9C0059E641 /* SpetzlerPonce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpetzlerPonce.swift; path = CDSS/SpetzlerPonce/SpetzlerPonce.swift; sourceTree = "<group>"; };
-		F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Recommendation.storyboard; path = CDSS/Recommendation.storyboard; sourceTree = "<group>"; };
-		F54DC0CE1BE264860059E641 /* RecommendationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecommendationVC.swift; path = CDSS/RecommendationVC.swift; sourceTree = "<group>"; };
-		F54DC0D11BE26BAF0059E641 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = CDSS/Helper.swift; sourceTree = "<group>"; };
-		F54FB2F21C20490D003C9E6A /* SINS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SINS.swift; path = CDSS/SINS/SINS.swift; sourceTree = "<group>"; };
-		F54FB2F61C22C9EC003C9E6A /* SINS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SINS.storyboard; path = CDSS/SINS/SINS.storyboard; sourceTree = "<group>"; };
-		F54FB2F81C22CA56003C9E6A /* SINS_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SINS_TVC.swift; path = CDSS/SINS/SINS_TVC.swift; sourceTree = "<group>"; };
 		F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDetailVC.swift; sourceTree = "<group>"; };
 		F5B525361BFB881600D7FB1C /* InfoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTVC.swift; sourceTree = "<group>"; };
 		F5E8D2BD1BE9DEF1000AE8CF /* ScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
 		F5ECFCF51BEC8D8200FFFDBB /* NeuroMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NeuroMind.entitlements; sourceTree = "<group>"; };
 		F5F219181C09A32700EA02FF /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		F5F2191B1C09A42E00EA02FF /* ScoreDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScoreDetail.storyboard; sourceTree = "<group>"; };
-		F5F2191F1C09A90F00EA02FF /* SLIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLIC.swift; sourceTree = "<group>"; };
-		F5F219221C09A93D00EA02FF /* SLICTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLICTableViewController.swift; sourceTree = "<group>"; };
-		F5F219251C09A9D700EA02FF /* SLIC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SLIC.storyboard; sourceTree = "<group>"; };
-		F5F2192B1C10D41100EA02FF /* TLICS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TLICS.storyboard; path = CDSS/TLICS/TLICS.storyboard; sourceTree = "<group>"; };
-		F5F2192D1C10D4E000EA02FF /* TLICS_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLICS_TVC.swift; path = CDSS/TLICS/TLICS_TVC.swift; sourceTree = "<group>"; };
-		F5F2192F1C10D4FD00EA02FF /* TLICS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLICS.swift; path = CDSS/TLICS/TLICS.swift; sourceTree = "<group>"; };
 		F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseNotesVC.swift; sourceTree = "<group>"; };
 		F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReleaseNotes.storyboard; sourceTree = "<group>"; };
 		F5F219461C15B57100EA02FF /* release_notes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = release_notes.html; sourceTree = "<group>"; };
 		F5F219481C15BFC200EA02FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		F5F2194B1C15C56000EA02FF /* PHASES.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PHASES.storyboard; path = CDSS/PHASES/PHASES.storyboard; sourceTree = "<group>"; };
-		F5F2194D1C15C57F00EA02FF /* PHASES_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PHASES_TVC.swift; path = CDSS/PHASES/PHASES_TVC.swift; sourceTree = "<group>"; };
-		F5F2194F1C15C58C00EA02FF /* PHASES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PHASES.swift; path = CDSS/PHASES/PHASES.swift; sourceTree = "<group>"; };
 		F5F219521C16056A00EA02FF /* Purchase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Purchase.storyboard; sourceTree = "<group>"; };
 		F5F219541C16058300EA02FF /* PurchaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,7 +172,7 @@
 			children = (
 				F54DC0C11BE24F750059E641 /* Global */,
 				F511314D1BB687D8004B4ED7 /* Scores */,
-				F511314C1BB687C6004B4ED7 /* CDSS */,
+				F511314C1BB687C6004B4ED7 /* Purchase */,
 			);
 			path = NeuroMind;
 			sourceTree = "<group>";
@@ -251,19 +215,13 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		F511314C1BB687C6004B4ED7 /* CDSS */ = {
+		F511314C1BB687C6004B4ED7 /* Purchase */ = {
 			isa = PBXGroup;
 			children = (
-				F5F219511C15CAD100EA02FF /* _Purchase */,
-				F54DC0D01BE2648C0059E641 /* _Recommendation */,
-				F5F2194A1C15C54400EA02FF /* PHASES */,
-				F54FB2F11C2048F1003C9E6A /* SINS */,
-				F5F2191E1C09A8FE00EA02FF /* SLIC */,
-				F54DC0C51BE250DD0059E641 /* Spetzler Ponce */,
-				F5F219281C10D3AF00EA02FF /* TLICS */,
-				F54DC0D11BE26BAF0059E641 /* Helper.swift */,
+				F5F219521C16056A00EA02FF /* Purchase.storyboard */,
+				F5F219541C16058300EA02FF /* PurchaseVC.swift */,
 			);
-			name = CDSS;
+			name = Purchase;
 			sourceTree = "<group>";
 		};
 		F511314D1BB687D8004B4ED7 /* Scores */ = {
@@ -306,35 +264,6 @@
 			name = Global;
 			sourceTree = "<group>";
 		};
-		F54DC0C51BE250DD0059E641 /* Spetzler Ponce */ = {
-			isa = PBXGroup;
-			children = (
-				F54DC0C81BE253C70059E641 /* SpetzlerPonce.storyboard */,
-				F54DC0C61BE2523A0059E641 /* SpetzlerPonceTVC.swift */,
-				F54DC0CA1BE25A9C0059E641 /* SpetzlerPonce.swift */,
-			);
-			name = "Spetzler Ponce";
-			sourceTree = "<group>";
-		};
-		F54DC0D01BE2648C0059E641 /* _Recommendation */ = {
-			isa = PBXGroup;
-			children = (
-				F54DC0CC1BE2644C0059E641 /* Recommendation.storyboard */,
-				F54DC0CE1BE264860059E641 /* RecommendationVC.swift */,
-			);
-			name = _Recommendation;
-			sourceTree = "<group>";
-		};
-		F54FB2F11C2048F1003C9E6A /* SINS */ = {
-			isa = PBXGroup;
-			children = (
-				F54FB2F61C22C9EC003C9E6A /* SINS.storyboard */,
-				F54FB2F81C22CA56003C9E6A /* SINS_TVC.swift */,
-				F54FB2F21C20490D003C9E6A /* SINS.swift */,
-			);
-			name = SINS;
-			sourceTree = "<group>";
-		};
 		F5F2191A1C09A33000EA02FF /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,26 +283,6 @@
 			name = ScoreDetail;
 			sourceTree = "<group>";
 		};
-		F5F2191E1C09A8FE00EA02FF /* SLIC */ = {
-			isa = PBXGroup;
-			children = (
-				F5F219251C09A9D700EA02FF /* SLIC.storyboard */,
-				F5F219221C09A93D00EA02FF /* SLICTableViewController.swift */,
-				F5F2191F1C09A90F00EA02FF /* SLIC.swift */,
-			);
-			name = SLIC;
-			sourceTree = "<group>";
-		};
-		F5F219281C10D3AF00EA02FF /* TLICS */ = {
-			isa = PBXGroup;
-			children = (
-				F5F2192B1C10D41100EA02FF /* TLICS.storyboard */,
-				F5F2192D1C10D4E000EA02FF /* TLICS_TVC.swift */,
-				F5F2192F1C10D4FD00EA02FF /* TLICS.swift */,
-			);
-			name = TLICS;
-			sourceTree = "<group>";
-		};
 		F5F219451C142ED200EA02FF /* ReleaseNotes */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,25 +291,6 @@
 				F5F219461C15B57100EA02FF /* release_notes.html */,
 			);
 			name = ReleaseNotes;
-			sourceTree = "<group>";
-		};
-		F5F2194A1C15C54400EA02FF /* PHASES */ = {
-			isa = PBXGroup;
-			children = (
-				F5F2194B1C15C56000EA02FF /* PHASES.storyboard */,
-				F5F2194D1C15C57F00EA02FF /* PHASES_TVC.swift */,
-				F5F2194F1C15C58C00EA02FF /* PHASES.swift */,
-			);
-			name = PHASES;
-			sourceTree = "<group>";
-		};
-		F5F219511C15CAD100EA02FF /* _Purchase */ = {
-			isa = PBXGroup;
-			children = (
-				F5F219521C16056A00EA02FF /* Purchase.storyboard */,
-				F5F219541C16058300EA02FF /* PurchaseVC.swift */,
-			);
-			name = _Purchase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,20 +407,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F54DC0C91BE253C70059E641 /* SpetzlerPonce.storyboard in Resources */,
 				F5F219191C09A32700EA02FF /* Info.storyboard in Resources */,
 				F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */,
-				F5F2194C1C15C56000EA02FF /* PHASES.storyboard in Resources */,
-				F5F2192C1C10D41100EA02FF /* TLICS.storyboard in Resources */,
-				F54FB2F71C22C9EC003C9E6A /* SINS.storyboard in Resources */,
 				F5F219531C16056A00EA02FF /* Purchase.storyboard in Resources */,
 				F5F219441C142EC300EA02FF /* ReleaseNotes.storyboard in Resources */,
-				F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */,
 				F5F219471C15B57100EA02FF /* release_notes.html in Resources */,
 				F5F2191C1C09A42E00EA02FF /* ScoreDetail.storyboard in Resources */,
 				F54DC0C01BE21C5B0059E641 /* scores.db in Resources */,
 				F51131081BB1B855004B4ED7 /* Assets.xcassets in Resources */,
-				F5F219261C09A9D700EA02FF /* SLIC.storyboard in Resources */,
 				F51131061BB1B855004B4ED7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,33 +440,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F54DC0CB1BE25A9C0059E641 /* SpetzlerPonce.swift in Sources */,
 				F5F219421C1428F300EA02FF /* ReleaseNotesVC.swift in Sources */,
 				F511314B1BB5A0B4004B4ED7 /* ScoreDetailVC.swift in Sources */,
 				F5F219551C16058300EA02FF /* PurchaseVC.swift in Sources */,
-				F5F219241C09A93D00EA02FF /* SLICTableViewController.swift in Sources */,
-				F54DC0CF1BE264860059E641 /* RecommendationVC.swift in Sources */,
 				F52CFC771BFDF9540072660B /* SwiftyJSON.swift in Sources */,
-				F54DC0C71BE2523A0059E641 /* SpetzlerPonceTVC.swift in Sources */,
 				F54DC0BE1BE208950059E641 /* DatabaseManager.swift in Sources */,
-				F5F219501C15C58C00EA02FF /* PHASES.swift in Sources */,
-				F54FB2F91C22CA56003C9E6A /* SINS_TVC.swift in Sources */,
 				F5B525371BFB881600D7FB1C /* InfoTVC.swift in Sources */,
 				F511313F1BB1BACE004B4ED7 /* FMDatabaseQueue.m in Sources */,
-				F54DC0D21BE26BAF0059E641 /* Helper.swift in Sources */,
-				F5F2194E1C15C57F00EA02FF /* PHASES_TVC.swift in Sources */,
 				F511313D1BB1BACE004B4ED7 /* FMDatabase.m in Sources */,
 				F511312F1BB1B8D0004B4ED7 /* ScoresTVC.swift in Sources */,
 				F52CFC751BFDF9540072660B /* IRIS.swift in Sources */,
-				F5F219301C10D4FD00EA02FF /* TLICS.swift in Sources */,
 				F511313E1BB1BACE004B4ED7 /* FMResultSet.m in Sources */,
-				F5F2192E1C10D4E000EA02FF /* TLICS_TVC.swift in Sources */,
 				F51131411BB1BACE004B4ED7 /* FMDatabasePool.m in Sources */,
-				F5F219201C09A90F00EA02FF /* SLIC.swift in Sources */,
 				F51131011BB1B855004B4ED7 /* AppDelegate.swift in Sources */,
 				F5B525351BFB87E300D7FB1C /* InfoDetailVC.swift in Sources */,
 				F51131491BB1CAD8004B4ED7 /* Score.swift in Sources */,
-				F54FB2F31C20490D003C9E6A /* SINS.swift in Sources */,
 				F5E8D2BE1BE9DEF1000AE8CF /* ScoreCell.swift in Sources */,
 				F52CFC761BFDF9540072660B /* Status.swift in Sources */,
 				F51131401BB1BACE004B4ED7 /* FMDatabaseAdditions.m in Sources */,
@@ -733,7 +605,7 @@
 				INFOPLIST_FILE = NeuroMind/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.OrthoMind;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.OrthoRefLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuroMind-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -750,7 +622,7 @@
 				INFOPLIST_FILE = NeuroMind/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.OrthoMind;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.dign.OrthoRefLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuroMind-Bridging-Header.h";
 			};

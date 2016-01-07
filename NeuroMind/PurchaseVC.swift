@@ -13,7 +13,6 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     
     @IBOutlet weak var purchaseButton: UIButton!
     @IBOutlet weak var restorePurchaseButton: UIButton!
-//    @IBOutlet weak var textVersionButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     var descriptionText = ""
     

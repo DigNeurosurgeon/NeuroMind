@@ -195,16 +195,16 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
         controller.score = score
         
         // for OrthoRef Lite version
-//        if score.hasInAppPurchase && NSUserDefaults.standardUserDefaults().stringForKey(Score.FullAccessAvailable) == nil {
-//            openPurchaseVCForScore(score)
-//        } else {
-//            let navigationController = UINavigationController(rootViewController: controller)
-//            splitViewController?.showDetailViewController(navigationController, sender: nil)
-//        }
+        if score.hasInAppPurchase && NSUserDefaults.standardUserDefaults().stringForKey(Score.FullAccessAvailable) == nil {
+            openPurchaseVCForScore(score)
+        } else {
+            let navigationController = UINavigationController(rootViewController: controller)
+            splitViewController?.showDetailViewController(navigationController, sender: nil)
+        }
         
         // for OrthoRef full version
-        let navigationController = UINavigationController(rootViewController: controller)
-        splitViewController?.showDetailViewController(navigationController, sender: nil)
+//        let navigationController = UINavigationController(rootViewController: controller)
+//        splitViewController?.showDetailViewController(navigationController, sender: nil)
     }
     
     
