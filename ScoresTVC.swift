@@ -194,25 +194,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
         controller.title = score.name
         controller.score = score
         
-        // for OrthoRef Lite version
-//        if score.hasInAppPurchase && NSUserDefaults.standardUserDefaults().stringForKey(Score.FullAccessAvailable) == nil {
-//            openPurchaseVCForScore(score)
-//        } else {
-//            let navigationController = UINavigationController(rootViewController: controller)
-//            splitViewController?.showDetailViewController(navigationController, sender: nil)
-//        }
-        
         // for OrthoRef full version
-        let navigationController = UINavigationController(rootViewController: controller)
-        splitViewController?.showDetailViewController(navigationController, sender: nil)
-    }
-    
-    
-    func openPurchaseVCForScore(score: Score) {
-        let storyboard = UIStoryboard(name: "Purchase", bundle: nil)
-        let controller = storyboard.instantiateInitialViewController() as! PurchaseVC
-        controller.title = score.name
-        controller.score = score
         let navigationController = UINavigationController(rootViewController: controller)
         splitViewController?.showDetailViewController(navigationController, sender: nil)
     }
