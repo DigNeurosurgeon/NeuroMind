@@ -35,7 +35,6 @@
 		F5F219421C1428F300EA02FF /* ReleaseNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */; };
 		F5F219441C142EC300EA02FF /* ReleaseNotes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */; };
 		F5F219471C15B57100EA02FF /* release_notes.html in Resources */ = {isa = PBXBuildFile; fileRef = F5F219461C15B57100EA02FF /* release_notes.html */; };
-		F5F219491C15BFC200EA02FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F219481C15BFC200EA02FF /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +110,6 @@
 		F5F219411C1428F300EA02FF /* ReleaseNotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseNotesVC.swift; sourceTree = "<group>"; };
 		F5F219431C142EC300EA02FF /* ReleaseNotes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReleaseNotes.storyboard; sourceTree = "<group>"; };
 		F5F219461C15B57100EA02FF /* release_notes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = release_notes.html; sourceTree = "<group>"; };
-		F5F219481C15BFC200EA02FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +118,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F51131451BB1C119004B4ED7 /* libsqlite3.tbd in Frameworks */,
-				F5F219491C15BFC200EA02FF /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +242,6 @@
 				F51131441BB1C119004B4ED7 /* libsqlite3.tbd */,
 				F511310C1BB1B855004B4ED7 /* Info.plist */,
 				F5ECFCF51BEC8D8200FFFDBB /* NeuroMind.entitlements */,
-				F5F219481C15BFC200EA02FF /* StoreKit.framework */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -351,7 +347,7 @@
 						DevelopmentTeam = XJW89ZK9NM;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
 								enabled = 0;
