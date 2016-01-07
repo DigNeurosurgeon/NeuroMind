@@ -10,7 +10,11 @@ import UIKit
 
 protocol ContainsScore: class {
     var score: Score {get set}
-//    var productID: String? {get set}
+}
+
+protocol NMContainsDecisionSupport: class {
+    var cdssStoryboard: UIStoryboard {get set}
+    var cdssTableViewController: UITableViewController {get set}
 }
 
 class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresentationControllerDelegate {
@@ -183,6 +187,16 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
         
         switch score.id {
         case 20:
+//            let storyboard = UIStoryboard(name: "SLIC", bundle: nil)
+//            let MyClassName = "NeuroMind.SLICTableViewController"
+//            let MyClass = NSClassFromString(MyClassName) as! UITableViewController.Type
+//            let controller = storyboard.instantiateInitialViewController() as! MyClass
+//            
+//            controller.title = score.name
+//            controller.score = score
+//            let navigationController = UINavigationController(rootViewController: controller)
+//            splitViewController?.showDetailViewController(navigationController, sender: nil)
+            
             openStoryboardWithName("SLIC", asType: SLICTableViewController.self, forScore: score)
         case 22:
             openStoryboardWithName("TLICS", asType: TLICS_TVC.self, forScore: score)
@@ -202,14 +216,13 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
     
     
     func openStoryboardWithName<T: UIViewController where T: ContainsScore>(name: String, asType type: T.Type, forScore score: Score) {
-        let storyboard = UIStoryboard(name: name, bundle: nil)
-        let controller = storyboard.instantiateInitialViewController() as! T
-        controller.title = score.name
-        controller.score = score
-        
         if score.hasInAppPurchase && NSUserDefaults.standardUserDefaults().stringForKey(score.productID) == nil {
             openPurchaseVCForScore(score)
         } else {
+            let storyboard = UIStoryboard(name: name, bundle: nil)
+            let controller = storyboard.instantiateInitialViewController() as! T
+            controller.title = score.name
+            controller.score = score
             let navigationController = UINavigationController(rootViewController: controller)
             splitViewController?.showDetailViewController(navigationController, sender: nil)
         }

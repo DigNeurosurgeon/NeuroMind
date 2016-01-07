@@ -107,8 +107,20 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
         restorePurchaseButton.hidden = true
         
         // Load CDSS
-        let storyboard = UIStoryboard(name: "PHASES", bundle: nil)
-        let controller = storyboard.instantiateInitialViewController() as! PHASES_TVC
+        switch score.id {
+        case 83:
+            openStoryboardWithName("SINS", asType: SINS_TVC.self, forScore: score)
+        case 180:
+            openStoryboardWithName("PHASES", asType: PHASES_TVC.self, forScore: score)
+        default:
+            openStoryboardWithName("ScoreDetail", asType: ScoreDetailVC.self, forScore: score)
+        }
+    }
+    
+    
+    func openStoryboardWithName<T: UIViewController where T: ContainsScore>(name: String, asType type: T.Type, forScore score: Score) {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
+        let controller = storyboard.instantiateInitialViewController() as! T
         controller.title = score.name
         controller.score = score
         let navigationController = UINavigationController(rootViewController: controller)

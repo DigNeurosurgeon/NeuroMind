@@ -12,7 +12,6 @@ import MessageUI
 class InfoTVC: UITableViewController, MFMailComposeViewControllerDelegate {
 
     enum SegueIdentifiers: String {
-        case About = "About"
         case EULA = "EULA"
         case Quality = "Quality"
         case Privacy = "Privacy"
@@ -51,9 +50,6 @@ class InfoTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         let destinationController = segue.destinationViewController as! InfoDetailVC
         
         switch segue.identifier! {
-        case SegueIdentifiers.About.rawValue:
-            destinationController.title = "About NeuroMind"
-            destinationController.content = "http://dign.eu/nm"
         case SegueIdentifiers.EULA.rawValue:
             destinationController.title = "License Agreement"
             destinationController.content = "http://dign.eu/eula"
