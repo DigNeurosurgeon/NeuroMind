@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Release Notes</title>
+        <style>
+            body {font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;}
+            h2 {color: gray;}
+            h3 {color: white; background-color: #107d76; background: -webkit-linear-gradient(left, #107d76 , #12a199);}
+            h4 {color: white; background-color: #12a199; background: -webkit-linear-gradient(left, #12a199 , #107d76); width: 90%}"
+            </style>
+    </head>
+    
+    <body>
+        
+        <h3>iRIS</h3>
+        
+        <p>iRIS stands for interactive Risk Inventory System (unique identifier: eu.dign.iRIS) and is a software component implemented in my clinical decision support apps and medical / risk calculators. From a user perspective it is preferable if no web connection is required to run the application, but from a safety standpoint there should be a “remote kill switch” that allows notification to the end user in case of errors in the application. This should be independent from updates in the App Store (or Google Play, Windows Store, etc).</p>
+        
+        <p>iRIS offers a JSON based updating system (but is not restricted to this technology) with custom error messages and warnings to the end user. It also allows a time limit to be checked after which the user gets warned to perform an update. This allows remote messaging and control over the app to prevent erroneous content being used unnoticed, which promotes patient safety. It is the responsibility of the end user to respond to the warnings given in the application by the iRIS system.</p>
+        
+        <p>All apps are provided with a reference to the source of the content, preferably (but not necessarily) a scientific journal or book chapter. Content itself is developed for local (off-line) use, at the moment of writing using Xcode and Swift (which are native Apple technologies provided to registered developers by Apple, Inc.). iRIS is not limited to using any specific vendor’s technology, but does prefer to adhere to platform standards as much as possible.</p>
+        
+        <p>App content is stored on the device to allow for easy and fast access independent of internet connection. This allows end users to access the content quickly. Integration of iRIS allows remote control over the app, both in the sense of a pre-set time limit after which the end user gets notified of checking the online app info (currently the JSON file) and customized warnings and error messages that can be provided to the end user in the app.</p>
+        
+        <p>Before releasing content publicly, it is tested technically and clinically by the manufacturer, who is a medical professional (neurosurgeon). Regarding vigilance and post-market surveillance, there is an option to provide feedback on possible errors directly from the app.</p>
+        
+        <p>The app is primarily aimed for medical professionals and medical students, but is publicly available for all who are interested in its content. A link to the end-user license agreement is explicitly shown at the first time the app is opened, and remains accessible from within the app.</p>
+        
+        <p>As the app adheres to common design principles regarding the user interface for mobile apps, no specific instructions for end users are provided. Based on the experience of the past 5 years, user feedback and the consistent high ranking of the NeuroMind app (which formed the basis for iRIS) in particular within the field of neurosurgery, it is reasonable to expect that end users have been able to find their way in the product and to use it as intended.</p>
+        
+        <h3>CE marking</h3>
+        
+        <p>The CE logo is added to the info screen of the apps implementing iRIS, as it is registered as a class 1 device / software component.</p>
+        
+    </body>
+    
+</html>

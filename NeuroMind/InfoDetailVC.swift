@@ -13,7 +13,7 @@ class InfoDetailVC: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var infoWebView: UIWebView!
-    var loadRemoteContent = true // default setting based on majority of menu items
+    var loadRemoteContent = false // default setting based on majority of menu items
     var content = ""
     var remoteURL = NSURL()
     
@@ -30,12 +30,23 @@ class InfoDetailVC: UIViewController, UIWebViewDelegate {
             infoWebView.loadRequest(request)
             
         } else {
+            loadLocalWebContent(content)
+            
+            /*
             // Show local info
             let infoContent =  "<html><body style=\"font-family: Arial;\">" +
                 "<p>\(content)</p>" +
             "</body></html>"
             infoWebView.loadHTMLString(infoContent, baseURL: nil)
+            */
         }
+    }
+    
+    
+    private func loadLocalWebContent(fileName: String) {
+        let url = NSBundle.mainBundle().URLForResource(fileName, withExtension: "html")
+        let request = NSURLRequest(URL: url!)
+        infoWebView.loadRequest(request)
     }
     
     

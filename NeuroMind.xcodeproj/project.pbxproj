@@ -56,6 +56,10 @@
 		F5F219501C15C58C00EA02FF /* PHASES.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2194F1C15C58C00EA02FF /* PHASES.swift */; };
 		F5F219531C16056A00EA02FF /* Purchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5F219521C16056A00EA02FF /* Purchase.storyboard */; };
 		F5F219551C16058300EA02FF /* PurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F219541C16058300EA02FF /* PurchaseVC.swift */; };
+		F5FCC2391C46FB6600AD19B5 /* eula.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FCC2381C46FB6600AD19B5 /* eula.html */; };
+		F5FCC23B1C46FC3900AD19B5 /* iris.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FCC23A1C46FC3900AD19B5 /* iris.html */; };
+		F5FCC23D1C46FCE400AD19B5 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FCC23C1C46FCE400AD19B5 /* privacy.html */; };
+		F5FCC23F1C46FD2F00AD19B5 /* me.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FCC23E1C46FD2F00AD19B5 /* me.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +158,10 @@
 		F5F2194F1C15C58C00EA02FF /* PHASES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PHASES.swift; path = CDSS/PHASES/PHASES.swift; sourceTree = "<group>"; };
 		F5F219521C16056A00EA02FF /* Purchase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Purchase.storyboard; sourceTree = "<group>"; };
 		F5F219541C16058300EA02FF /* PurchaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
+		F5FCC2381C46FB6600AD19B5 /* eula.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = eula.html; path = Info/html/eula.html; sourceTree = "<group>"; };
+		F5FCC23A1C46FC3900AD19B5 /* iris.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = iris.html; path = Info/html/iris.html; sourceTree = "<group>"; };
+		F5FCC23C1C46FCE400AD19B5 /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = privacy.html; path = Info/html/privacy.html; sourceTree = "<group>"; };
+		F5FCC23E1C46FD2F00AD19B5 /* me.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = me.html; path = Info/html/me.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +349,7 @@
 		F5F2191A1C09A33000EA02FF /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				F5FCC2371C46FB3B00AD19B5 /* html */,
 				F5F219181C09A32700EA02FF /* Info.storyboard */,
 				F5B525361BFB881600D7FB1C /* InfoTVC.swift */,
 				F5B525341BFB87E300D7FB1C /* InfoDetailVC.swift */,
@@ -413,6 +422,17 @@
 				F5F219541C16058300EA02FF /* PurchaseVC.swift */,
 			);
 			name = _Purchase;
+			sourceTree = "<group>";
+		};
+		F5FCC2371C46FB3B00AD19B5 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				F5FCC2381C46FB6600AD19B5 /* eula.html */,
+				F5FCC23A1C46FC3900AD19B5 /* iris.html */,
+				F5FCC23C1C46FCE400AD19B5 /* privacy.html */,
+				F5FCC23E1C46FD2F00AD19B5 /* me.html */,
+			);
+			name = html;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,14 +550,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F54DC0C91BE253C70059E641 /* SpetzlerPonce.storyboard in Resources */,
+				F5FCC23D1C46FCE400AD19B5 /* privacy.html in Resources */,
 				F5F219191C09A32700EA02FF /* Info.storyboard in Resources */,
 				F511310B1BB1B855004B4ED7 /* LaunchScreen.storyboard in Resources */,
+				F5FCC2391C46FB6600AD19B5 /* eula.html in Resources */,
 				F5F2194C1C15C56000EA02FF /* PHASES.storyboard in Resources */,
 				F5F2192C1C10D41100EA02FF /* TLICS.storyboard in Resources */,
 				F54FB2F71C22C9EC003C9E6A /* SINS.storyboard in Resources */,
 				F5F219531C16056A00EA02FF /* Purchase.storyboard in Resources */,
+				F5FCC23B1C46FC3900AD19B5 /* iris.html in Resources */,
 				F5F219441C142EC300EA02FF /* ReleaseNotes.storyboard in Resources */,
 				F54DC0CD1BE2644D0059E641 /* Recommendation.storyboard in Resources */,
+				F5FCC23F1C46FD2F00AD19B5 /* me.html in Resources */,
 				F5F219471C15B57100EA02FF /* release_notes.html in Resources */,
 				F5F2191C1C09A42E00EA02FF /* ScoreDetail.storyboard in Resources */,
 				F54DC0C01BE21C5B0059E641 /* scores.db in Resources */,

@@ -52,22 +52,20 @@ class InfoTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         switch segue.identifier! {
         case SegueIdentifiers.EULA.rawValue:
             destinationController.title = "License Agreement"
-            destinationController.content = "http://dign.eu/eula"
+            destinationController.content = "eula"
         case SegueIdentifiers.Quality.rawValue:
             destinationController.title = "Quality Assurance"
-            destinationController.content = "http://dign.eu/iris"
+            destinationController.content = "iris"
         case SegueIdentifiers.Privacy.rawValue:
             destinationController.title = "Privacy statement"
-            destinationController.content = "http://dign.eu/eula/privacy"
+            destinationController.content = "privacy"
         case SegueIdentifiers.Twitter.rawValue:
             destinationController.title = "@DigNeurosurgeon"
             destinationController.content = "http://twitter.com/digneurosurgeon"
-        case SegueIdentifiers.Blog.rawValue:
-            destinationController.title = "Blog"
-            destinationController.content = "http://dign.eu/blg"
+            destinationController.loadRemoteContent = true
         case SegueIdentifiers.Developer.rawValue:
-            destinationController.title = "About Pieter Kubben, MD, PhD"
-            destinationController.content = "http://dign.eu/me"
+            destinationController.title = "About Pieter Kubben"
+            destinationController.content = "me"
         default:
             break
         }
