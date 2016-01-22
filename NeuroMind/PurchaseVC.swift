@@ -36,6 +36,12 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     }
     
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        SKPaymentQueue.defaultQueue().removeTransactionObserver(self)
+    }
+    
+    
     // MARK:- StoreKit
     
     
@@ -76,7 +82,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
-            case .Purchased:
+            case .Purchased, .Restored:
                 unlockItem()
                 SKPaymentQueue.defaultQueue().finishTransaction(transaction)
             case .Failed:
@@ -92,9 +98,16 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     // MARK:- Process purchase
     
     
-    func purchaseOrRestoreItem() {
+    func purchaseItem() {
         let payment = SKPayment(product: product!)
         SKPaymentQueue.defaultQueue().addPayment(payment)
+    }
+    
+    
+    func restoreItem() {
+        if SKPaymentQueue.canMakePayments() {
+            SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
+        }
     }
 
 
@@ -140,7 +153,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     
     
     @IBAction func purchaseButtonTapped(sender: AnyObject) {
-        purchaseOrRestoreItem()
+        purchaseItem()
     }
     
 
@@ -154,7 +167,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
 
     
     @IBAction func restorePurchaseButtonTapped(sender: AnyObject) {
-        purchaseOrRestoreItem()
+        restoreItem()
     }
     
 }
