@@ -86,9 +86,16 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     // MARK:- Process purchase
     
     
-    func purchaseOrRestoreItem() {
+    func purchaseItem() {
         let payment = SKPayment(product: product!)
         SKPaymentQueue.defaultQueue().addPayment(payment)
+    }
+    
+    
+    func restoreItem() {
+        if SKPaymentQueue.canMakePayments() {
+            SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
+        }
     }
 
 
@@ -122,7 +129,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
     
     
     @IBAction func purchaseButtonTapped(sender: AnyObject) {
-        purchaseOrRestoreItem()
+        purchaseItem()
     }
     
 
@@ -136,7 +143,7 @@ class PurchaseVC: UIViewController, ContainsScore, SKPaymentTransactionObserver,
 
     
     @IBAction func restorePurchaseButtonTapped(sender: AnyObject) {
-        purchaseOrRestoreItem()
+        restoreItem()
     }
     
 }
