@@ -18,7 +18,7 @@ class PHASES {
         ["< 70 years", "\u{2265} 70 years"],
         ["< 7.0 mm", "7.0 - 9.9 mm", "10.0 - 19.9 mm", "\u{2265} 20 mm"],
         ["No", "Yes"],
-        ["Internal Cerebral Artery", "Medial Cerebral Artery", "Anterior Cerebral Artery", "Posterior Cerebral Artery", "Communicating Posterior Artery"]
+        ["Internal Cerebral Artery", "Middle Cerebral Artery", "Anterior Cerebral Artery", "Posterior Cerebral Artery", "Communicating Posterior Artery"]
     ]
     
     let points = [
@@ -120,9 +120,8 @@ class PHASES {
         } else if sumScore >= 12 {
             result = (risk: stats[max].0, ciLower: stats[max].1, ciUpper: stats[max].2)
         } else {
-            for i in 1..<max {
-                result = (risk: stats[i].0, ciLower: stats[i].1, ciUpper: stats[i].2)
-            }
+            let index = sumScore - 2
+            result = (risk: stats[index].0, ciLower: stats[index].1, ciUpper: stats[index].2)
         }
         
         return result
@@ -131,6 +130,7 @@ class PHASES {
     
     var risksAsHTML: String {
         return "<h3>5 year risk: \(risks.risk)% (95% CI \(risks.ciLower)%-\(risks.ciUpper)%)</h3>" +
+                "<h4>PHASES score: \(sumScore)</h4>" +
                 "<p>This is the 5 year risk of aneurysm rupture based on these parameters:</p>" +
                 "<ul>" +
                     "<li>Population: \(items[0][population.rawValue])</li>" +
