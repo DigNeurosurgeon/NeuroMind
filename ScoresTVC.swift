@@ -54,7 +54,7 @@ class ScoresTVC: UITableViewController, UISearchResultsUpdating, UIPopoverPresen
         
         // Continue with loading menu
         super.viewDidLoad()
-        iris = IRIS(version: currentNeuroMindVersion, statusURLString: "http://dign.eu/nm/neuromind.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
+        iris = IRIS(version: currentNeuroMindVersion, statusURLString: "http://dign.eu/nm/neuromind_test.json", expirationTimeInDays: 30, eulaURLString: "http://dign.eu/eula")
         
         if let split = self.splitViewController {
             let controllers = split.viewControllers
